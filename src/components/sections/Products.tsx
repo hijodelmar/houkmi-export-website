@@ -27,7 +27,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
             id: "watermelons",
             name: dict.Products.watermelons,
             color: "#EC4899",
-            image: "https://images.unsplash.com/photo-1589984662742-a26c462fd541?w=800&q=80"
+            image: "/images/watermelon.jpg"
         },
     ];
 
