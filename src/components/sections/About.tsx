@@ -27,7 +27,7 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                         ></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                         <div className="absolute bottom-6 left-6 text-white">
-                            <p className="font-bold text-lg">Detailed care in every harvest</p>
+                            <p className="font-bold text-lg">{dict.About.imageCaption}</p>
                         </div>
                     </motion.div>
 
