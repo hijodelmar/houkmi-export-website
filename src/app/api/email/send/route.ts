@@ -12,6 +12,13 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'SMTP not configured' }, { status: 500 });
         }
 
+        console.log('=== SMTP CONFIG ===');
+        console.log('Host:', config.host);
+        console.log('Port:', config.port);
+        console.log('User:', config.user);
+        console.log('To Email:', config.toEmail);
+        console.log('==================');
+
         const transporter = nodemailer.createTransport({
             host: config.host,
             port: config.port,
@@ -40,7 +47,13 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true });
     } catch (error) {
-        console.error('Email send error:', error);
-        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+        console.error('=== EMAIL SEND ERROR ===');
+        console.error('Error details:', error);
+        console.error('Error message:', error instanceof Error ? error.message : 'Unknown error');
+        console.error('=======================');
+        return NextResponse.json({
+            error: 'Failed to send email',
+            details: error instanceof Error ? error.message : 'Unknown error'
+        }, { status: 500 });
     }
 }
