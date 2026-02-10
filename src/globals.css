@@ -10,6 +10,31 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand Colors */
+  --color-brand-green: #7CB342;
+  --color-brand-green-light: #9CCC65;
+  --color-brand-green-dark: #558B2F;
+
+  --color-brand-orange: #FF6F00;
+  --color-brand-orange-light: #FF9800;
+  --color-brand-orange-dark: #E65100;
+
+  --color-brand-red: #FF5252;
+  --color-brand-red-light: #FF7979;
+  --color-brand-red-dark: #E53935;
+
+  --color-brand-yellow: #FFD600;
+  --color-brand-yellow-light: #FFEA00;
+  --color-brand-yellow-dark: #FFC400;
+
+  --color-brand-purple: #AB47BC;
+  --color-brand-purple-light: #BA68C8;
+  --color-brand-purple-dark: #8E24AA;
+
+  --color-brand-mint: #26A69A;
+  --color-brand-mint-light: #4DB6AC;
+  --color-brand-mint-dark: #00897B;
 }
 
 body {
