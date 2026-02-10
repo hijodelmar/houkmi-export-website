@@ -15,7 +15,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
             id: "oranges",
             name: dict.Products.oranges,
             color: "#F97316",
-            image: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5a?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80"
         },
         {
             id: "peppers",
@@ -27,7 +27,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
             id: "watermelons",
             name: dict.Products.watermelons,
             color: "#EC4899",
-            image: "https://images.unsplash.com/photo-1587049352846-4a222e784587?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1589984662742-a26c462fd541?w=800&q=80"
         },
     ];
 
