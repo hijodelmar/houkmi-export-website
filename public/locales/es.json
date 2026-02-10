@@ -31,7 +31,10 @@
   "Contact": {
     "title": "Póngase en Contacto",
     "description": "Siempre estamos listos para discutir nuevas oportunidades. Contáctenos para pedidos o consultas.",
+    "locationLabel": "Nuestra Ubicación",
     "location": "Zona Industrial de Agadir, Marruecos",
+    "emailLabel": "Envíenos un Correo",
+    "phoneLabel": "Llámenos",
     "name": "Nombre",
     "email": "Correo Electrónico",
     "message": "Mensaje",

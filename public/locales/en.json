@@ -31,7 +31,10 @@
   "Contact": {
     "title": "Get in Touch",
     "description": "We are always ready to discuss new opportunities. Reach out to us for orders or inquiries.",
+    "locationLabel": "Our Location",
     "location": "Agadir Industrial Zone, Morocco",
+    "emailLabel": "Email Us",
+    "phoneLabel": "Call Us",
     "name": "Name",
     "email": "Email",
     "message": "Message",

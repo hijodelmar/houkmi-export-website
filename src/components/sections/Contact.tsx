@@ -70,8 +70,8 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     <MapPin className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 mb-1">Our Location</h4>
-                                    <p className="text-gray-700">Agadir Industrial Zone, Morocco</p>
+                                    <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.locationLabel}</h4>
+                                    <p className="text-gray-700">{dict.Contact.location}</p>
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     <Mail className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 mb-1">Email Us</h4>
+                                    <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.emailLabel}</h4>
                                     <p className="text-gray-700">info@houkmiexport.com</p>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     <Phone className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 mb-1">Call Us</h4>
+                                    <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.phoneLabel}</h4>
                                     <p className="text-gray-700">+212 5 28 00 00 00</p>
                                 </div>
                             </div>

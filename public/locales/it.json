@@ -4,21 +4,21 @@
     "about": "Chi Siamo",
     "products": "Prodotti",
     "gallery": "Galleria",
-    "contact": "Contatti"
+    "contact": "Contatto"
   },
   "Hero": {
     "title": "Frutta e Verdura Fresca dal Marocco al Mondo",
-    "subtitle": "Prodotti di alta qualità direttamente dalle nostre fattorie di Agadir.",
+    "subtitle": "Prodotti di qualità premium direttamente dalle nostre fattorie ad Agadir.",
     "cta_products": "I Nostri Prodotti",
     "cta_contact": "Contattaci"
   },
   "About": {
     "title": "Chi Siamo",
     "description": "Con oltre 35 anni di esperienza, HOUKMI EXPORT è leader nella produzione ed esportazione di agrumi e verdure fresche.",
-    "mission": "La nostra missione è fornire il meglio della natura con una qualità senza compromessi."
+    "mission": "La nostra missione è fornire il meglio della natura con qualità senza compromessi."
   },
   "Gallery": {
-    "description": "Uno sguardo alle nostre fattorie, strutture di imballaggio e al team dedicato che garantisce la qualità in ogni scatola."
+    "description": "Uno sguardo alle nostre fattorie, strutture di confezionamento e al team dedicato che garantisce la qualità in ogni scatola."
   },
   "Products": {
     "title": "Il Nostro Raccolto",
@@ -29,16 +29,19 @@
     "watermelons": "Angurie Succose"
   },
   "Contact": {
-    "title": "Mettiti in Contatto",
-    "description": "Siamo sempre pronti a discutere nuove opportunita. Contattaci per ordini o richieste.",
+    "title": "Contattaci",
+    "description": "Siamo sempre pronti a discutere di nuove opportunità. Contattaci per ordini o richieste.",
+    "locationLabel": "La Nostra Posizione",
     "location": "Zona Industriale di Agadir, Marocco",
+    "emailLabel": "Inviaci un'Email",
+    "phoneLabel": "Chiamaci",
     "name": "Nome",
     "email": "Email",
     "message": "Messaggio",
     "send": "Invia Messaggio"
   },
   "Footer": {
-    "description": "Portare frutta e verdura fresche dal Marocco alla tua tavola. Qualità e affidabilità dal 1990.",
+    "description": "Portando la frutta e la verdura più fresca dal Marocco alla vostra tavola. Qualità e affidabilità dal 1990.",
     "quick_links": "Link Rapidi",
     "contact_us": "Contattaci",
     "rights": "Tutti i diritti riservati."

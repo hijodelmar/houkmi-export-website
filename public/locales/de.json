@@ -7,38 +7,41 @@
     "contact": "Kontakt"
   },
   "Hero": {
-    "title": "Frisches Obst & Gemüse aus Marokko für die Welt",
-    "subtitle": "Erstklassige Produkte direkt von unseren Farmen in Agadir.",
+    "title": "Frisches Obst & Gemüse aus Marokko in die Welt",
+    "subtitle": "Premiumqualität direkt von unseren Farmen in Agadir.",
     "cta_products": "Unsere Produkte",
     "cta_contact": "Kontaktieren Sie Uns"
   },
   "About": {
     "title": "Wer Wir Sind",
-    "description": "Mit über 35 Jahren Erfahrung ist HOUKMI EXPORT führend in der Produktion und dem Export von Zitrusfrüchten und frischem Gemüse.",
-    "mission": "Unsere Mission ist es, das Beste aus der Natur in kompromissloser Qualität zu liefern."
+    "description": "Mit über 35 Jahren Erfahrung ist HOUKMI EXPORT führend in der Produktion und im Export von Zitrusfrüchten und frischem Gemüse.",
+    "mission": "Unsere Mission ist es, das Beste der Natur mit kompromissloser Qualität zu liefern."
   },
   "Gallery": {
-    "description": "Ein Einblick in unsere Farmen, Verpackungsanlagen und das engagierte Team, das Qualität in jeder Kiste garantiert."
+    "description": "Ein Einblick in unsere Farmen, Verpackungsanlagen und das engagierte Team, das Qualität in jeder Kiste gewährleistet."
   },
   "Products": {
     "title": "Unsere Ernte",
-    "view_all": "Alle Produkte Ansehen",
+    "view_all": "Alle Produkte Anzeigen",
     "tomatoes": "Frische Tomaten",
     "oranges": "Süße Orangen",
     "peppers": "Knackige Paprika",
     "watermelons": "Saftige Wassermelonen"
   },
   "Contact": {
-    "title": "Kontakt Aufnehmen",
-    "description": "Wir sind immer bereit, neue Möglichkeiten zu besprechen. Kontaktieren Sie uns für Bestellungen oder Anfragen.",
-    "location": "Industriezone Agadir, Marokko",
+    "title": "Kontaktieren Sie Uns",
+    "description": "Wir sind immer bereit, über neue Möglichkeiten zu sprechen. Kontaktieren Sie uns für Bestellungen oder Anfragen.",
+    "locationLabel": "Unser Standort",
+    "location": "Industriegebiet Agadir, Marokko",
+    "emailLabel": "Senden Sie Uns Eine E-Mail",
+    "phoneLabel": "Rufen Sie Uns An",
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
     "send": "Nachricht Senden"
   },
   "Footer": {
-    "description": "Wir bringen das frischeste Obst und Gemüse aus Marokko auf Ihren Tisch. Qualität und Zuverlässigkeit seit 1990.",
+    "description": "Frisches Obst und Gemüse aus Marokko auf Ihren Tisch. Qualität und Zuverlässigkeit seit 1990.",
     "quick_links": "Schnelllinks",
     "contact_us": "Kontaktieren Sie Uns",
     "rights": "Alle Rechte vorbehalten."

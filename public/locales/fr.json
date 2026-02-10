@@ -15,10 +15,10 @@
   "About": {
     "title": "Qui Sommes-Nous",
     "description": "Avec plus de 35 ans d'expérience, HOUKMI EXPORT est un leader dans la production et l'exportation d'agrumes et de légumes frais.",
-    "mission": "Notre mission est de fournir le meilleur de la nature avec une qualité sans compromis."
+    "mission": "Notre mission est de fournir le meilleur de la nature avec une qualité inégalée."
   },
   "Gallery": {
-    "description": "Un aperçu de nos fermes, de nos installations d'emballage et de l'équipe dévouée qui assure la qualité dans chaque caisse."
+    "description": "Un aperçu de nos fermes, installations d'emballage et de l'équipe dévouée garantissant la qualité dans chaque boîte."
   },
   "Products": {
     "title": "Notre Récolte",
@@ -30,15 +30,18 @@
   },
   "Contact": {
     "title": "Contactez-nous",
-    "description": "Nous sommes toujours prêts à discuter de nouvelles opportunités. Contactez-nous pour des commandes ou des renseignements.",
+    "description": "Nous sommes toujours prêts à discuter de nouvelles opportunités. Contactez-nous pour les commandes ou les demandes.",
+    "locationLabel": "Notre Emplacement",
     "location": "Zone Industrielle d'Agadir, Maroc",
+    "emailLabel": "Envoyez-nous un Email",
+    "phoneLabel": "Appelez-nous",
     "name": "Nom",
     "email": "Email",
     "message": "Message",
     "send": "Envoyer le Message"
   },
   "Footer": {
-    "description": "Apporter les fruits et légumes les plus frais du Maroc à votre table. Qualité et fiabilité depuis 1990.",
+    "description": "Apportant les fruits et légumes les plus frais du Maroc à votre table. Qualité et fiabilité depuis 1990.",
     "quick_links": "Liens Rapides",
     "contact_us": "Contactez-nous",
     "rights": "Tous droits réservés."
