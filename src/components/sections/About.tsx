@@ -5,9 +5,9 @@ import { CheckCircle, Award, Leaf, Users, Globe } from "lucide-react";
 
 export default function About({ lang, dict }: { lang: string; dict: any }) {
     const features = [
-        { icon: <Award className="w-6 h-6" />, text: dict.About.experience, color: "linear-gradient(to bottom right, #F5A623, #E8772A)" },
-        { icon: <Leaf className="w-6 h-6" />, text: dict.About.farming, color: "linear-gradient(to bottom right, #5CB338, #3BA88E)" },
-        { icon: <Globe className="w-6 h-6" />, text: dict.About.globalReach, color: "linear-gradient(to bottom right, #C73232, #E8772A)" },
+        { icon: <Award className="w-6 h-6" />, text: dict.About.experience, color: "linear-gradient(to bottom right, #FFD600, #FF6F00)" },
+        { icon: <Leaf className="w-6 h-6" />, text: dict.About.farming, color: "linear-gradient(to bottom right, #7CB342, #26A69A)" },
+        { icon: <Globe className="w-6 h-6" />, text: dict.About.globalReach, color: "linear-gradient(to bottom right, #AB47BC, #FF5252)" },
     ];
 
     return (

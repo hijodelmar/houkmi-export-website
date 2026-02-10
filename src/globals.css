@@ -11,30 +11,30 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Brand Colors - extracted from logo2.png */
-  --color-brand-green: #5CB338;
-  --color-brand-green-light: #7BC95A;
-  --color-brand-green-dark: #3D8B1F;
+  /* Brand Colors */
+  --color-brand-green: #7CB342;
+  --color-brand-green-light: #9CCC65;
+  --color-brand-green-dark: #558B2F;
 
-  --color-brand-orange: #E8772A;
-  --color-brand-orange-light: #F09550;
-  --color-brand-orange-dark: #C75E15;
+  --color-brand-orange: #FF6F00;
+  --color-brand-orange-light: #FF9800;
+  --color-brand-orange-dark: #E65100;
 
-  --color-brand-red: #C73232;
-  --color-brand-red-light: #E04545;
-  --color-brand-red-dark: #A02525;
+  --color-brand-red: #FF5252;
+  --color-brand-red-light: #FF7979;
+  --color-brand-red-dark: #E53935;
 
-  --color-brand-yellow: #F5A623;
-  --color-brand-yellow-light: #F7B84D;
-  --color-brand-yellow-dark: #D4890F;
+  --color-brand-yellow: #FFD600;
+  --color-brand-yellow-light: #FFEA00;
+  --color-brand-yellow-dark: #FFC400;
 
-  --color-brand-charcoal: #2D2D2D;
-  --color-brand-charcoal-light: #4A4A4A;
-  --color-brand-charcoal-dark: #1A1A1A;
+  --color-brand-purple: #AB47BC;
+  --color-brand-purple-light: #BA68C8;
+  --color-brand-purple-dark: #8E24AA;
 
-  --color-brand-mint: #3BA88E;
-  --color-brand-mint-light: #5DC4AA;
-  --color-brand-mint-dark: #2D8A72;
+  --color-brand-mint: #26A69A;
+  --color-brand-mint-light: #4DB6AC;
+  --color-brand-mint-dark: #00897B;
 }
 
 body {
@@ -58,12 +58,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #5CB338 0%, #E8772A 100%);
+  background: linear-gradient(135deg, #7CB342 0%, #FF6F00 100%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #3D8B1F 0%, #C75E15 100%);
+  background: linear-gradient(135deg, #558B2F 0%, #E65100 100%);
 }
 
 /* Animated gradient background utility */
