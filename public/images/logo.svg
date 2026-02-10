@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 100">
+  <!-- Group the Icon -->
+  <g transform="translate(10, 10) scale(0.8)">
+    <!-- Sun -->
+    <circle cx="50" cy="50" r="40" fill="#F57C00" />
+    <!-- Leaf Overlay -->
+    <path d="M50 90 Q10 90 10 50 Q10 10 50 10 Q90 10 90 50 Q90 90 50 90 Z" fill="#2E7D32" opacity="0.9" transform="translate(12, 12) scale(0.8)" />
+  </g>
+  
+  <!-- Text Section -->
+  <text x="100" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="40" fill="#2E7D32">HOUKMI</text>
+  <text x="290" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="40" fill="#F57C00">EXPORT</text>
+</svg>

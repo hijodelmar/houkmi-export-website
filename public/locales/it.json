@@ -1,0 +1,46 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "products": "Prodotti",
+    "gallery": "Galleria",
+    "contact": "Contatti"
+  },
+  "Hero": {
+    "title": "Frutta e Verdura Fresca dal Marocco al Mondo",
+    "subtitle": "Prodotti di alta qualità direttamente dalle nostre fattorie di Agadir.",
+    "cta_products": "I Nostri Prodotti",
+    "cta_contact": "Contattaci"
+  },
+  "About": {
+    "title": "Chi Siamo",
+    "description": "Con oltre 35 anni di esperienza, HOUKMI EXPORT è leader nella produzione ed esportazione di agrumi e verdure fresche.",
+    "mission": "La nostra missione è fornire il meglio della natura con una qualità senza compromessi."
+  },
+  "Gallery": {
+    "description": "Uno sguardo alle nostre fattorie, strutture di imballaggio e al team dedicato che garantisce la qualità in ogni scatola."
+  },
+  "Products": {
+    "title": "Il Nostro Raccolto",
+    "view_all": "Vedi Tutti i Prodotti",
+    "tomatoes": "Pomodori Freschi",
+    "oranges": "Arance Dolci",
+    "peppers": "Peperoni Croccanti",
+    "watermelons": "Angurie Succose"
+  },
+  "Contact": {
+    "title": "Mettiti in Contatto",
+    "description": "Siamo sempre pronti a discutere nuove opportunita. Contattaci per ordini o richieste.",
+    "location": "Zona Industriale di Agadir, Marocco",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia Messaggio"
+  },
+  "Footer": {
+    "description": "Portare frutta e verdura fresche dal Marocco alla tua tavola. Qualità e affidabilità dal 1990.",
+    "quick_links": "Link Rapidi",
+    "contact_us": "Contattaci",
+    "rights": "Tutti i diritti riservati."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "Fresh Fruits & Vegetables from Morocco to the World",
+    "subtitle": "Premium quality produce directly from our farms in Agadir.",
+    "cta_products": "Our Products",
+    "cta_contact": "Contact Us"
+  },
+  "About": {
+    "title": "Who We Are",
+    "description": "With over 35 years of experience, HOUKMI EXPORT is a leader in the production and export of citrus fruits and fresh vegetables.",
+    "mission": "Our mission is to provide nature's best with uncompromised quality."
+  },
+  "Gallery": {
+    "description": "A glimpse into our farms, packing facilities, and the dedicated team ensuring quality in every box."
+  },
+  "Products": {
+    "title": "Our Harvest",
+    "view_all": "View All Products",
+    "tomatoes": "Fresh Tomatoes",
+    "oranges": "Sweet Oranges",
+    "peppers": "Crisp Peppers",
+    "watermelons": "Juicy Watermelons"
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "description": "We are always ready to discuss new opportunities. Reach out to us for orders or inquiries.",
+    "location": "Agadir Industrial Zone, Morocco",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "Footer": {
+    "description": "Bringing the freshest fruits and vegetables from Morocco to your table. Quality and reliability since 1990.",
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "rights": "All rights reserved."
+  }
+}

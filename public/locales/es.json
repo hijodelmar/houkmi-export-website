@@ -1,0 +1,46 @@
+{
+  "Navigation": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "products": "Productos",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Frutas y Verduras Frescas de Marruecos para el Mundo",
+    "subtitle": "Productos de primera calidad directamente de nuestras granjas en Agadir.",
+    "cta_products": "Nuestros Productos",
+    "cta_contact": "Contáctenos"
+  },
+  "About": {
+    "title": "Quiénes Somos",
+    "description": "Con más de 35 años de experiencia, HOUKMI EXPORT es líder en la producción y exportación de cítricos y verduras frescas.",
+    "mission": "Nuestra misión es proporcionar lo mejor de la naturaleza con una calidad inigualable."
+  },
+  "Gallery": {
+    "description": "Un vistazo a nuestras granjas, instalaciones de envasado y al equipo dedicado que garantiza la calidad en cada caja."
+  },
+  "Products": {
+    "title": "Nuestra Cosecha",
+    "view_all": "Ver Todos los Productos",
+    "tomatoes": "Tomates Frescos",
+    "oranges": "Naranjas Dulces",
+    "peppers": "Pimientos Crujientes",
+    "watermelons": "Sandías Jugosas"
+  },
+  "Contact": {
+    "title": "Póngase en Contacto",
+    "description": "Siempre estamos listos para discutir nuevas oportunidades. Contáctenos para pedidos o consultas.",
+    "location": "Zona Industrial de Agadir, Marruecos",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "Footer": {
+    "description": "Llevando las frutas y verduras más frescas de Marruecos a su mesa. Calidad y confianza desde 1990.",
+    "quick_links": "Enlaces Rápidos",
+    "contact_us": "Contáctenos",
+    "rights": "Todos los derechos reservados."
+  }
+}
