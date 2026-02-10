@@ -15,7 +15,10 @@
   "About": {
     "title": "Qui Sommes-Nous",
     "description": "Avec plus de 35 ans d'expérience, HOUKMI EXPORT est un leader dans la production et l'exportation d'agrumes et de légumes frais.",
-    "mission": "Notre mission est de fournir le meilleur de la nature avec une qualité inégalée."
+    "mission": "Notre mission est de fournir le meilleur de la nature avec une qualité inégalée.",
+    "experience": "+35 Ans d'Expérience",
+    "farming": "Agriculture Durable",
+    "globalReach": "Portée Mondiale"
   },
   "Gallery": {
     "description": "Un aperçu de nos fermes, installations d'emballage et de l'équipe dévouée garantissant la qualité dans chaque boîte."

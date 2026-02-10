@@ -15,7 +15,10 @@
   "About": {
     "title": "Quiénes Somos",
     "description": "Con más de 35 años de experiencia, HOUKMI EXPORT es líder en la producción y exportación de cítricos y verduras frescas.",
-    "mission": "Nuestra misión es proporcionar lo mejor de la naturaleza con una calidad inigualable."
+    "mission": "Nuestra misión es proporcionar lo mejor de la naturaleza con una calidad inigualable.",
+    "experience": "+35 Años de Experiencia",
+    "farming": "Agricultura Sostenible",
+    "globalReach": "Alcance Global"
   },
   "Gallery": {
     "description": "Un vistazo a nuestras granjas, instalaciones de envasado y al equipo dedicado que garantiza la calidad en cada caja."

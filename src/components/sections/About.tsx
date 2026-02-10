@@ -5,9 +5,9 @@ import { CheckCircle, Award, Leaf, Users, Globe } from "lucide-react";
 
 export default function About({ lang, dict }: { lang: string; dict: any }) {
     const features = [
-        { icon: <Award className="w-6 h-6" />, text: "35+ Years Experience", gradient: "from-brand-yellow to-brand-orange" },
-        { icon: <Leaf className="w-6 h-6" />, text: "Sustainable Farming", gradient: "from-brand-green to-brand-mint" },
-        { icon: <Globe className="w-6 h-6" />, text: "Global Reach", gradient: "from-brand-purple to-brand-red" },
+        { icon: <Award className="w-6 h-6" />, text: dict.About.experience, color: "linear-gradient(to bottom right, #FFD600, #FF6F00)" },
+        { icon: <Leaf className="w-6 h-6" />, text: dict.About.farming, color: "linear-gradient(to bottom right, #7CB342, #26A69A)" },
+        { icon: <Globe className="w-6 h-6" />, text: dict.About.globalReach, color: "linear-gradient(to bottom right, #AB47BC, #FF5252)" },
     ];
 
     return (
@@ -57,7 +57,8 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1, duration: 0.5 }}
                                     whileHover={{ y: -5 }}
-                                    className={`flex flex-col items-center text-center bg-gradient-to-br ${item.gradient} p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all`}
+                                    className="flex flex-col items-center text-center p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all"
+                                    style={{ background: item.color }}
                                 >
                                     <div className="text-white mb-2">
                                         {item.icon}
