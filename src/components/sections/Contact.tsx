@@ -65,30 +65,24 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                         </p>
 
                         <div className="space-y-6 mb-10">
-                            <div className="flex items-start space-x-4 group hover:scale-105 transition-transform">
-                                <div className="bg-gradient-to-br from-brand-green to-brand-mint p-3 rounded-full shadow-lg">
-                                    <MapPin className="w-6 h-6 text-white" />
-                                </div>
+                            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
+                                <MapPin style={{ color: '#7CB342' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.locationLabel}</h4>
                                     <p className="text-gray-700">{dict.Contact.location}</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4 group hover:scale-105 transition-transform">
-                                <div className="bg-gradient-to-br from-brand-orange to-brand-yellow p-3 rounded-full shadow-lg">
-                                    <Mail className="w-6 h-6 text-white" />
-                                </div>
+                            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
+                                <Mail style={{ color: '#FF6F00' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.emailLabel}</h4>
                                     <p className="text-gray-700">info@houkmiexport.com</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4 group hover:scale-105 transition-transform">
-                                <div className="bg-gradient-to-br from-brand-purple to-brand-red p-3 rounded-full shadow-lg">
-                                    <Phone className="w-6 h-6 text-white" />
-                                </div>
+                            <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
+                                <Phone style={{ color: '#AB47BC' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.phoneLabel}</h4>
                                     <p className="text-gray-700">+212 5 28 00 00 00</p>
