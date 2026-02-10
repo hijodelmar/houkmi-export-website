@@ -41,10 +41,10 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ background: 'linear-gradient(to right, #7CB342, #FF6F00)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ background: 'linear-gradient(to right, #5CB338, #E8772A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                             {dict.Products.title}
                         </h2>
-                        <div className="w-24 h-1.5 mx-auto rounded-full" style={{ background: 'linear-gradient(to right, #FF6F00, #FFD600)' }}></div>
+                        <div className="w-24 h-1.5 mx-auto rounded-full" style={{ background: 'linear-gradient(to right, #E8772A, #F5A623)' }}></div>
                     </motion.div>
                 </div>
 
@@ -82,7 +82,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                                 <Link
                                     href={`/${lang}/products`}
                                     className="inline-flex items-center font-semibold text-sm hover:gap-2 gap-1 transition-all"
-                                    style={{ color: '#FF6F00' }}
+                                    style={{ color: '#E8772A' }}
                                 >
                                     Learn more
                                     <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
@@ -102,7 +102,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                     <Link
                         href={`/${lang}/products`}
                         className="inline-block text-white font-bold py-4 px-10 rounded-full hover:shadow-2xl hover:scale-105 transition-all shadow-lg"
-                        style={{ background: 'linear-gradient(to right, #7CB342, #26A69A)' }}
+                        style={{ background: 'linear-gradient(to right, #5CB338, #3BA88E)' }}
                     >
                         {dict.Products.view_all}
                     </Link>

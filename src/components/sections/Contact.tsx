@@ -66,7 +66,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
 
                         <div className="space-y-6 mb-10">
                             <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
-                                <MapPin style={{ color: '#7CB342' }} className="w-8 h-8 flex-shrink-0" />
+                                <MapPin style={{ color: '#5CB338' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.locationLabel}</h4>
                                     <p className="text-gray-700">{dict.Contact.location}</p>
@@ -74,7 +74,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                             </div>
 
                             <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
-                                <Mail style={{ color: '#FF6F00' }} className="w-8 h-8 flex-shrink-0" />
+                                <Mail style={{ color: '#E8772A' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.emailLabel}</h4>
                                     <p className="text-gray-700">info@houkmiexport.com</p>
@@ -82,7 +82,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                             </div>
 
                             <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform">
-                                <Phone style={{ color: '#AB47BC' }} className="w-8 h-8 flex-shrink-0" />
+                                <Phone style={{ color: '#C73232' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.phoneLabel}</h4>
                                     <p className="text-gray-700">+212 5 28 00 00 00</p>
