@@ -26,9 +26,9 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                         <Image
                             src="/images/logo2.png"
                             alt="HOUKMI EXPORT"
-                            width={400}
-                            height={120}
-                            className="h-20 md:h-24 w-auto group-hover:scale-105 transition-transform duration-300"
+                            width={500}
+                            height={150}
+                            className="h-28 md:h-[135px] w-auto group-hover:scale-105 transition-transform duration-300"
                             priority
                         />
                     </Link>
