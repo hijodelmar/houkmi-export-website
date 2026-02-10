@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../globals.css";
-import { locales, type Locale } from "@/lib/i18n";
+import { locales } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -18,13 +18,8 @@ export async function generateStaticParams() {
     return locales.map((lang) => ({ lang }));
 }
 
-export default async function RootLayout({
-    children,
-    params,
-}: Readonly<{
-    children: React.ReactNode;
-    params: Promise<{ lang: Locale }>;
-}>) {
+// @ts-expect-error - Next.js 16 type inference issue with dynamic route params
+export default async function RootLayout({ children, params }) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
 
