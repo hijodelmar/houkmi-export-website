@@ -74,6 +74,9 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                                 {item.name}
                             </Link>
                         ))}
+                        <div className="px-3 py-2 border-t border-gray-200 mt-2 pt-3">
+                            <LanguageSwitcher currentLang={lang} />
+                        </div>
                     </div>
                 </div>
             )}
