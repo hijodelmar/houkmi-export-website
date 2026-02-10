@@ -23,19 +23,23 @@ export default async function RootLayout({
     params,
 }: Readonly<{
     children: React.ReactNode;
-    params: Promise<{ lang: "en" | "es" | "fr" | "de" | "it" | "ru" }>;
+    params: Promise<{ lang: Locale }>;
 }>) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
+
     return (
         <html lang={lang}>
-            <body className={inter.className}>
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+            </head>
+            <body className="antialiased">
                 <Navbar lang={lang} dict={dict} />
-                <main className="min-h-screen">
-                    {children}
-                </main>
-                <WhatsAppButton />
+                {children}
                 <Footer lang={lang} dict={dict} />
+                <WhatsAppButton />
             </body>
         </html>
     );
