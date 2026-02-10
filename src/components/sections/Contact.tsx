@@ -19,19 +19,27 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
         };
 
         try {
+            console.log('Sending email...', data);
             const res = await fetch('/api/email/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
             });
 
+            const result = await res.json();
+            console.log('Response:', result);
+
             if (res.ok) {
                 setStatus('success');
                 (e.target as HTMLFormElement).reset();
             } else {
+                console.error('Email send failed:', result);
+                alert('Error: ' + (result.details || result.error || 'Unknown error'));
                 setStatus('error');
             }
         } catch (error) {
+            console.error('Catch error:', error);
+            alert('Network error: ' + (error instanceof Error ? error.message : 'Unknown'));
             setStatus('error');
         } finally {
             setTimeout(() => setStatus('idle'), 5000);
