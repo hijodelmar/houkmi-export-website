@@ -23,8 +23,8 @@ export function middleware(request: NextRequest) {
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
     );
 
-    // Redirect if there is no locale
-    if (pathnameIsMissingLocale) {
+    // Redirect if there is no locale (except for the root path which can be served directly)
+    if (pathnameIsMissingLocale && pathname !== '/') {
         const locale = defaultLocale;
 
         // e.g. incoming request is /products
