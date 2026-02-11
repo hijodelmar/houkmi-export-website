@@ -15,7 +15,7 @@ export const seed = mutation({
         })),
     },
     handler: async (ctx, args) => {
-        // Clear existing reviews first to avoid duplicates if re-seeded
+        // Clear existing reviews first
         const existing = await ctx.db.query("reviews").collect();
         for (const review of existing) {
             await ctx.db.delete(review._id);
