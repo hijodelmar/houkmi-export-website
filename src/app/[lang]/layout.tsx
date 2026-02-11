@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import SchemaOrg from "@/components/seo/SchemaOrg";
+import { ConvexClientProvider } from "@/components/providers/ConvexClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -119,10 +120,12 @@ export default async function RootLayout({ children, params }) {
                 <SchemaOrg lang={lang} />
             </head>
             <body className="antialiased">
-                <Navbar lang={lang} dict={dict} />
-                {children}
-                <Footer lang={lang} dict={dict} />
-                <WhatsAppButton />
+                <ConvexClientProvider>
+                    <Navbar lang={lang} dict={dict} />
+                    {children}
+                    <Footer lang={lang} dict={dict} />
+                    <WhatsAppButton />
+                </ConvexClientProvider>
             </body>
         </html>
     );

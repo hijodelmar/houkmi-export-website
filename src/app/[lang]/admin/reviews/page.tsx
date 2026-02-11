@@ -1,77 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Check, Shield, Trash2, Globe, Building2, Star, Filter, LogOut, Quote, ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { Check, Shield, Trash2, Globe, Building2, Star, Filter, Quote, ArrowLeft } from "lucide-react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
 import LogoutButton from "@/components/ui/LogoutButton";
-
-interface Review {
-    id: string;
-    name: string;
-    company: string;
-    country: string;
-    rating: number;
-    comment: string;
-    image_url?: string;
-    status: 'pending' | 'approved' | 'rejected';
-    createdAt: string;
-}
+import { Id } from "../../../../convex/_generated/dataModel";
 
 export default function AdminDashboard() {
     const params = useParams();
     const lang = params?.lang as string || 'en';
-    const [reviews, setReviews] = useState<Review[]>([]);
-    const [loading, setLoading] = useState(true);
+    const reviews = useQuery(api.reviews.getAll);
+    const updateStatus = useMutation(api.reviews.updateStatus);
+    const removeReview = useMutation(api.reviews.remove);
+
     const [filter, setFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
 
-    useEffect(() => {
-        fetchReviews();
-    }, []);
-
-    const fetchReviews = async () => {
-        setLoading(true);
+    const handleStatusUpdate = async (id: Id<"reviews">, status: 'approved' | 'rejected') => {
         try {
-            const res = await fetch('/api/admin/reviews');
-            if (res.ok) {
-                const data = await res.json();
-                setReviews(data);
-            }
-        } catch (error) {
-            console.error("Error fetching admin reviews:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleStatusUpdate = async (id: string, status: 'approved' | 'rejected') => {
-        try {
-            const res = await fetch('/api/admin/reviews', {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id, status })
-            });
-            if (res.ok) fetchReviews();
+            await updateStatus({ id, status });
         } catch (error) {
             alert("Error updating review");
         }
     };
 
-    const handleDelete = async (id: string) => {
+    const handleDelete = async (id: Id<"reviews">) => {
         if (!confirm("Are you sure you want to delete this review?")) return;
         try {
-            const res = await fetch(`/api/admin/reviews?id=${id}`, {
-                method: 'DELETE'
-            });
-            if (res.ok) fetchReviews();
+            await removeReview({ id });
         } catch (error) {
             alert("Error deleting review");
         }
     };
 
+    if (reviews === undefined) {
+        return (
+            <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
+                <Shield className="w-16 h-16 text-gray-200 mb-4 animate-pulse" />
+                <p className="text-gray-400 font-bold uppercase tracking-widest text-sm">Loading Moderation Panel...</p>
+            </div>
+        );
+    }
+
     const filteredReviews = filter === 'all'
         ? reviews
         : reviews.filter(r => r.status === filter);
+
+    const totalReviews = reviews.length;
+    const pendingCount = reviews.filter(r => r.status === 'pending').length;
+    const approvedCount = reviews.filter(r => r.status === 'approved').length;
+    const avgRating = totalReviews > 0
+        ? (reviews.reduce((acc, r) => acc + r.rating, 0) / totalReviews).toFixed(1)
+        : "5.0";
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -113,24 +95,24 @@ export default function AdminDashboard() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-sm font-bold text-gray-500 uppercase mb-2">Total Reviews</p>
-                        <p className="text-3xl font-extrabold text-gray-900">{reviews.length}</p>
+                        <p className="text-3xl font-extrabold text-gray-900">{totalReviews}</p>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-sm font-bold text-yellow-600 uppercase mb-2">Pending</p>
                         <p className="text-3xl font-extrabold text-gray-900">
-                            {reviews.filter(r => r.status === 'pending').length}
+                            {pendingCount}
                         </p>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-sm font-bold text-green-600 uppercase mb-2">Approved</p>
                         <p className="text-3xl font-extrabold text-gray-900">
-                            {reviews.filter(r => r.status === 'approved').length}
+                            {approvedCount}
                         </p>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-sm font-bold text-blue-600 uppercase mb-2">Avg Rating</p>
                         <p className="text-3xl font-extrabold text-gray-900">
-                            {(reviews.reduce((acc, r) => acc + r.rating, 0) / (reviews.length || 1)).toFixed(1)} ⭐
+                            {avgRating} ⭐
                         </p>
                     </div>
                 </div>
@@ -157,12 +139,7 @@ export default function AdminDashboard() {
 
                 {/* Reviews List */}
                 <div className="space-y-6">
-                    {loading ? (
-                        <div className="text-center py-20">
-                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
-                            <p className="mt-4 text-gray-500 font-bold uppercase tracking-widest text-sm">Loading reviews...</p>
-                        </div>
-                    ) : filteredReviews.length === 0 ? (
+                    {filteredReviews.length === 0 ? (
                         <div className="bg-white rounded-3xl p-20 text-center border border-dashed border-gray-200">
                             <Quote size={48} className="text-gray-200 mx-auto mb-4" />
                             <p className="text-gray-500 text-lg font-medium">No reviews found matching your filter.</p>
@@ -170,7 +147,7 @@ export default function AdminDashboard() {
                     ) : (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {filteredReviews.map((review) => (
-                                <div key={review.id} className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div key={review._id} className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <div className="flex justify-between items-start mb-6">
                                         <div className="flex items-center gap-4">
                                             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gray-100">
@@ -218,11 +195,11 @@ export default function AdminDashboard() {
 
                                     <div className="flex items-center justify-between pt-6 border-t border-gray-50">
                                         <span className="text-xs text-gray-400 font-medium">
-                                            {new Date(review.createdAt).toLocaleDateString()}
+                                            {new Date(review._creationTime).toLocaleDateString()}
                                         </span>
                                         <div className="flex gap-2">
                                             <button
-                                                onClick={() => handleDelete(review.id)}
+                                                onClick={() => handleDelete(review._id)}
                                                 className="p-2 text-gray-400 hover:text-red-500 transition-colors"
                                                 title="Delete"
                                             >
@@ -231,7 +208,7 @@ export default function AdminDashboard() {
 
                                             {review.status !== 'rejected' && (
                                                 <button
-                                                    onClick={() => handleStatusUpdate(review.id, 'rejected')}
+                                                    onClick={() => handleStatusUpdate(review._id, 'rejected')}
                                                     className="px-4 py-2 rounded-xl border border-gray-200 text-gray-600 font-bold text-sm hover:bg-red-50 hover:text-red-600 hover:border-red-100 transition-all"
                                                 >
                                                     Reject
@@ -240,7 +217,7 @@ export default function AdminDashboard() {
 
                                             {review.status !== 'approved' && (
                                                 <button
-                                                    onClick={() => handleStatusUpdate(review.id, 'approved')}
+                                                    onClick={() => handleStatusUpdate(review._id, 'approved')}
                                                     className="px-4 py-2 rounded-xl bg-green-600 text-white font-bold text-sm hover:bg-green-700 shadow-md shadow-green-100 transition-all"
                                                 >
                                                     Approve
