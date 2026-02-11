@@ -1,41 +1,35 @@
+import { list, del } from '@vercel/blob';
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 
 export async function GET() {
     try {
-        const galleryDir = path.join(process.cwd(), 'public', 'images', 'pics');
+        const { blobs } = await list({ prefix: 'gallery/' });
 
-        if (!fs.existsSync(galleryDir)) {
-            return NextResponse.json([]);
-        }
-
-        const files = fs.readdirSync(galleryDir);
-        const images = files.filter(file =>
-            /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
-        ).map(file => ({
-            name: file,
-            path: `/images/pics/${file}`,
-            size: fs.statSync(path.join(galleryDir, file)).size
+        const images = blobs.map(blob => ({
+            name: blob.pathname.replace('gallery/', ''),
+            path: blob.url,
+            size: blob.size
         }));
 
         return NextResponse.json(images);
     } catch (error) {
+        console.error('List Error:', error);
         return NextResponse.json({ error: 'Failed to list images' }, { status: 500 });
     }
 }
 
 export async function DELETE(request: Request) {
     try {
-        const { filename } = await request.json();
-        const filePath = path.join(process.cwd(), 'public', 'images', 'pics', filename);
+        const { url } = await request.json();
 
-        if (fs.existsSync(filePath)) {
-            fs.unlinkSync(filePath);
-            return NextResponse.json({ success: true });
+        if (!url) {
+            return NextResponse.json({ error: 'No URL provided' }, { status: 400 });
         }
-        return NextResponse.json({ error: 'File not found' }, { status: 404 });
+
+        await del(url);
+        return NextResponse.json({ success: true });
     } catch (error) {
+        console.error('Delete Error:', error);
         return NextResponse.json({ error: 'Failed to delete image' }, { status: 500 });
     }
 }
