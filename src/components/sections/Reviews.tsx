@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote, Plus, X, Upload, CheckCircle } from "lucide-react";
 import ReviewSchema from "@/components/seo/ReviewSchema";
-import ReCAPTCHA from "react-google-recaptcha";
 
 interface Review {
     id: string;
@@ -21,8 +20,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
     const [formData, setFormData] = useState({
         name: "",
         company: "",
@@ -59,16 +56,22 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!captchaToken) {
-            alert("Please verify that you are not a robot.");
-            return;
-        }
-
         try {
+            if (!window.grecaptcha || !window.grecaptcha.enterprise) {
+                throw new Error("reCAPTCHA not loaded");
+            }
+
+            const token = await new Promise<string>((resolve) => {
+                window.grecaptcha.enterprise.ready(async () => {
+                    const res = await window.grecaptcha.enterprise.execute('6LcI7GcsAAAAABfEZ115oceso-A9xqoX_Gueg5er', { action: 'REVIEW' });
+                    resolve(res);
+                });
+            });
+
             const res = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData, captcha: captchaToken })
+                body: JSON.stringify({ ...formData, captcha: token })
             });
 
             if (res.ok) {
@@ -77,16 +80,13 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                     setIsFormOpen(false);
                     setIsSubmitted(false);
                     setFormData({ name: "", company: "", country: "", rating: 5, comment: "", image_url: "" });
-                    setCaptchaToken(null);
-                    recaptchaRef.current?.reset();
                 }, 3000);
             } else {
                 const errorData = await res.json();
                 alert(errorData.error || "Error submitting review.");
-                setCaptchaToken(null);
-                recaptchaRef.current?.reset();
             }
         } catch (error) {
+            console.error("error:", error);
             alert("Error submitting review. Please try again.");
         }
     };
@@ -377,14 +377,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                                     </div>
                                                     <p className="text-[10px] text-gray-400">Max size: 2MB. Optimized automatically for B2B portal.</p>
                                                 </div>
-                                            </div>
-
-                                            <div className="flex justify-center">
-                                                <ReCAPTCHA
-                                                    ref={recaptchaRef}
-                                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"}
-                                                    onChange={(token) => setCaptchaToken(token)}
-                                                />
                                             </div>
 
                                             <button
