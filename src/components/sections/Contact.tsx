@@ -1,40 +1,32 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-
-declare global {
-    interface Window {
-        grecaptcha: any;
-    }
-}
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact({ lang, dict }: { lang: string; dict: any }) {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            alert('Please verify that you are not a robot.');
+            return;
+        }
+
         setStatus('loading');
 
         try {
-            if (!window.grecaptcha || !window.grecaptcha.enterprise) {
-                throw new Error("reCAPTCHA not loaded");
-            }
-
-            const token = await new Promise<string>((resolve) => {
-                window.grecaptcha.enterprise.ready(async () => {
-                    const res = await window.grecaptcha.enterprise.execute('6LcI7GcsAAAAABfEZ115oceso-A9xqoX_Gueg5er', { action: 'CONTACT' });
-                    resolve(res);
-                });
-            });
-
             const formData = new FormData(e.currentTarget);
             const data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 message: formData.get('message'),
-                captcha: token,
+                captcha: captchaToken,
             };
 
             const res = await fetch('/api/email/send', {
@@ -48,13 +40,17 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
             if (res.ok) {
                 setStatus('success');
                 (e.target as HTMLFormElement).reset();
+                recaptchaRef.current?.reset();
+                setCaptchaToken(null);
             } else {
                 alert('Error: ' + (result.details || result.error || 'Unknown error'));
                 setStatus('error');
+                recaptchaRef.current?.reset();
+                setCaptchaToken(null);
             }
         } catch (error) {
             console.error("error:", error);
-            alert('Error: ' + (error instanceof Error ? error.message : 'Unknown'));
+            alert('Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
             setStatus('error');
         } finally {
             setTimeout(() => setStatus('idle'), 5000);
@@ -178,6 +174,14 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
                                     placeholder="How can we help you?"
                                 ></textarea>
+                            </div>
+
+                            <div className="flex justify-center">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey="6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"
+                                    onChange={(token) => setCaptchaToken(token)}
+                                />
                             </div>
 
                             <button

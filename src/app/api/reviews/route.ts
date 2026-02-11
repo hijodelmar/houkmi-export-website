@@ -16,16 +16,16 @@ export async function POST(request: Request) {
         const body = await request.json();
         const { name, company, country, rating, comment, image_url, captcha } = body;
 
-        // Verify reCAPTCHA Enterprise Assessment
-        const score = await createAssessment({
-            token: captcha,
-            recaptchaAction: 'REVIEW'
+        // Verify Captcha v2 (Classic)
+        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6Lcb_WcsAAAAAIX5PdiQGMdrFV0uliGVrjF_I4kc";
+        const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`, {
+            method: 'POST'
         });
+        const verifyData = await verifyRes.json();
 
-        // Score 0.0 is bot, 1.0 is human. We accept 0.5+
-        if (score === null || score < 0.5) {
-            console.error("reCAPTCHA check failed. Score:", score);
-            return NextResponse.json({ error: 'Security check failed. Please try again.' }, { status: 400 });
+        if (!verifyData.success) {
+            console.error("reCAPTCHA v2 failed:", verifyData);
+            return NextResponse.json({ error: 'Captcha verification failed' }, { status: 400 });
         }
 
         if (!name || !company || !rating || !comment) {
