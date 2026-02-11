@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getReviews, addReview } from '@/lib/reviews-store';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     const reviews = await getReviews();
     // Only return approved reviews for the public API

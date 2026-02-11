@@ -74,24 +74,32 @@ const initialData: Review[] = [
 // Memory cache for the session/server instance
 let reviewsCache: Review[] | null = null;
 
-const DATA_PATH = path.join(process.cwd(), '/tmp', 'reviews.json'); // Use /tmp for writable space on Vercel
+// Paths
+const TMP_PATH = '/tmp/reviews.json';
+const REPO_PATH = path.join(process.cwd(), 'data', 'reviews.json');
 
 export async function getReviews(): Promise<Review[]> {
-    // 1. Return cache if available
     if (reviewsCache) return reviewsCache;
 
     try {
-        // 2. Try to read from /tmp (local changes in current instance)
-        if (fs.existsSync(DATA_PATH)) {
-            const data = fs.readFileSync(DATA_PATH, 'utf8');
+        // 1. Try /tmp (dynamic changes)
+        if (fs.existsSync(TMP_PATH)) {
+            const data = fs.readFileSync(TMP_PATH, 'utf8');
+            reviewsCache = JSON.parse(data);
+            return reviewsCache || initialData;
+        }
+
+        // 2. Try Repository data (seeded file)
+        if (fs.existsSync(REPO_PATH)) {
+            const data = fs.readFileSync(REPO_PATH, 'utf8');
             reviewsCache = JSON.parse(data);
             return reviewsCache || initialData;
         }
     } catch (error) {
-        console.error("Error reading reviews from tmp:", error);
+        console.error("Error reading reviews:", error);
     }
 
-    // 3. Fallback to hardcoded initial data
+    // 3. Fallback to code constant
     reviewsCache = [...initialData];
     return reviewsCache;
 }
@@ -99,15 +107,10 @@ export async function getReviews(): Promise<Review[]> {
 export async function saveReviews(reviews: Review[]): Promise<void> {
     reviewsCache = reviews;
     try {
-        // Ensure tmp exists
-        const tmpDir = path.dirname(DATA_PATH);
-        if (!fs.existsSync(tmpDir)) {
-            fs.mkdirSync(tmpDir, { recursive: true });
-        }
-        fs.writeFileSync(DATA_PATH, JSON.stringify(reviews, null, 2));
+        fs.writeFileSync(TMP_PATH, JSON.stringify(reviews, null, 2));
     } catch (error) {
-        // On Vercel this might fail in some environments, but we still have the memory cache
-        console.error("Error saving reviews to tmp:", error);
+        // Vercel /tmp is only writable in some cases, but we keep memory cache
+        console.error("Error saving reviews to /tmp:", error);
     }
 }
 

@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getReviews, updateReviewStatus, deleteReview } from '@/lib/reviews-store';
 
+export const dynamic = 'force-dynamic';
+
 // NOTE: In a real production app, you would add authentication middleware here
 // For now, we are implementing the logic.
 
