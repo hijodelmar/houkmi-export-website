@@ -3,14 +3,16 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote, Plus, X, Upload, CheckCircle } from "lucide-react";
-import { useQuery, useMutation } from "convex/react";
+import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import ReviewSchema from "@/components/seo/ReviewSchema";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
-    const reviews = useQuery(api.reviews.getApproved) || [];
-    const addReview = useMutation(api.reviews.add);
+    const reviewsData = useQuery(api.reviews.getApproved);
+    const reviews = reviewsData || [];
+    const isLoading = reviewsData === undefined;
+    const submitReviewAction = useAction(api.actions.submitWithCaptcha);
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -45,11 +47,10 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
         }
 
         try {
-            // Re-verify on backend via API as well for security if preferred, 
-            // but for simplicity here we trust the token and call Convex
-            await addReview({
+            await submitReviewAction({
                 ...formData,
-                rating: formData.rating,
+                image_url: formData.image_url || undefined,
+                captchaToken: captchaToken
             });
 
             setIsSubmitted(true);
@@ -74,7 +75,7 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
     }, [reviews.length]);
 
     if (!dict.Reviews || !dict.Reviews.title) {
-        return null; // Don't render if translations are missing
+        return null;
     }
 
     return (
@@ -85,7 +86,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                 totalCount={reviews.length}
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -107,8 +107,14 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                     </motion.h2>
                 </div>
 
-                {reviews.length > 0 ? (
-                    /* Carousel Container */
+                {isLoading ? (
+                    <div className="text-center py-12">
+                        <div className="animate-pulse flex flex-col items-center">
+                            <div className="h-4 w-48 bg-gray-200 rounded mb-4"></div>
+                            <div className="h-10 w-64 bg-gray-100 rounded"></div>
+                        </div>
+                    </div>
+                ) : reviews.length > 0 ? (
                     <div className="relative max-w-4xl mx-auto">
                         <div className="absolute top-0 left-0 -translate-x-12 -translate-y-6 text-brand-green/10 opacity-50 hidden md:block">
                             <Quote size={120} />
@@ -124,7 +130,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
                                     className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center"
                                 >
-                                    {/* Stars */}
                                     <div className="flex gap-1 mb-6">
                                         {[...Array(5)].map((_, i) => (
                                             <Star
@@ -133,13 +138,9 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                             />
                                         ))}
                                     </div>
-
-                                    {/* Comment */}
                                     <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed mb-8">
                                         "{reviews[currentIndex]?.comment}"
                                     </p>
-
-                                    {/* Reviewer Info */}
                                     <div className="flex flex-col items-center">
                                         <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-brand-green/20">
                                             <img
@@ -157,7 +158,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                 </motion.div>
                             </AnimatePresence>
 
-                            {/* Controls */}
                             <div className="flex justify-center gap-4 mt-8">
                                 <button
                                     onClick={prevReview}
@@ -175,15 +175,12 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                         </div>
                     </div>
                 ) : (
-                    <div className="text-center py-12">
-                        <div className="animate-pulse flex flex-col items-center">
-                            <div className="h-4 w-48 bg-gray-100 rounded mb-4"></div>
-                            <div className="h-10 w-64 bg-gray-50 rounded"></div>
-                        </div>
+                    <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-gray-100">
+                        <Quote className="mx-auto text-gray-200 mb-4" size={48} />
+                        <p className="text-gray-500 text-lg">No reviews yet. Be the first to write one!</p>
                     </div>
                 )}
 
-                {/* Write Review Button */}
                 <div className="mt-16 text-center">
                     <button
                         onClick={() => setIsFormOpen(true)}
@@ -195,7 +192,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                 </div>
             </div>
 
-            {/* Review Form Modal */}
             <AnimatePresence>
                 {isFormOpen && (
                     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
@@ -308,7 +304,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                                                 onChange={async (e) => {
                                                                     const file = e.target.files?.[0];
                                                                     if (file) {
-                                                                        // Basic compression using canvas
                                                                         const reader = new FileReader();
                                                                         reader.onload = (event) => {
                                                                             const img = new Image();
@@ -318,7 +313,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                                                                 const MAX_HEIGHT = 200;
                                                                                 let width = img.width;
                                                                                 let height = img.height;
-
                                                                                 if (width > height) {
                                                                                     if (width > MAX_WIDTH) {
                                                                                         height *= MAX_WIDTH / width;
@@ -350,7 +344,6 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                                             </div>
                                                         )}
                                                     </div>
-                                                    <p className="text-[10px] text-gray-400">Max size: 2MB. Optimized automatically for B2B portal.</p>
                                                 </div>
                                             </div>
 
