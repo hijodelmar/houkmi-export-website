@@ -13,14 +13,6 @@ export interface Review {
     createdAt: string;
 }
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'reviews.json');
-
-// Ensure data directory exists
-if (!fs.existsSync(path.join(process.cwd(), 'data'))) {
-    fs.mkdirSync(path.join(process.cwd(), 'data'));
-}
-
-// Initial dummy data
 const initialData: Review[] = [
     {
         id: "1",
@@ -30,7 +22,7 @@ const initialData: Review[] = [
         rating: 5,
         comment: "Outstanding quality. We've been importing tomatoes and peppers from HOUKMI EXPORT for 5 years. Their reliability and product freshness are unmatched in the Moroccan market.",
         status: "approved",
-        createdAt: new Date().toISOString(),
+        createdAt: "2024-01-15T12:00:00.000Z",
         image_url: "https://i.pravatar.cc/150?u=markus"
     },
     {
@@ -41,7 +33,7 @@ const initialData: Review[] = [
         rating: 5,
         comment: "The best sweet oranges we've ever sourced. The color and juice content are exactly what our premium supermarkets demand. Highly professional logistics team.",
         status: "approved",
-        createdAt: new Date().toISOString(),
+        createdAt: "2024-02-10T14:30:00.000Z",
         image_url: "https://i.pravatar.cc/150?u=alessandra"
     },
     {
@@ -52,30 +44,70 @@ const initialData: Review[] = [
         rating: 4,
         comment: "Excellent partnership. Their watermelons are a hit every summer in Paris. Consistent quality and GlobalGAP certifications make them a trusted supplier.",
         status: "approved",
-        createdAt: new Date().toISOString(),
+        createdAt: "2024-03-05T09:15:00.000Z",
         image_url: "https://i.pravatar.cc/150?u=jean"
+    },
+    {
+        id: "4",
+        name: "Dmitry Volkov",
+        company: "Nordic Trade Group",
+        country: "Russia",
+        rating: 5,
+        comment: "Reliable exporter for the Russian market. They handle the complex logistics and documentation perfectly. The peppers arrive crisp and fresh even after long transit.",
+        status: "approved",
+        createdAt: "2024-03-20T11:45:00.000Z",
+        image_url: "https://i.pravatar.cc/150?u=dmitry"
+    },
+    {
+        id: "5",
+        name: "Sarah Van den Berg",
+        company: "Benelux Imports",
+        country: "Netherlands",
+        rating: 5,
+        comment: "A true B2B partner. HOUKMI EXPORT understands the European standards for residue levels and quality. Their transparency and communication are top-tier.",
+        status: "approved",
+        createdAt: "2024-04-01T16:20:00.000Z",
+        image_url: "https://i.pravatar.cc/150?u=sarah"
     }
 ];
 
+// Memory cache for the session/server instance
+let reviewsCache: Review[] | null = null;
+
+const DATA_PATH = path.join(process.cwd(), '/tmp', 'reviews.json'); // Use /tmp for writable space on Vercel
+
 export async function getReviews(): Promise<Review[]> {
+    // 1. Return cache if available
+    if (reviewsCache) return reviewsCache;
+
     try {
-        if (!fs.existsSync(DATA_PATH)) {
-            await saveReviews(initialData);
-            return initialData;
+        // 2. Try to read from /tmp (local changes in current instance)
+        if (fs.existsSync(DATA_PATH)) {
+            const data = fs.readFileSync(DATA_PATH, 'utf8');
+            reviewsCache = JSON.parse(data);
+            return reviewsCache || initialData;
         }
-        const data = fs.readFileSync(DATA_PATH, 'utf8');
-        return JSON.parse(data);
     } catch (error) {
-        console.error("Error reading reviews:", error);
-        return initialData;
+        console.error("Error reading reviews from tmp:", error);
     }
+
+    // 3. Fallback to hardcoded initial data
+    reviewsCache = [...initialData];
+    return reviewsCache;
 }
 
 export async function saveReviews(reviews: Review[]): Promise<void> {
+    reviewsCache = reviews;
     try {
+        // Ensure tmp exists
+        const tmpDir = path.dirname(DATA_PATH);
+        if (!fs.existsSync(tmpDir)) {
+            fs.mkdirSync(tmpDir, { recursive: true });
+        }
         fs.writeFileSync(DATA_PATH, JSON.stringify(reviews, null, 2));
     } catch (error) {
-        console.error("Error saving reviews:", error);
+        // On Vercel this might fail in some environments, but we still have the memory cache
+        console.error("Error saving reviews to tmp:", error);
     }
 }
 
@@ -87,8 +119,8 @@ export async function addReview(review: Omit<Review, 'id' | 'status' | 'createdA
         status: 'pending',
         createdAt: new Date().toISOString()
     };
-    reviews.push(newReview);
-    await saveReviews(reviews);
+    const updatedReviews = [...reviews, newReview];
+    await saveReviews(updatedReviews);
     return newReview;
 }
 
@@ -97,9 +129,10 @@ export async function updateReviewStatus(id: string, status: 'approved' | 'rejec
     const index = reviews.findIndex(r => r.id === id);
     if (index === -1) return null;
 
-    reviews[index].status = status;
-    await saveReviews(reviews);
-    return reviews[index];
+    const updatedReviews = [...reviews];
+    updatedReviews[index] = { ...updatedReviews[index], status };
+    await saveReviews(updatedReviews);
+    return updatedReviews[index];
 }
 
 export async function deleteReview(id: string): Promise<boolean> {
