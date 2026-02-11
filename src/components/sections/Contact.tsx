@@ -14,7 +14,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
         e.preventDefault();
 
         if (!captchaToken) {
-            alert('Please verify that you are not a robot.');
+            alert('STOP: Please check the "I am not a robot" box before sending. This is required for security.');
             return;
         }
 
@@ -176,12 +176,19 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                 ></textarea>
                             </div>
 
-                            <div className="flex justify-center">
+                            <div className="flex flex-col items-center gap-4">
+                                <p className="text-sm font-bold text-brand-orange animate-pulse">Security Verification Required:</p>
                                 <ReCAPTCHA
                                     ref={recaptchaRef}
                                     sitekey="6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"
-                                    onChange={(token) => setCaptchaToken(token)}
+                                    onChange={(token) => {
+                                        console.log("Token received:", token);
+                                        setCaptchaToken(token);
+                                    }}
                                 />
+                                {!captchaToken && status === 'loading' && (
+                                    <p className="text-xs text-red-500">Wait! You must check the box above first.</p>
+                                )}
                             </div>
 
                             <button
