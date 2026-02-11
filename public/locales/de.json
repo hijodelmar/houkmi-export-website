@@ -51,20 +51,46 @@
     "contact_us": "Kontaktieren Sie Uns",
     "rights": "Alle Rechte vorbehalten."
   },
+  "Agadir": {
+    "title": "Agadir: Ein einzigartiges landwirtschaftliches Mikroklima für eine zuverlässige Exportversorgung",
+    "description": "An der Atlantikküste Marokkos gelegen, bietet Agadir einen strategischen landwirtschaftlichen Vorteil mit über 300 Sonnentagen pro Jahr und einer stabilen Durchschnittstemperatur von 21°C.",
+    "climate_title": "Klimastabilität und 21°C Jahresdurchschnitt",
+    "climate_desc": "Agadir genießt mehr als 300 Sonnentage pro Jahr und bietet ideale Bedingungen für ein gleichmäßiges Wachstum ohne thermischen Schock.",
+    "ocean_title": "Der thermoregulierende Einfluss des Atlantiks",
+    "ocean_desc": "Die Meeresbrise wirkt als natürlicher Thermostat und verhindert extreme Temperaturschwankungen.",
+    "harvest_title": "Vorhersehbare Erntezyklen",
+    "harvest_desc": "Stabile Bedingungen ermöglichen es uns, feste Erntepläne einzuhalten und eine konstante Versorgung für internationale Partner zu gewährleisten.",
+    "strategic_title": "Strategische Lage für den Export",
+    "strategic_desc": "Hervorragende Logistikverbindungen nach Europa und Russland, die Frische von der Farm bis zum Bestimmungsort garantieren.",
+    "stats": {
+      "sun": "300+ Sonnentage",
+      "temp": "21°C Durchschnitt",
+      "advantage": "Atlantik-Vorteil"
+    }
+  },
   "ProductDetails": {
     "about": "Über",
     "features": "Hauptmerkmale",
     "contact_us": "Kontaktieren Sie Uns für Bestellungen",
     "back_to_products": "Zurück zu Produkten",
-    "tomatoes_description": "Unsere Premium-Tomaten werden in den fruchtbaren Böden von Agadir, Marokko, angebaut. Bei optimaler Reife geerntet, bieten sie außergewöhnlichen Geschmack, lebendige Farbe und feste Textur. Perfekt für frischen Verzehr, Salate oder Verarbeitung.",
+    "specs_title": "Technische Daten",
+    "varieties_label": "Sorten",
+    "calendar_label": "Erntekalender",
+    "packaging_label": "Verpackung",
+    "calibration_label": "Kalibrierung",
+    "climate_advantage_title": "Warum das Klima in Agadir dieses Produkt verbessert",
+    "trust_title": "Zuverlässige Exporterfahrung",
+    "trust_description": "Mit über 35 Jahren Erfahrung garantiert HOUKMI EXPORT einen zuverlässigen Erntekalender, pünktliche Logistik und eine konstante Lieferkapazität.",
+    "tomatoes_description": "Unsere Premium-Tomaten werden in Agadir, Marokko, angebaut. Bei optimaler Reife geerntet, bieten sie außergewöhnlichen Geschmack und feste Textur.",
     "tomatoes_features": [
-      "Angebaut im optimalen mediterranen Klima",
+      "Angebaut in Agadirs einzigartigem atlantischen Mikroklima",
       "Handgepflückt bei optimaler Reife",
       "Reich an Vitaminen und Antioxidantien",
       "Ganzjährig verfügbar",
       "Zertifizierte Qualitätsstandards"
     ],
-    "oranges_description": "Süße, saftige Orangen aus Marokkos sonnenverwöhnten Hainen. Unsere Orangen sind bekannt für ihr perfektes Gleichgewicht zwischen Süße und Säure, ideal für frischen Saft oder direkten Verzehr. Voller Vitamin C und natürlicher Güte.",
+    "tomatoes_climate": "Die stabile Durchschnittstemperatur von 21°C verhindert einen thermischen Schock und sorgt das ganze Jahr über für eine gleichbleibende Textur und Farbe.",
+    "oranges_description": "Süße, saftige Orangen aus den sonnenverwöhnten Hainen von Agadir, die von über 300 Sonnentagen profitieren.",
     "oranges_features": [
       "100% natürlich, keine künstlichen Behandlungen",
       "Hoher Saftgehalt",
@@ -72,22 +98,25 @@
       "Premium-Exportqualität",
       "Nachhaltige Anbaumethoden"
     ],
-    "peppers_description": "Knackige, farbenfrohe Paprika, sorgfältig auf unseren marokkanischen Farmen angebaut. In mehreren Sorten erhältlich, sind unsere Paprika bekannt für ihre Frische, Knackigkeit und lebendigen Farben. Ideal zum Kochen, Grillen oder für frische Salate.",
+    "oranges_climate": "Ausgewogene Meeresfeuchtigkeit und intensive Sonnenbestrahlung erhöhen den Zuckergehalt (Brix) auf natürliche Weise.",
+    "peppers_description": "Knackige, farbenfrohe Paprika, die mit Sorgfalt in den Küstenfarmen von Agadir unter einem stabilen Durchschnitt von 21°C angebaut werden.",
     "peppers_features": [
       "Mehrere Farbvarianten verfügbar",
       "Knackige Textur und frischer Geschmack",
-      "Reich an Vitaminen A und C",
+      "Rich in vitamins A and C",
       "Sorgfältig sortiert und verpackt",
       "Verlängerte Haltbarkeit"
     ],
-    "watermelons_description": "Saftige, süße Wassermelonen, angebaut unter der marokkanischen Sonne. Unsere Wassermelonen werden sorgfältig nach Süße, knackiger Textur und lebendigem rotem Fruchtfleisch ausgewählt. Perfekt für heiße Sommertage und ein gesunder, erfrischender Genuss.",
-    "watermelons_features": [
-      "Natürlich süß und erfrischend",
-      "Hoher Wassergehalt zur Hydratation",
-      "Kernlose Sorten verfügbar",
-      "Sorgfältig geerntet und transportiert",
-      "Verfügbarkeit in der Hochsaison"
-    ]
+    "peppers_climate": "Das stabile Klima verhindert Hautrisse und sorgt für eine gleichmäßige Dicke der Fruchtwände.",
+    "watermelons_description": "Saftige, süße Wassermelonen, angebaut unter der außergewöhnlichen Sonne von Agadir.",
+    "watermelon_climate": "Ununterbrochener Sonnenschein sorgt für eine überlegene Fruchtfleischdichte und natürliche Süße.",
+    "zucchini_climate": "Das atlantische Klima ermöglicht ein schnelles, gleichmäßiges Wachstum, was zu einer glatten Haut und einem festen Kern führt.",
+    "melon_climate": "Die kühlen Meeresnächte konzentrieren den Zucker im Fruchtfleisch und sorgen für einen intensiven Geschmack.",
+    "green_beans_climate": "Feuchtigkeitskontrollierte atlantische Luft verhindert Faserbildung und hält die Bohnen zart und knackig.",
+    "calabacin_description": "Unsere Zucchini werden im Küstenmikroklima von Agadir angebaut, um eine perfekte Form und lebendige grüne Haut zu gewährleisten.",
+    "melon_description": "Unter der Sonne von Agadir gereift, bieten unsere gelben Melonen einen erfrischend süßen Geschmack.",
+    "alubias_description": "Premium flache grüne Bohnen (Alubias), handverlesen für Qualität.",
+    "judias_description": "Runde, feine grüne Bohnen (Judías), akribisch sortiert."
   },
   "Reviews": {
     "title": "Kundenbewertungen",

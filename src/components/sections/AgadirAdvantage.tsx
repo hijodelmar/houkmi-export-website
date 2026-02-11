@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Sun, Wind, Calendar, MapPin, Thermometer } from "lucide-react";
 
 export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: any }) {
+    if (!dict.Agadir) return null;
+
     const stats = [
         {
             icon: <Sun className="w-8 h-8 text-brand-orange" />,
