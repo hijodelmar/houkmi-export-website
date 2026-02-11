@@ -27,10 +27,7 @@ export default function About({ dict }: { dict: any }) {
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                             style={{ backgroundImage: `url('/images/ahmedlogo.PNG')` }}
                         ></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div className="absolute bottom-6 left-6 right-6 text-white p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
-                            <p className="font-bold text-lg text-center">{dict.About.imageCaption}</p>
-                        </div>
+
                     </motion.div>
 
                     {/* Content Side */}
