@@ -24,7 +24,7 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: `url('/images/ahmed.JPG')` }}
+                            style={{ backgroundImage: `url('/images/ahmedlogo.PNG')` }}
                         ></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <div className="absolute bottom-6 left-6 right-6 text-white p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
