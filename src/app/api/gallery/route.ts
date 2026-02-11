@@ -3,7 +3,10 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        const { blobs } = await list({ prefix: 'gallery/' });
+        const { blobs } = await list({
+            prefix: 'gallery/',
+            token: process.env.houkmi_READ_WRITE_TOKEN,
+        });
 
         // Return only the URLs
         const images = blobs.map(blob => blob.url);

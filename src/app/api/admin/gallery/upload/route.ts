@@ -13,6 +13,7 @@ export async function POST(request: Request): Promise<NextResponse> {
         // Upload to Vercel Blob using the body stream directly
         const blob = await put(`gallery/${filename}`, request.body, {
             access: 'public',
+            token: process.env.houkmi_READ_WRITE_TOKEN,
         });
 
         return NextResponse.json({ success: true, path: blob.url });

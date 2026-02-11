@@ -3,7 +3,10 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        const { blobs } = await list({ prefix: 'gallery/' });
+        const { blobs } = await list({
+            prefix: 'gallery/',
+            token: process.env.houkmi_READ_WRITE_TOKEN,
+        });
 
         const images = blobs.map(blob => ({
             name: blob.pathname.replace('gallery/', ''),
@@ -26,7 +29,9 @@ export async function DELETE(request: Request) {
             return NextResponse.json({ error: 'No URL provided' }, { status: 400 });
         }
 
-        await del(url);
+        await del(url, {
+            token: process.env.houkmi_READ_WRITE_TOKEN,
+        });
         return NextResponse.json({ success: true });
     } catch (error) {
         console.error('Delete Error:', error);
