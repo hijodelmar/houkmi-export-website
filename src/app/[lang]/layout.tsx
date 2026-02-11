@@ -93,6 +93,10 @@ export async function generateMetadata({
                 'max-snippet': -1,
             },
         },
+        icons: {
+            icon: '/icon.svg',
+            apple: '/icon.svg',
+        },
     };
 }
 
