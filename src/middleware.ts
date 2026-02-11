@@ -5,6 +5,19 @@ import { locales, defaultLocale } from "./lib/i18n";
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
+    // 1. EXCLUDE STATIC FILES AND SEO FILES FROM REDIRECTION
+    if (
+        pathname.startsWith('/sitemap.xml') ||
+        pathname.startsWith('/robots.txt') ||
+        pathname.startsWith('/favicon.ico') ||
+        pathname.startsWith('/images/') ||
+        pathname.includes('.') ||
+        pathname.startsWith('/api/') ||
+        pathname.startsWith('/_next/')
+    ) {
+        return;
+    }
+
     // Check if there is any supported locale in the pathname
     const pathnameIsMissingLocale = locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -24,7 +37,14 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        // Skip all internal paths (_next, assets, api) and static SEO files
+        // Match all request paths except for the ones starting with:
+        // - api (API routes)
+        // - _next/static (static files)
+        // - _next/image (image optimization files)
+        // - images (public images)
+        // - favicon.ico (favicon file)
+        // - sitemap.xml (SEO)
+        // - robots.txt (SEO)
         '/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.xml|robots.txt).*)',
     ],
 };
