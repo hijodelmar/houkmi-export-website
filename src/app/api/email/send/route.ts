@@ -5,7 +5,19 @@ import { getSmtpConfig } from '@/lib/email-config';
 
 export async function POST(request: Request) {
     try {
-        const { name, email, message } = await request.json();
+        const { name, email, message, captcha } = await request.json();
+
+        // Verify Captcha
+        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"; // Google Test Secret
+        const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`, {
+            method: 'POST'
+        });
+        const verifyData = await verifyRes.json();
+
+        if (!verifyData.success) {
+            return NextResponse.json({ error: 'Captcha verification failed' }, { status: 400 });
+        }
+
         const config = await getSmtpConfig();
 
         if (!config.user || !config.pass) {

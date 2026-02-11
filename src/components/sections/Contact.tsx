@@ -1,14 +1,23 @@
 "use client";
 
+import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import React from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact({ lang, dict }: { lang: string; dict: any }) {
-    const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            alert('Please verify that you are not a robot.');
+            return;
+        }
+
         setStatus('loading');
 
         const formData = new FormData(e.currentTarget);
@@ -16,10 +25,10 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
             name: formData.get('name'),
             email: formData.get('email'),
             message: formData.get('message'),
+            captcha: captchaToken,
         };
 
         try {
-            console.log('Sending email...', data);
             const res = await fetch('/api/email/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -27,18 +36,19 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
             });
 
             const result = await res.json();
-            console.log('Response:', result);
 
             if (res.ok) {
                 setStatus('success');
                 (e.target as HTMLFormElement).reset();
+                recaptchaRef.current?.reset();
+                setCaptchaToken(null);
             } else {
-                console.error('Email send failed:', result);
                 alert('Error: ' + (result.details || result.error || 'Unknown error'));
                 setStatus('error');
+                recaptchaRef.current?.reset();
+                setCaptchaToken(null);
             }
         } catch (error) {
-            console.error('Catch error:', error);
             alert('Network error: ' + (error instanceof Error ? error.message : 'Unknown'));
             setStatus('error');
         } finally {
@@ -163,6 +173,14 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
                                     placeholder="How can we help you?"
                                 ></textarea>
+                            </div>
+
+                            <div className="flex justify-center">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Google Test Key
+                                    onChange={(token) => setCaptchaToken(token)}
+                                />
                             </div>
 
                             <button

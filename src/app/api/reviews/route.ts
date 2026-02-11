@@ -13,7 +13,18 @@ export async function GET() {
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, company, country, rating, comment, image_url } = body;
+        const { name, company, country, rating, comment, image_url, captcha } = body;
+
+        // Verify Captcha
+        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"; // Google Test Secret
+        const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`, {
+            method: 'POST'
+        });
+        const verifyData = await verifyRes.json();
+
+        if (!verifyData.success) {
+            return NextResponse.json({ error: 'Captcha verification failed' }, { status: 400 });
+        }
 
         if (!name || !company || !rating || !comment) {
             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
