@@ -88,5 +88,19 @@
       "Accuratamente raccolte e trasportate",
       "Disponibilità in alta stagione"
     ]
+  },
+  "Reviews": {
+    "title": "Recensioni dei Clienti",
+    "subtitle": "Scelto da importatori e grossisti europei",
+    "writeReview": "Scrivi una recensione",
+    "name": "Nome e cognome",
+    "company": "Nome dell'azienda",
+    "country": "Paese",
+    "rating": "Valutazione",
+    "comment": "Il tuo commento",
+    "submit": "Invia recensione",
+    "success": "Grazie! La tua recensione è in attesa di approvazione.",
+    "photo": "Carica foto (Opzionale)",
+    "pending": "Recensione in attesa di approvazione"
   }
 }

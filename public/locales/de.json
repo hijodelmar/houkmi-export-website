@@ -88,5 +88,19 @@
       "Sorgfältig geerntet und transportiert",
       "Verfügbarkeit in der Hochsaison"
     ]
+  },
+  "Reviews": {
+    "title": "Kundenbewertungen",
+    "subtitle": "Vertraut von europäischen Importeuren und Großhändlern",
+    "writeReview": "Eine Bewertung schreiben",
+    "name": "Vollständiger Name",
+    "company": "Name der Firma",
+    "country": "Land",
+    "rating": "Bewertung",
+    "comment": "Ihr Kommentar",
+    "submit": "Bewertung absenden",
+    "success": "Vielen Dank! Ihre Bewertung wartet auf die Genehmigung.",
+    "photo": "Foto hochladen (Optional)",
+    "pending": "Bewertung ausstehend"
   }
 }
