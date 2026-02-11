@@ -4,7 +4,8 @@
     "about": "About Us",
     "products": "Products",
     "gallery": "Gallery",
-    "contact": "Contact"
+    "contact": "Contact",
+    "back_to_products": "Back to Products"
   },
   "Hero": {
     "title": "Fresh Fruits & Vegetables from Morocco to the World",
@@ -49,5 +50,43 @@
     "quick_links": "Quick Links",
     "contact_us": "Contact Us",
     "rights": "All rights reserved."
+  },
+  "ProductDetails": {
+    "about": "About",
+    "features": "Key Features",
+    "contact_us": "Contact Us for Orders",
+    "back_to_products": "Back to Products",
+    "tomatoes_description": "Our premium tomatoes are grown in the fertile soils of Agadir, Morocco. Harvested at peak ripeness, they offer exceptional flavor, vibrant color, and firm texture. Perfect for fresh consumption, salads, or processing.",
+    "tomatoes_features": [
+      "Grown in optimal Mediterranean climate",
+      "Hand-picked at peak ripeness",
+      "Rich in vitamins and antioxidants",
+      "Available year-round",
+      "Certified quality standards"
+    ],
+    "oranges_description": "Sweet, juicy oranges from Morocco's sun-drenched groves. Our oranges are known for their perfect balance of sweetness and acidity, making them ideal for fresh juice or direct consumption. Packed with vitamin C and natural goodness.",
+    "oranges_features": [
+      "100% natural, no artificial treatments",
+      "High juice content",
+      "Perfect sweetness balance",
+      "Premium export quality",
+      "Sustainable farming practices"
+    ],
+    "peppers_description": "Crisp, colorful peppers grown with care in our Moroccan farms. Available in multiple varieties, our peppers are known for their freshness, crunch, and vibrant colors. Ideal for cooking, grilling, or fresh salads.",
+    "peppers_features": [
+      "Multiple color varieties available",
+      "Crisp texture and fresh flavor",
+      "Rich in vitamins A and C",
+      "Carefully sorted and packed",
+      "Extended shelf life"
+    ],
+    "watermelons_description": "Juicy, sweet watermelons grown under the Moroccan sun. Our watermelons are carefully selected for their sweetness, crisp texture, and vibrant red flesh. Perfect for hot summer days and a healthy, refreshing treat.",
+    "watermelons_features": [
+      "Naturally sweet and refreshing",
+      "High water content for hydration",
+      "Seedless varieties available",
+      "Carefully harvested and transported",
+      "Peak season availability"
+    ]
   }
 }

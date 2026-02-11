@@ -4,7 +4,8 @@
     "about": "Nosotros",
     "products": "Productos",
     "gallery": "Galería",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "back_to_products": "Volver a Productos"
   },
   "Hero": {
     "title": "Frutas y Verduras Frescas de Marruecos para el Mundo",
@@ -49,5 +50,43 @@
     "quick_links": "Enlaces Rápidos",
     "contact_us": "Contáctenos",
     "rights": "Todos los derechos reservados."
+  },
+  "ProductDetails": {
+    "about": "Acerca de",
+    "features": "Características Clave",
+    "contact_us": "Contáctenos para Pedidos",
+    "back_to_products": "Volver a Productos",
+    "tomatoes_description": "Nuestros tomates premium se cultivan en los suelos fértiles de Agadir, Marruecos. Cosechados en su punto óptimo de madurez, ofrecen un sabor excepcional, color vibrante y textura firme. Perfectos para consumo fresco, ensaladas o procesamiento.",
+    "tomatoes_features": [
+      "Cultivados en clima mediterráneo óptimo",
+      "Recolectados a mano en su punto óptimo",
+      "Ricos en vitaminas y antioxidantes",
+      "Disponibles todo el año",
+      "Estándares de calidad certificados"
+    ],
+    "oranges_description": "Naranjas dulces y jugosas de los huertos bañados por el sol de Marruecos. Nuestras naranjas son conocidas por su equilibrio perfecto entre dulzura y acidez, ideales para jugo fresco o consumo directo. Llenas de vitamina C y bondad natural.",
+    "oranges_features": [
+      "100% naturales, sin tratamientos artificiales",
+      "Alto contenido de jugo",
+      "Equilibrio perfecto de dulzura",
+      "Calidad premium de exportación",
+      "Prácticas agrícolas sostenibles"
+    ],
+    "peppers_description": "Pimientos crujientes y coloridos cultivados con cuidado en nuestras granjas marroquíes. Disponibles en múltiples variedades, nuestros pimientos son conocidos por su frescura, textura crujiente y colores vibrantes. Ideales para cocinar, asar o ensaladas frescas.",
+    "peppers_features": [
+      "Múltiples variedades de colores disponibles",
+      "Textura crujiente y sabor fresco",
+      "Ricos en vitaminas A y C",
+      "Cuidadosamente seleccionados y empacados",
+      "Vida útil prolongada"
+    ],
+    "watermelons_description": "Sandías jugosas y dulces cultivadas bajo el sol marroquí. Nuestras sandías son cuidadosamente seleccionadas por su dulzura, textura crujiente y pulpa roja vibrante. Perfectas para días calurosos de verano y un refrigerio saludable y refrescante.",
+    "watermelons_features": [
+      "Naturalmente dulces y refrescantes",
+      "Alto contenido de agua para hidratación",
+      "Variedades sin semillas disponibles",
+      "Cuidadosamente cosechadas y transportadas",
+      "Disponibilidad en temporada alta"
+    ]
   }
 }

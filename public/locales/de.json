@@ -4,7 +4,8 @@
     "about": "Über Uns",
     "products": "Produkte",
     "gallery": "Galerie",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "back_to_products": "Zurück zu Produkten"
   },
   "Hero": {
     "title": "Frisches Obst & Gemüse aus Marokko in die Welt",
@@ -49,5 +50,43 @@
     "quick_links": "Schnelllinks",
     "contact_us": "Kontaktieren Sie Uns",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "ProductDetails": {
+    "about": "Über",
+    "features": "Hauptmerkmale",
+    "contact_us": "Kontaktieren Sie Uns für Bestellungen",
+    "back_to_products": "Zurück zu Produkten",
+    "tomatoes_description": "Unsere Premium-Tomaten werden in den fruchtbaren Böden von Agadir, Marokko, angebaut. Bei optimaler Reife geerntet, bieten sie außergewöhnlichen Geschmack, lebendige Farbe und feste Textur. Perfekt für frischen Verzehr, Salate oder Verarbeitung.",
+    "tomatoes_features": [
+      "Angebaut im optimalen mediterranen Klima",
+      "Handgepflückt bei optimaler Reife",
+      "Reich an Vitaminen und Antioxidantien",
+      "Ganzjährig verfügbar",
+      "Zertifizierte Qualitätsstandards"
+    ],
+    "oranges_description": "Süße, saftige Orangen aus Marokkos sonnenverwöhnten Hainen. Unsere Orangen sind bekannt für ihr perfektes Gleichgewicht zwischen Süße und Säure, ideal für frischen Saft oder direkten Verzehr. Voller Vitamin C und natürlicher Güte.",
+    "oranges_features": [
+      "100% natürlich, keine künstlichen Behandlungen",
+      "Hoher Saftgehalt",
+      "Perfektes Süßegleichgewicht",
+      "Premium-Exportqualität",
+      "Nachhaltige Anbaumethoden"
+    ],
+    "peppers_description": "Knackige, farbenfrohe Paprika, sorgfältig auf unseren marokkanischen Farmen angebaut. In mehreren Sorten erhältlich, sind unsere Paprika bekannt für ihre Frische, Knackigkeit und lebendigen Farben. Ideal zum Kochen, Grillen oder für frische Salate.",
+    "peppers_features": [
+      "Mehrere Farbvarianten verfügbar",
+      "Knackige Textur und frischer Geschmack",
+      "Reich an Vitaminen A und C",
+      "Sorgfältig sortiert und verpackt",
+      "Verlängerte Haltbarkeit"
+    ],
+    "watermelons_description": "Saftige, süße Wassermelonen, angebaut unter der marokkanischen Sonne. Unsere Wassermelonen werden sorgfältig nach Süße, knackiger Textur und lebendigem rotem Fruchtfleisch ausgewählt. Perfekt für heiße Sommertage und ein gesunder, erfrischender Genuss.",
+    "watermelons_features": [
+      "Natürlich süß und erfrischend",
+      "Hoher Wassergehalt zur Hydratation",
+      "Kernlose Sorten verfügbar",
+      "Sorgfältig geerntet und transportiert",
+      "Verfügbarkeit in der Hochsaison"
+    ]
   }
 }

@@ -4,7 +4,8 @@
     "about": "À Propos",
     "products": "Produits",
     "gallery": "Galerie",
-    "contact": "Contact"
+    "contact": "Contact",
+    "back_to_products": "Retour aux Produits"
   },
   "Hero": {
     "title": "Fruits et Légumes Frais du Maroc vers le Monde",
@@ -49,5 +50,43 @@
     "quick_links": "Liens Rapides",
     "contact_us": "Contactez-nous",
     "rights": "Tous droits réservés."
+  },
+  "ProductDetails": {
+    "about": "À Propos",
+    "features": "Caractéristiques Clés",
+    "contact_us": "Contactez-nous pour Commander",
+    "back_to_products": "Retour aux Produits",
+    "tomatoes_description": "Nos tomates premium sont cultivées dans les sols fertiles d'Agadir, Maroc. Récoltées à maturité optimale, elles offrent une saveur exceptionnelle, une couleur vibrante et une texture ferme. Parfaites pour la consommation fraîche, les salades ou la transformation.",
+    "tomatoes_features": [
+      "Cultivées sous climat méditerranéen optimal",
+      "Cueillies à la main à maturité optimale",
+      "Riches en vitamines et antioxydants",
+      "Disponibles toute l'année",
+      "Normes de qualité certifiées"
+    ],
+    "oranges_description": "Oranges douces et juteuses des vergers ensoleillés du Maroc. Nos oranges sont connues pour leur équilibre parfait entre douceur et acidité, idéales pour le jus frais ou la consommation directe. Riches en vitamine C et en bonté naturelle.",
+    "oranges_features": [
+      "100% naturelles, sans traitements artificiels",
+      "Haute teneur en jus",
+      "Équilibre parfait de douceur",
+      "Qualité premium d'exportation",
+      "Pratiques agricoles durables"
+    ],
+    "peppers_description": "Poivrons croquants et colorés cultivés avec soin dans nos fermes marocaines. Disponibles en plusieurs variétés, nos poivrons sont connus pour leur fraîcheur, leur croquant et leurs couleurs vibrantes. Idéaux pour la cuisine, les grillades ou les salades fraîches.",
+    "peppers_features": [
+      "Plusieurs variétés de couleurs disponibles",
+      "Texture croquante et saveur fraîche",
+      "Riches en vitamines A et C",
+      "Soigneusement triés et emballés",
+      "Durée de conservation prolongée"
+    ],
+    "watermelons_description": "Pastèques juteuses et sucrées cultivées sous le soleil marocain. Nos pastèques sont soigneusement sélectionnées pour leur douceur, leur texture croquante et leur chair rouge vibrante. Parfaites pour les chaudes journées d'été et une collation saine et rafraîchissante.",
+    "watermelons_features": [
+      "Naturellement douces et rafraîchissantes",
+      "Haute teneur en eau pour l'hydratation",
+      "Variétés sans pépins disponibles",
+      "Soigneusement récoltées et transportées",
+      "Disponibilité en haute saison"
+    ]
   }
 }

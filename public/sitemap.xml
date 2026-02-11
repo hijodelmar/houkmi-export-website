@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Root / Home -->
+  <url>
+    <loc>https://houkmiexport.com/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://houkmiexport.com/en</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+  
+  <url>
+    <loc>https://houkmiexport.com/en/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- English Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/en/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/en/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/en/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/en/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+  <!-- Spanish Pages -->
+  <url>
+    <loc>https://houkmiexport.com/es</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/es/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- Spanish Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/es/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/es/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/es/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/es/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+  <!-- French Pages -->
+  <url>
+    <loc>https://houkmiexport.com/fr</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/fr/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- French Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/fr/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/fr/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/fr/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/fr/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+  <!-- German Pages -->
+  <url>
+    <loc>https://houkmiexport.com/de</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/de/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- German Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/de/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/de/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/de/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/de/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+  <!-- Italian Pages -->
+  <url>
+    <loc>https://houkmiexport.com/it</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/it/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- Italian Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/it/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/it/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/it/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/it/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+  <!-- Russian Pages -->
+  <url>
+    <loc>https://houkmiexport.com/ru</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/ru/products</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products"/>
+  </url>
+
+  <!-- Russian Product Pages -->
+  <url>
+    <loc>https://houkmiexport.com/ru/products/tomatoes</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/tomatoes"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/tomatoes"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/ru/products/oranges</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/oranges"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/oranges"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/ru/products/peppers</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/peppers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/peppers"/>
+  </url>
+
+  <url>
+    <loc>https://houkmiexport.com/ru/products/watermelons</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://houkmiexport.com/en/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://houkmiexport.com/es/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://houkmiexport.com/fr/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://houkmiexport.com/de/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://houkmiexport.com/it/products/watermelons"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://houkmiexport.com/ru/products/watermelons"/>
+  </url>
+
+</urlset>

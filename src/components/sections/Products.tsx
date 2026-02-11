@@ -80,7 +80,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                                     {product.name}
                                 </h3>
                                 <Link
-                                    href={`/${lang}/products`}
+                                    href={`/${lang}/products/${product.id}`}
                                     className="inline-flex items-center font-semibold text-sm hover:gap-2 gap-1 transition-all"
                                     style={{ color: '#FF6F00' }}
                                 >

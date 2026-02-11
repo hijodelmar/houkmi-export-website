@@ -4,7 +4,8 @@
     "about": "Chi Siamo",
     "products": "Prodotti",
     "gallery": "Galleria",
-    "contact": "Contatto"
+    "contact": "Contatto",
+    "back_to_products": "Torna ai Prodotti"
   },
   "Hero": {
     "title": "Frutta e Verdura Fresca dal Marocco al Mondo",
@@ -49,5 +50,43 @@
     "quick_links": "Link Rapidi",
     "contact_us": "Contattaci",
     "rights": "Tutti i diritti riservati."
+  },
+  "ProductDetails": {
+    "about": "Informazioni",
+    "features": "Caratteristiche Principali",
+    "contact_us": "Contattaci per Ordini",
+    "back_to_products": "Torna ai Prodotti",
+    "tomatoes_description": "I nostri pomodori premium sono coltivati nei terreni fertili di Agadir, Marocco. Raccolti al punto ottimale di maturazione, offrono sapore eccezionale, colore vibrante e consistenza soda. Perfetti per consumo fresco, insalate o lavorazione.",
+    "tomatoes_features": [
+      "Coltivati in clima mediterraneo ottimale",
+      "Raccolti a mano al punto ottimale",
+      "Ricchi di vitamine e antiossidanti",
+      "Disponibili tutto l'anno",
+      "Standard di qualità certificati"
+    ],
+    "oranges_description": "Arance dolci e succose dai frutteti baciati dal sole del Marocco. Le nostre arance sono note per il loro perfetto equilibrio tra dolcezza e acidità, ideali per succo fresco o consumo diretto. Ricche di vitamina C e bontà naturale.",
+    "oranges_features": [
+      "100% naturali, senza trattamenti artificiali",
+      "Alto contenuto di succo",
+      "Perfetto equilibrio di dolcezza",
+      "Qualità premium da esportazione",
+      "Pratiche agricole sostenibili"
+    ],
+    "peppers_description": "Peperoni croccanti e colorati coltivati con cura nelle nostre fattorie marocchine. Disponibili in più varietà, i nostri peperoni sono noti per la loro freschezza, croccantezza e colori vivaci. Ideali per cucinare, grigliare o insalate fresche.",
+    "peppers_features": [
+      "Più varietà di colori disponibili",
+      "Consistenza croccante e sapore fresco",
+      "Ricchi di vitamine A e C",
+      "Accuratamente selezionati e confezionati",
+      "Durata di conservazione prolungata"
+    ],
+    "watermelons_description": "Angurie succose e dolci coltivate sotto il sole marocchino. Le nostre angurie sono accuratamente selezionate per dolcezza, consistenza croccante e polpa rossa vibrante. Perfette per le calde giornate estive e uno spuntino sano e rinfrescante.",
+    "watermelons_features": [
+      "Naturalmente dolci e rinfrescanti",
+      "Alto contenuto d'acqua per l'idratazione",
+      "Varietà senza semi disponibili",
+      "Accuratamente raccolte e trasportate",
+      "Disponibilità in alta stagione"
+    ]
   }
 }
