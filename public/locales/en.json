@@ -76,13 +76,13 @@
     "back_to_products": "Back to Products",
     "tomatoes_description": "Our premium tomatoes are grown in the fertile soils of Agadir, Morocco. Harvested at peak ripeness, they offer exceptional flavor, vibrant color, and firm texture. Perfect for fresh consumption, salads, or processing.",
     "tomatoes_features": [
-      "Grown in optimal Mediterranean climate",
+      "Grown in Agadir's unique Atlantic microclimate",
       "Hand-picked at peak ripeness",
       "Rich in vitamins and antioxidants",
       "Available year-round",
       "Certified quality standards"
     ],
-    "oranges_description": "Sweet, juicy oranges from Morocco's sun-drenched groves. Our oranges are known for their perfect balance of sweetness and acidity, making them ideal for fresh juice or direct consumption. Packed with vitamin C and natural goodness.",
+    "oranges_description": "Sweet, juicy oranges from Agadir's sun-drenched groves, benefitting from 300+ days of sun. Our oranges are known for their perfect balance of sweetness and acidity, making them ideal for fresh juice or direct consumption. Packed with vitamin C and natural goodness.",
     "oranges_features": [
       "100% natural, no artificial treatments",
       "High juice content",
@@ -90,7 +90,7 @@
       "Premium export quality",
       "Sustainable farming practices"
     ],
-    "peppers_description": "Crisp, colorful peppers grown with care in our Moroccan farms. Available in multiple varieties, our peppers are known for their freshness, crunch, and vibrant colors. Ideal for cooking, grilling, or fresh salads.",
+    "peppers_description": "Crisp, colorful peppers grown with care in Agadir's coastal farms under a stable 21°C average. Available in multiple varieties, our peppers are known for their freshness, crunch, and vibrant colors. Ideal for cooking, grilling, or fresh salads.",
     "peppers_features": [
       "Multiple color varieties available",
       "Crisp texture and fresh flavor",
@@ -98,7 +98,7 @@
       "Carefully sorted and packed",
       "Extended shelf life"
     ],
-    "watermelons_description": "Juicy, sweet watermelons grown under the Moroccan sun. Our watermelons are carefully selected for their sweetness, crisp texture, and vibrant red flesh. Perfect for hot summer days and a healthy, refreshing treat.",
+    "watermelons_description": "Juicy, sweet watermelons grown under the exceptional Agadir sun. Our watermelons are carefully selected for their sweetness, crisp texture, and vibrant red flesh. Perfect for hot summer days and a healthy, refreshing treat.",
     "watermelons_features": [
       "Naturally sweet and refreshing",
       "High water content for hydration",
@@ -135,7 +135,7 @@
       "packaging": "Bins (Palox) or Bulk loading",
       "calibration": "8kg - 16kg per fruit"
     },
-    "calabacin_description": "Our zucchini are grown in controlled environments to ensure a perfectly straight shape and vibrant green skin. Harvested daily to maintain maximum crunch.",
+    "calabacin_description": "Our zucchini are grown in Agadir's coastal microclimate to ensure a perfectly straight shape and vibrant green skin. Harvested daily to maintain maximum crunch.",
     "calabacin_features": [
       "Rich dark green color",
       "Firm and crunchy texture",
@@ -163,7 +163,7 @@
       "packaging": "10kg Carton Box",
       "calibration": "Sizes 5, 6, 7"
     },
-    "melon_description": "Nurtured under the Moroccan sun, our yellow melons offer a refreshingly sweet flavor and smooth texture. Known for their durability during transport.",
+    "melon_description": "Nurtured under the Agadir sun, our yellow melons offer a refreshingly sweet flavor and smooth texture. Known for their durability during transport.",
     "melon_features": [
       "Smooth yellow skin",
       "Crisp white flesh",
@@ -204,7 +204,17 @@
       "calendar": "October to June",
       "packaging": "5kg Carton, 500g Flowpack",
       "calibration": "6-9mm (Fine), <6mm (Extra Fine)"
-    }
+    },
+    "climate_advantage_title": "Why Agadir Climate Enhances This Product",
+    "trust_title": "Reliable Export Experience",
+    "trust_description": "With over 35 years of experience, HOUKMI EXPORT guarantees a reliable harvest calendar, timely logistics, and consistent supply capacity for all our international partners.",
+    "tomatoes_climate": "The stable 21°C average temperature prevents thermal shock, ensuring that our tomatoes develop uniform color and optimal firmness for long-distance transport.",
+    "oranges_climate": "Balanced ocean humidity and intense sun exposure result in oranges with exceptional juice content and the perfect sugar-to-acid ratio.",
+    "peppers_climate": "Predictable harvest cycles allow us to supply crisp, thick-walled peppers with consistent sizing, meeting the strict demands of European supermarkets.",
+    "zucchini_climate": "The temperate coastal weather allows for daily harvesting of tender zucchini that maintain their crunch and deep green luster throughout the export chain.",
+    "watermelon_climate": "300+ days of sunshine ensure highest possible Brix (sugar) levels and a crisp, deep red flesh that customers love.",
+    "melon_climate": "Agadir's unique light intensity creates incredibly fragrant melons with a resilient skin, perfect for arrival at destination in pristine condition.",
+    "green_beans_climate": "Ocean-regulated temperatures ensure our beans grow straight and tender without becoming fibrous, offering gourmet quality every time."
   },
   "Reviews": {
     "title": "Client Reviews",
@@ -219,5 +229,22 @@
     "success": "Thank you! Your review is awaiting approval.",
     "photo": "Upload Photo (Optional)",
     "pending": "Review Pending Approval"
+  },
+  "Agadir": {
+    "title": "Agadir: A Unique Agricultural Microclimate for Reliable Export Supply",
+    "description": "Located on Morocco's Atlantic coast, Agadir offers a strategic agricultural advantage that is unparalleled in the region. The combination of ocean regulation and consistent sunshine creates a powerhouse for premium produce export.",
+    "climate_title": "Climate Stability and 21°C Annual Average",
+    "climate_desc": "Agadir enjoys more than 300 days of sunshine per year, with an average annual temperature of 21°C, providing the perfect environment for year-round production.",
+    "ocean_title": "Ocean Influence and Temperature Regulation",
+    "ocean_desc": "The Atlantic Ocean acts as a natural thermoregulator, preventing extreme seasonal variations and ensuring a stable environment for delicate crops.",
+    "harvest_title": "Predictable Harvest Cycles",
+    "harvest_desc": "Consistent weather means consistent growth. We offer reliable supply schedules and uniform crop quality that European and Russian importers can depend on.",
+    "strategic_title": "Strategic Location for Global Markets",
+    "strategic_desc": "Our proximity to major ports and advanced logistics infrastructure makes us the ideal partner for the European and Russian markets.",
+    "stats": {
+      "sun": "300+ Days",
+      "temp": "21°C Avg",
+      "advantage": "Atlantic Advantage"
+    }
   }
 }

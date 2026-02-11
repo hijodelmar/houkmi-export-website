@@ -76,13 +76,13 @@
     "back_to_products": "Volver a Productos",
     "tomatoes_description": "Nuestros tomates premium se cultivan en los suelos fértiles de Agadir, Marruecos. Cosechados en su punto óptimo de madurez, ofrecen un sabor excepcional, color vibrante y textura firme. Perfectos para consumo fresco, ensaladas o procesamiento.",
     "tomatoes_features": [
-      "Cultivados en clima mediterráneo óptimo",
+      "Cultivados en el microclima único de Agadir",
       "Recolectados a mano en su punto óptimo",
       "Ricos en vitaminas y antioxidantes",
       "Disponibles todo el año",
       "Estándares de calidad certificados"
     ],
-    "oranges_description": "Naranjas dulces y jugosas de los huertos bañados por el sol de Marruecos. Nuestras naranjas son conocidas por su equilibrio perfecto entre dulzura y acidez, ideales para jugo fresco o consumo directo. Llenas de vitamina C y bondad natural.",
+    "oranges_description": "Naranjas dulces y jugosas de los huertos de Agadir, beneficiadas por más de 300 días de sol. Nuestras naranjas son conocidas por su equilibrio perfecto entre dulzura y acidez, ideales para jugo fresco o consumo directo. Llenas de vitamina C.",
     "oranges_features": [
       "100% naturales, sin tratamientos artificiales",
       "Alto contenido de jugo",
@@ -90,7 +90,7 @@
       "Calidad premium de exportación",
       "Prácticas agrícolas sostenibles"
     ],
-    "peppers_description": "Pimientos crujientes y coloridos cultivados con cuidado en nuestras granjas marroquíes. Disponibles en múltiples variedades, nuestros pimientos son conocidos por su frescura, textura crujiente y colores vibrantes. Ideales para cocinar, asar o ensaladas frescas.",
+    "peppers_description": "Pimientos crujientes y coloridos cultivados con cuidado en nuestras granjas costeras de Agadir bajo una media estable de 21°C. Disponibles en múltiples variedades, conocidos por su frescura y colores vibrantes.",
     "peppers_features": [
       "Múltiples variedades de colores disponibles",
       "Textura crujiente y sabor fresco",
@@ -98,7 +98,7 @@
       "Cuidadosamente seleccionados y empacados",
       "Vida útil prolongada"
     ],
-    "watermelons_description": "Sandías jugosas y dulces cultivadas bajo el sol marroquí. Nuestras sandías son cuidadosamente seleccionadas por su dulzura, textura crujiente y pulpa roja vibrante. Perfectas para días calurosos de verano y un refrigerio saludable y refrescante.",
+    "watermelons_description": "Sandías jugosas y dulces cultivadas bajo el sol excepcional de Agadir. Nuestras sandías son cuidadosamente seleccionadas por su dulzura, textura crujiente y pulpa roja vibrante.",
     "watermelons_features": [
       "Naturalmente dulces y refrescantes",
       "Alto contenido de agua para hidratación",
@@ -135,7 +135,7 @@
       "packaging": "Bins (Palox) o Granel",
       "calibration": "8kg - 16kg por fruta"
     },
-    "calabacin_description": "Nuestros calabacines se cultivan en ambientes controlados para asegurar una forma perfectamente recta y una piel verde vibrante. Cosechados diariamente.",
+    "calabacin_description": "Nuestros calabacines se cultivan en el microclima costero de Agadir para asegurar una forma perfectamente recta y una piel verde vibrante. Cosechados diariamente.",
     "calabacin_features": [
       "Color verde oscuro intenso",
       "Textura firme y crujiente",
@@ -163,7 +163,7 @@
       "packaging": "Caja Cartón 10kg",
       "calibration": "Calibres 5, 6, 7"
     },
-    "melon_description": "Cultivados bajo el sol marroquí, nuestros melones amarillos ofrecen un sabor refrescante y una textura suave.",
+    "melon_description": "Cultivados bajo el sol de Agadir, nuestros melones amarillos ofrecen un sabor refrescante y una textura suave.",
     "melon_features": [
       "Piel amarilla lisa",
       "Pulpa blanca crujiente",
@@ -204,7 +204,17 @@
       "calendar": "Octubre a Junio",
       "packaging": "Cartón 5kg, Flowpack 500g",
       "calibration": "6-9mm (Fina), <6mm (Extra Fina)"
-    }
+    },
+    "climate_advantage_title": "Por qué el clima de Agadir mejora este producto",
+    "trust_title": "Experiencia Confiable en Exportación",
+    "trust_description": "Con más de 35 años de experiencia, HOUKMI EXPORT garantiza un calendario de cosecha confiable, logística oportuna y una capacidad de suministro constante para todos nuestros socios internacionales.",
+    "tomatoes_climate": "La temperatura media estable de 21°C evita el choque térmico, asegurando que nuestros tomates desarrollen un color uniforme y una firmeza óptima para el transporte de larga distancia.",
+    "oranges_climate": "La humedad oceánica equilibrada y la intensa exposición al sol dan como resultado naranjas con un contenido de jugo excepcional y la relación perfecta entre azúcar y acidez.",
+    "peppers_climate": "Los ciclos de cosecha predecibles nos permiten suministrar pimientos crujientes y de paredes gruesas con un tamaño constante, cumpliendo con las estrictas demandas de los supermercados europeos.",
+    "zucchini_climate": "El clima costero templado permite la cosecha diaria de calabacines tiernos que mantienen su textura crujiente y su brillo verde intenso durante toda la cadena de exportación.",
+    "watermelon_climate": "Más de 300 días de sol aseguran los niveles más altos posibles de Brix (azúcar) y una pulpa crujiente y roja intensa que encanta a los clientes.",
+    "melon_climate": "La intensidad lumínica única de Agadir crea melones increíblemente fragantes con una piel resistente, perfectos para llegar al destino en condiciones impecables.",
+    "green_beans_climate": "Las temperaturas reguladas por el océano aseguran que nuestras judías crezcan rectas y tiernas sin volverse fibrosas, ofreciendo calidad gourmet en cada ocasión."
   },
   "Reviews": {
     "title": "Reseñas de Clientes",
@@ -219,5 +229,22 @@
     "success": "¡Gracias! Tu reseña está pendiente de aprobación.",
     "photo": "Subir foto (Opcional)",
     "pending": "Reseña pendiente de aprobación"
+  },
+  "Agadir": {
+    "title": "Agadir: Un Microclima Agrícola Único para un Suministro de Exportación Confiable",
+    "description": "Situada en la costa atlántica del sur de Marruecos, Agadir ofrece una ventaja estratégica agrícola inigualable en la región. La combinación de la regulación oceánica y el sol constante crea un motor para la exportación de productos premium.",
+    "climate_title": "Estabilidad Climática y Media Anual de 21°C",
+    "climate_desc": "Agadir disfruta de más de 300 días de sol al año, con una temperatura media anual de 21°C, proporcionando el entorno perfecto para la producción durante todo el año.",
+    "ocean_title": "Influencia Oceánica y Regulación de Temperatura",
+    "ocean_desc": "El Océano Atlántico actúa como un termorregulador natural, evitando variaciones estacionales extremas y garantizando un entorno estable para los cultivos delicados.",
+    "harvest_title": "Ciclos de Cosecha Predecibles",
+    "harvest_desc": "Un clima constante significa un crecimiento constante. Ofrecemos calendarios de suministro confiables y una calidad de cosecha uniforme en la que los importadores europeos y rusos pueden confiar.",
+    "strategic_title": "Ubicación Estratégica para Mercados Globales",
+    "strategic_desc": "Nuestra proximidad a los principales puertos y una infraestructura logística avanzada nos convierte en el socio ideal para los mercados europeo y ruso.",
+    "stats": {
+      "sun": "300+ Días",
+      "temp": "21°C Media",
+      "advantage": "Ventaja Atlántica"
+    }
   }
 }

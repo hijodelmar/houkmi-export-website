@@ -16,6 +16,7 @@ const productsData = {
         descriptionKey: "tomatoes_description",
         featuresKey: "tomatoes_features",
         specsKey: "tomatoes_specs",
+        climateKey: "tomatoes_climate",
         seo: {
             en: {
                 title: "Tomato Exporter Morocco | Fresh Tomatoes Wholesale Supplier - HOUKMI EXPORT",
@@ -56,6 +57,7 @@ const productsData = {
         descriptionKey: "oranges_description",
         featuresKey: "oranges_features",
         specsKey: "oranges_specs",
+        climateKey: "oranges_climate",
         seo: {
             en: {
                 title: "Orange & Citrus Exporter Morocco | Fresh Citrus Wholesale Supplier - HOUKMI EXPORT",
@@ -96,6 +98,7 @@ const productsData = {
         descriptionKey: "peppers_description",
         featuresKey: "peppers_features",
         specsKey: "peppers_specs",
+        climateKey: "peppers_climate",
         seo: {
             en: {
                 title: "Pepper Exporter Morocco | Fresh Bell Peppers Wholesale Supplier - HOUKMI EXPORT",
@@ -136,6 +139,7 @@ const productsData = {
         descriptionKey: "watermelons_description",
         featuresKey: "watermelons_features",
         specsKey: "watermelons_specs",
+        climateKey: "watermelon_climate",
         seo: {
             en: {
                 title: "Watermelon Exporter Morocco | Fresh Watermelons Wholesale Supplier - HOUKMI EXPORT",
@@ -176,6 +180,7 @@ const productsData = {
         descriptionKey: "calabacin_description",
         featuresKey: "calabacin_features",
         specsKey: "calabacin_specs",
+        climateKey: "zucchini_climate",
         seo: {
             en: {
                 title: "Zucchini Exporter Morocco | Fresh Zucchini Wholesale Supplier - HOUKMI EXPORT",
@@ -204,6 +209,7 @@ const productsData = {
         descriptionKey: "cantaloupe_description",
         featuresKey: "cantaloupe_features",
         specsKey: "cantaloupe_specs",
+        climateKey: "melon_climate",
         seo: {
             en: {
                 title: "Cantaloupe Exporter Morocco | Fresh Cantaloupe Melon Supplier - HOUKMI EXPORT",
@@ -232,6 +238,7 @@ const productsData = {
         descriptionKey: "melon_description",
         featuresKey: "melon_features",
         specsKey: "melon_specs",
+        climateKey: "melon_climate",
         seo: {
             en: {
                 title: "Yellow Melon Exporter Morocco | Fresh Melons Wholesale Supplier - HOUKMI EXPORT",
@@ -260,6 +267,7 @@ const productsData = {
         descriptionKey: "alubias_description",
         featuresKey: "alubias_features",
         specsKey: "alubias_specs",
+        climateKey: "green_beans_climate",
         seo: {
             en: {
                 title: "Flat Bean Exporter Morocco | Fresh Flat Green Beans Supplier - HOUKMI EXPORT",
@@ -288,6 +296,7 @@ const productsData = {
         descriptionKey: "judias_description",
         featuresKey: "judias_features",
         specsKey: "judias_specs",
+        climateKey: "green_beans_climate",
         seo: {
             en: {
                 title: "Green Bean Exporter Morocco | Fresh Fine Green Beans Supplier - HOUKMI EXPORT",
@@ -408,6 +417,11 @@ export default async function ProductPage({
         title: (dict.ProductDetails as any)?.specs_title || "Technical Specs"
     };
 
+    const climateAdvantage = (dict.ProductDetails as any)?.[(product as any).climateKey];
+    const climateTitle = (dict.ProductDetails as any)?.climate_advantage_title || "Why Agadir Climate Enhances This Product";
+    const trustTitle = (dict.ProductDetails as any)?.trust_title || "Reliable Export Experience";
+    const trustDescription = (dict.ProductDetails as any)?.trust_description || "With over 35 years of experience, HOUKMI EXPORT guarantees a reliable harvest calendar, timely logistics, and consistent supply capacity.";
+
     return (
         <>
             <ProductSchema
@@ -520,9 +534,67 @@ export default async function ProductPage({
                             >
                                 {dict.ProductDetails?.contact_us || "Contact Us for Orders"}
                             </Link>
+
+                            {/* Agadir Climate Advantage Section */}
+                            {climateAdvantage && (
+                                <div className="mt-12 p-8 bg-gradient-to-br from-orange-50 to-green-50 rounded-3xl border border-orange-100/50 shadow-sm relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                        <div className="w-24 h-24 bg-brand-orange rounded-full blur-2xl" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="p-2 bg-white rounded-lg shadow-sm">
+                                                <svg className="w-6 h-6 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.95 16.95l.707.707M7.05 7.05l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                                                </svg>
+                                            </div>
+                                            <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">
+                                                {climateTitle}
+                                            </h3>
+                                        </div>
+                                        <p className="text-gray-700 leading-relaxed font-medium">
+                                            {climateAdvantage}
+                                        </p>
+                                        <div className="mt-4 flex gap-4 text-xs font-bold text-brand-green/80 uppercase tracking-widest">
+                                            <span>300+ Days Sun</span>
+                                            <span>•</span>
+                                            <span>21°C Average</span>
+                                            <span>•</span>
+                                            <span>Atlantic Breeze</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Experience & Trust Section */}
+                            <div className="mt-8 p-8 bg-gray-900 rounded-3xl text-white shadow-xl">
+                                <h3 className="text-xl font-bold mb-3 text-brand-orange">
+                                    {trustTitle}
+                                </h3>
+                                <p className="text-gray-300 leading-relaxed text-sm">
+                                    {trustDescription}
+                                </p>
+                                <div className="mt-6 flex items-center gap-4 border-t border-white/10 pt-6">
+                                    <div className="text-center">
+                                        <div className="text-2xl font-black text-brand-orange">35+</div>
+                                        <div className="text-[10px] uppercase tracking-tighter text-gray-400">Years Exp</div>
+                                    </div>
+                                    <div className="w-px h-8 bg-white/10" />
+                                    <div className="text-center">
+                                        <div className="text-2xl font-black text-brand-green">100%</div>
+                                        <div className="text-[10px] uppercase tracking-tighter text-gray-400">Reliable</div>
+                                    </div>
+                                    <div className="w-px h-8 bg-white/10" />
+                                    <div className="text-center">
+                                        <div className="text-2xl font-black text-brand-purple">Global</div>
+                                        <div className="text-[10px] uppercase tracking-tighter text-gray-400">Reach</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </>
     );
