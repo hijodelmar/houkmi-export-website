@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Award, Leaf, Users, Globe, Package } from "lucide-react";
+import { CheckCircle, Award, Leaf, Package } from "lucide-react";
 
-export default function About({ lang, dict }: { lang: string; dict: any }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function About({ dict }: { dict: any }) {
     const features = [
         { icon: <Award className="w-6 h-6" />, text: dict.About.experience, color: "linear-gradient(to bottom right, #FFD600, #FF6F00)" },
         { icon: <CheckCircle className="w-6 h-6" />, text: dict.About.quality, color: "linear-gradient(to bottom right, #7CB342, #26A69A)" },
@@ -56,7 +57,7 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                         <div className="bg-brand-mint/10 p-6 rounded-2xl border border-brand-mint/20 mb-8 relative">
                             <Leaf className="absolute top-4 right-4 text-brand-mint/40 w-8 h-8" />
                             <p className="text-lg text-gray-800 font-medium leading-relaxed italic">
-                                "{dict.About.mission}"
+                                &quot;{dict.About.mission}&quot;
                             </p>
                         </div>
 
