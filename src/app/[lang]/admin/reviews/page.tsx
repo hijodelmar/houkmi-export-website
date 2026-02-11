@@ -5,9 +5,9 @@ import { Check, Shield, Trash2, Globe, Building2, Star, Filter, Quote, ArrowLeft
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useQuery, useMutation } from "convex/react";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "../../../../../convex/_generated/api";
 import LogoutButton from "@/components/ui/LogoutButton";
-import { Id } from "../../../../convex/_generated/dataModel";
+import { Id } from "../../../../../convex/_generated/dataModel";
 
 export default function AdminDashboard() {
     const params = useParams();
