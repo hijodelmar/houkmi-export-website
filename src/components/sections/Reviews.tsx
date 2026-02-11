@@ -84,11 +84,15 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
         }
     }, [reviews]);
 
+    if (!dict.Reviews || !dict.Reviews.title) {
+        return null; // Don't render if translations are missing
+    }
+
     return (
         <section id="reviews" className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
             <ReviewSchema
                 reviews={reviews.map(r => ({ name: r.name, company: r.company, rating: r.rating, comment: r.comment, date: r.createdAt }))}
-                averageRating={reviews.reduce((acc, r) => acc + r.rating, 0) / (reviews.length || 1)}
+                averageRating={reviews.length > 0 ? reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length : 5}
                 totalCount={reviews.length}
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,72 +118,81 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                     </motion.h2>
                 </div>
 
-                {/* Carousel Container */}
-                <div className="relative max-w-4xl mx-auto">
-                    <div className="absolute top-0 left-0 -translate-x-12 -translate-y-6 text-brand-green/10 opacity-50 hidden md:block">
-                        <Quote size={120} />
-                    </div>
+                {reviews.length > 0 ? (
+                    /* Carousel Container */
+                    <div className="relative max-w-4xl mx-auto">
+                        <div className="absolute top-0 left-0 -translate-x-12 -translate-y-6 text-brand-green/10 opacity-50 hidden md:block">
+                            <Quote size={120} />
+                        </div>
 
-                    <div className="relative z-10">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={currentIndex}
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.5, ease: "easeInOut" }}
-                                className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center"
-                            >
-                                {/* Stars */}
-                                <div className="flex gap-1 mb-6">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className={`h-6 w-6 ${i < reviews[currentIndex].rating ? "fill-brand-orange text-brand-orange" : "text-gray-200"}`}
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* Comment */}
-                                <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed mb-8">
-                                    "{reviews[currentIndex].comment}"
-                                </p>
-
-                                {/* Reviewer Info */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-brand-green/20">
-                                        <img
-                                            src={reviews[currentIndex].image_url}
-                                            alt={reviews[currentIndex].name}
-                                            className="w-full h-full object-cover"
-                                        />
+                        <div className="relative z-10">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentIndex}
+                                    initial={{ opacity: 0, x: 50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -50 }}
+                                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                                    className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center"
+                                >
+                                    {/* Stars */}
+                                    <div className="flex gap-1 mb-6">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star
+                                                key={i}
+                                                className={`h-6 w-6 ${i < (reviews[currentIndex]?.rating || 0) ? "fill-brand-orange text-brand-orange" : "text-gray-200"}`}
+                                            />
+                                        ))}
                                     </div>
-                                    <h4 className="text-xl font-bold text-gray-900">{reviews[currentIndex].name}</h4>
-                                    <p className="text-brand-green font-semibold">
-                                        {reviews[currentIndex].company}
-                                    </p>
-                                    <p className="text-sm text-gray-500">{reviews[currentIndex].country}</p>
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
 
-                        {/* Controls */}
-                        <div className="flex justify-center gap-4 mt-8">
-                            <button
-                                onClick={prevReview}
-                                className="p-3 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all shadow-sm"
-                            >
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button
-                                onClick={nextReview}
-                                className="p-3 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all shadow-sm"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
+                                    {/* Comment */}
+                                    <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed mb-8">
+                                        "{reviews[currentIndex]?.comment}"
+                                    </p>
+
+                                    {/* Reviewer Info */}
+                                    <div className="flex flex-col items-center">
+                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-brand-green/20">
+                                            <img
+                                                src={reviews[currentIndex]?.image_url || "https://i.pravatar.cc/150?u=anonymous"}
+                                                alt={reviews[currentIndex]?.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-gray-900">{reviews[currentIndex]?.name}</h4>
+                                        <p className="text-brand-green font-semibold">
+                                            {reviews[currentIndex]?.company}
+                                        </p>
+                                        <p className="text-sm text-gray-500">{reviews[currentIndex]?.country}</p>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+
+                            {/* Controls */}
+                            <div className="flex justify-center gap-4 mt-8">
+                                <button
+                                    onClick={prevReview}
+                                    className="p-3 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all shadow-sm"
+                                >
+                                    <ChevronLeft size={24} />
+                                </button>
+                                <button
+                                    onClick={nextReview}
+                                    className="p-3 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all shadow-sm"
+                                >
+                                    <ChevronRight size={24} />
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ) : (
+                    <div className="text-center py-12">
+                        <div className="animate-pulse flex flex-col items-center">
+                            <div className="h-4 w-48 bg-gray-100 rounded mb-4"></div>
+                            <div className="h-10 w-64 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
+                )}
 
                 {/* Write Review Button */}
                 <div className="mt-16 text-center">
