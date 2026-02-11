@@ -23,12 +23,22 @@ export function middleware(request: NextRequest) {
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
     );
 
+    const currentLocale = locales.find(
+        (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    ) || defaultLocale;
+
+    // 2. PROTECT ADMIN ROUTES
+    if (pathname.includes('/admin') && !pathname.includes('/admin/login')) {
+        const session = request.cookies.get('admin_session')?.value;
+        if (!session || session !== process.env.ADMIN_PASSWORD) {
+            return NextResponse.redirect(new URL(`/${currentLocale}/admin/login`, request.url));
+        }
+    }
+
     // Redirect if there is no locale
     if (pathnameIsMissingLocale) {
         const locale = defaultLocale;
 
-        // e.g. incoming request is /products
-        // The new URL is now /en/products
         return NextResponse.redirect(
             new URL(`/${locale}/${pathname}`, request.url)
         );

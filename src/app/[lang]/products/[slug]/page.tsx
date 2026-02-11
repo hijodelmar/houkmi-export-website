@@ -15,6 +15,7 @@ const productsData = {
         image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=1200&q=80",
         descriptionKey: "tomatoes_description",
         featuresKey: "tomatoes_features",
+        specsKey: "tomatoes_specs",
         seo: {
             en: {
                 title: "Tomato Exporter Morocco | Fresh Tomatoes Wholesale Supplier - HOUKMI EXPORT",
@@ -54,6 +55,7 @@ const productsData = {
         image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=1200&q=80",
         descriptionKey: "oranges_description",
         featuresKey: "oranges_features",
+        specsKey: "oranges_specs",
         seo: {
             en: {
                 title: "Orange & Citrus Exporter Morocco | Fresh Citrus Wholesale Supplier - HOUKMI EXPORT",
@@ -93,6 +95,7 @@ const productsData = {
         image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=1200&q=80",
         descriptionKey: "peppers_description",
         featuresKey: "peppers_features",
+        specsKey: "peppers_specs",
         seo: {
             en: {
                 title: "Pepper Exporter Morocco | Fresh Bell Peppers Wholesale Supplier - HOUKMI EXPORT",
@@ -132,6 +135,7 @@ const productsData = {
         image: "/images/watermelon.jpg",
         descriptionKey: "watermelons_description",
         featuresKey: "watermelons_features",
+        specsKey: "watermelons_specs",
         seo: {
             en: {
                 title: "Watermelon Exporter Morocco | Fresh Watermelons Wholesale Supplier - HOUKMI EXPORT",
@@ -163,6 +167,146 @@ const productsData = {
                 description: "Exportador premium de sandías de Marruecos. Proveedor mayorista de sandías frescas para Europa. Certificado GlobalGAP. 35+ años de experiencia.",
                 keywords: "exportador sandías Marruecos, proveedor sandías frescas, mayorista sandías"
             }
+        }
+    },
+    calabacin: {
+        id: "calabacin",
+        color: "#166534",
+        image: "/images/calabacin.jpg",
+        descriptionKey: "calabacin_description",
+        featuresKey: "calabacin_features",
+        specsKey: "calabacin_specs",
+        seo: {
+            en: {
+                title: "Zucchini Exporter Morocco | Fresh Zucchini Wholesale Supplier - HOUKMI EXPORT",
+                description: "Premium zucchini exporter from Morocco. Wholesale supplier of fresh zucchini to Europe & international markets.",
+                keywords: "zucchini exporter Morocco, fresh zucchini supplier, wholesale zucchini Morocco"
+            },
+            es: {
+                title: "Exportador de Calabacín Marruecos | Proveedor Mayorista de Calabacines - HOUKMI EXPORT",
+                description: "Exportador premium de calabacín de Marruecos. Proveedor mayorista de calabacines frescos para Europa.",
+                keywords: "exportador calabacín Marruecos, proveedor calabacín fresco, mayorista calabacín"
+            },
+            fr: {
+                title: "Exportateur de Courgettes Maroc | Fournisseur Grossiste Courgettes - HOUKMI EXPORT",
+                description: "Exportateur premium de courgettes du Maroc. Fournisseur grossiste de courgettes fraîches pour l'Europe.",
+                keywords: "exportateur courgettes Maroc, fournisseur courgettes frais, grossiste courgettes"
+            },
+            de: { title: "Zucchini Export Marokko", description: "Premium Zucchini Export Marokko", keywords: "zucchini export" },
+            it: { title: "Esportatore Zucchine Marocco", description: "Esportatore Zucchine Marocco", keywords: "zucchine export" },
+            ru: { title: "Экспорт Кабачков Марокко", description: "Экспорт Кабачков Марокко", keywords: "экспорт кабачков" }
+        }
+    },
+    cantaloupe: {
+        id: "cantaloupe",
+        color: "#F59E0B",
+        image: "/images/catalupo.jpg",
+        descriptionKey: "cantaloupe_description",
+        featuresKey: "cantaloupe_features",
+        specsKey: "cantaloupe_specs",
+        seo: {
+            en: {
+                title: "Cantaloupe Exporter Morocco | Fresh Cantaloupe Melon Supplier - HOUKMI EXPORT",
+                description: "Premium Cantaloupe exporter from Morocco. Wholesale supplier of fresh melons to Europe.",
+                keywords: "cantaloupe exporter Morocco, fresh cantaloupe supplier, wholesale melons"
+            },
+            es: {
+                title: "Exportador de Cantalupo Marruecos | Proveedor de Melones Cantaloupe - HOUKMI EXPORT",
+                description: "Exportador premium de melón cantalupo de Marruecos. Proveedor mayorista para Europa.",
+                keywords: "exportador cantalupo Marruecos, proveedor melón cantaloupe, mayorista melones"
+            },
+            fr: {
+                title: "Exportateur de Cantaloup Maroc | Fournisseur Grossiste Melons - HOUKMI EXPORT",
+                description: "Exportateur premium de melons cantaloup du Maroc. Fournisseur grossiste pour l'Europe.",
+                keywords: "exportateur cantaloup Maroc, fournisseur melons frais, grossiste melons"
+            },
+            de: { title: "Cantaloupe Melonen Export Marokko", description: "Cantaloupe Melonen Export Marokko", keywords: "cantaloupe export" },
+            it: { title: "Esportatore Meloni Cantalupo Marocco", description: "Esportatore Meloni Cantalupo Marocco", keywords: "cantalupo export" },
+            ru: { title: "Экспорт Дыни Канталупа Марокко", description: "Экспорт Дыни Канталупа Марокко", keywords: "экспорт дыни" }
+        }
+    },
+    melon: {
+        id: "melon",
+        color: "#FACC15",
+        image: "/images/melon.jpg",
+        descriptionKey: "melon_description",
+        featuresKey: "melon_features",
+        specsKey: "melon_specs",
+        seo: {
+            en: {
+                title: "Yellow Melon Exporter Morocco | Fresh Melons Wholesale Supplier - HOUKMI EXPORT",
+                description: "Premium yellow melon exporter from Morocco. Wholesale supplier of fresh sweet melons to international markets.",
+                keywords: "melon exporter Morocco, fresh yellow melon supplier, wholesale melons Morocco"
+            },
+            es: {
+                title: "Exportador de Melón Amarillo Marruecos | Proveedor Mayorista de Melones - HOUKMI EXPORT",
+                description: "Exportador premium de melón amarillo de Marruecos. Proveedor mayorista de melones frescos.",
+                keywords: "exportador melón amarillo Marruecos, proveedor melones frescos, mayorista melones"
+            },
+            fr: {
+                title: "Exportateur de Melon Jaune Maroc | Fournisseur Grossiste Melons - HOUKMI EXPORT",
+                description: "Exportateur premium de melons jaunes du Maroc. Fournisseur grossiste de melons frais.",
+                keywords: "exportateur melon jaune Maroc, fournisseur melons frais, grossiste melons"
+            },
+            de: { title: "Gelbe Melonen Export Marokko", description: "Gelbe Melonen Export Marokko", keywords: "melonen export" },
+            it: { title: "Esportatore Meloni Gialli Marocco", description: "Esportatore Meloni Gialli Marocco", keywords: "meloni export" },
+            ru: { title: "Экспорт Желтой Дыни Марокко", description: "Экспорт Желтой Дыни Марокко", keywords: "экспорт дыни" }
+        }
+    },
+    alubias: {
+        id: "alubias",
+        color: "#4ADE80",
+        image: "/images/alubias.jpg",
+        descriptionKey: "alubias_description",
+        featuresKey: "alubias_features",
+        specsKey: "alubias_specs",
+        seo: {
+            en: {
+                title: "Flat Bean Exporter Morocco | Fresh Flat Green Beans Supplier - HOUKMI EXPORT",
+                description: "Premium flat green bean exporter from Morocco. Wholesale supplier of fresh beans (Alubias) to Europe.",
+                keywords: "flat bean exporter Morocco, fresh alubias supplier, wholesale green beans"
+            },
+            es: {
+                title: "Exportador de Alubias Marruecos | Proveedor de Judías Verdes Planas - HOUKMI EXPORT",
+                description: "Exportador premium de alubias verdes de Marruecos. Proveedor mayorista de judías planas.",
+                keywords: "exportador alubias Marruecos, proveedor judías planas, mayorista alubias"
+            },
+            fr: {
+                title: "Exportateur de Haricots Plats Maroc | Fournisseur Haricots Verts - HOUKMI EXPORT",
+                description: "Exportateur premium de haricots plats (Alubias) du Maroc. Fournisseur grossiste pour l'Europe.",
+                keywords: "exportateur haricots plats Maroc, fournisseur haricots verts, grossiste haricots"
+            },
+            de: { title: "Flache Bohnen Export Marokko", description: "Flache Bohnen Export Marokko", keywords: "bohnen export" },
+            it: { title: "Esportatore Fagioli Piatti Marocco", description: "Esportatore Fagioli Piatti Marocco", keywords: "fagioli export" },
+            ru: { title: "Экспорт Плоской Фасоли Марокко", description: "Экспорт Плоской Фасоли Марокко", keywords: "экспорт фасоли" }
+        }
+    },
+    judias: {
+        id: "judias",
+        color: "#65A30D",
+        image: "/images/judias.jpg",
+        descriptionKey: "judias_description",
+        featuresKey: "judias_features",
+        specsKey: "judias_specs",
+        seo: {
+            en: {
+                title: "Green Bean Exporter Morocco | Fresh Fine Green Beans Supplier - HOUKMI EXPORT",
+                description: "Premium fine green bean exporter from Morocco. Wholesale supplier of fresh judías to Europe & international markets.",
+                keywords: "green bean exporter Morocco, fresh judias supplier, wholesale fine green beans"
+            },
+            es: {
+                title: "Exportador de Judías Verdes Marruecos | Proveedor de Judías Finas - HOUKMI EXPORT",
+                description: "Exportador premium de judías verdes de Marruecos. Proveedor mayorista de judías finas para Europa.",
+                keywords: "exportador judías verdes Marruecos, proveedor judías finas, mayorista judías"
+            },
+            fr: {
+                title: "Exportateur de Haricots Verts Maroc | Fournisseur Haricots Fins - HOUKMI EXPORT",
+                description: "Exportateur premium de haricots verts fins (Judías) du Maroc. Fournisseur grossiste pour l'Europe.",
+                keywords: "exportateur haricots verts Maroc, fournisseur haricots fins, grossiste haricots"
+            },
+            de: { title: "Grüne Bohnen Export Marokko", description: "Grüne Bohnen Export Marokko", keywords: "bohnen export" },
+            it: { title: "Esportatore Fagioli Verdi Marocco", description: "Esportatore Fagioli Verdi Marocco", keywords: "fagioli export" },
+            ru: { title: "Экспорт Зеленой Фасоли Марокко", description: "Экспорт Зеленой Фасоли Марокко", keywords: "экспорт фасоли" }
         }
     },
 };
@@ -255,6 +399,14 @@ export default async function ProductPage({
     const productName = dict.Products[product.id as keyof typeof dict.Products];
     const productDescription = (dict.ProductDetails as any)?.[product.descriptionKey] || "Premium quality produce from Morocco.";
     const productFeatures = (dict.ProductDetails as any)?.[product.featuresKey] || [];
+    const productSpecs = (dict.ProductDetails as any)?.[(product as any).specsKey];
+    const specLabels = {
+        varieties: (dict.ProductDetails as any)?.varieties_label || "Varieties",
+        calendar: (dict.ProductDetails as any)?.calendar_label || "Calendar",
+        packaging: (dict.ProductDetails as any)?.packaging_label || "Packaging",
+        calibration: (dict.ProductDetails as any)?.calibration_label || "Calibration",
+        title: (dict.ProductDetails as any)?.specs_title || "Technical Specs"
+    };
 
     return (
         <>
@@ -333,9 +485,36 @@ export default async function ProductPage({
                                 </div>
                             )}
 
+                            {/* Technical Specs */}
+                            {productSpecs && (
+                                <div className="mb-8 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">
+                                        {specLabels.title}
+                                    </h3>
+                                    <div className="space-y-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            <span className="font-semibold text-gray-700">{specLabels.varieties}:</span>
+                                            <span className="text-gray-600">{productSpecs.varieties}</span>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            <span className="font-semibold text-gray-700">{specLabels.calendar}:</span>
+                                            <span className="text-gray-600">{productSpecs.calendar}</span>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            <span className="font-semibold text-gray-700">{specLabels.packaging}:</span>
+                                            <span className="text-gray-600">{productSpecs.packaging}</span>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            <span className="font-semibold text-gray-700">{specLabels.calibration}:</span>
+                                            <span className="text-gray-600">{productSpecs.calibration}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* CTA */}
                             <Link
-                                href={`/${lang}/contact`}
+                                href={`/${lang}/contact?product=${product.id}`}
                                 className="inline-block text-white font-bold py-4 px-8 rounded-full hover:shadow-2xl hover:scale-105 transition-all shadow-lg"
                                 style={{ background: `linear-gradient(to right, ${product.color}, #26A69A)` }}
                             >

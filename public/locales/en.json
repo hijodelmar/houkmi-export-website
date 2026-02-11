@@ -14,13 +14,15 @@
     "cta_contact": "Contact Us"
   },
   "About": {
-    "title": "Who We Are",
-    "description": "With over 35 years of experience, HOUKMI EXPORT is a leader in the production and export of citrus fruits and fresh vegetables.",
-    "mission": "Our mission is to provide nature's best with uncompromised quality.",
-    "experience": "35+ Years Experience",
-    "farming": "Sustainable Farming",
-    "globalReach": "Global Reach",
-    "imageCaption": "Detailed care in every harvest"
+    "title": "Our Legacy",
+    "subtitle": "Quality Rooted in European Standards",
+    "description": "SARL HOUKMI EXPORT was founded by Mr. Houkmi Ahmed, a former Quality Inspector for the European Commission, alongside his daughter, Imene Houkmi. With over 35 years of combined experience, this unique leadership ensures that every shipment meets the strictest European quality standards.",
+    "sub_description": "We simply don't just trade; we ensure excellence. Partnering with top-tier farms and packing stations across Agadir, we offer fully customizable packaging solutions and maintain a rigorous cold chain in our dedicated warehousing facilities to ensure freshness.",
+    "mission": "To provide unbeatable prices without compromising on quality, bridging the gap between Moroccan producers and European markets (France, Italy, and beyond).",
+    "experience": "35+ Years Expertise",
+    "quality": "EU Inspector Founded",
+    "logistics": "Cold Chain & Custom Packing",
+    "imageCaption": "Mr. Houkmi Ahmed and Imene Houkmi - A legacy of quality"
   },
   "Gallery": {
     "description": "A glimpse into our farms, packing facilities, and the dedicated team ensuring quality in every box."
@@ -31,19 +33,35 @@
     "tomatoes": "Fresh Tomatoes",
     "oranges": "Sweet Oranges",
     "peppers": "Crisp Peppers",
-    "watermelons": "Juicy Watermelons"
+    "watermelons": "Juicy Watermelons",
+    "calabacin": "Premium Zucchini",
+    "cantaloupe": "Cantaloupe Melon",
+    "melon": "Sweet Yellow Melon",
+    "alubias": "Flat Green Beans",
+    "judias": "Fine Green Beans"
   },
   "Contact": {
-    "title": "Get in Touch",
-    "description": "We are always ready to discuss new opportunities. Reach out to us for orders or inquiries.",
-    "locationLabel": "Our Location",
+    "title": "Request a Quote",
+    "description": "Ready to import premium Moroccan produce? Fill out the form below for a tailored quotation.",
+    "locationLabel": "Packing House Location",
     "location": "Agadir Industrial Zone, Morocco",
-    "emailLabel": "Email Us",
-    "phoneLabel": "Call Us",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send Message"
+    "emailLabel": "Sales & Exports",
+    "phoneLabel": "Phone / WhatsApp",
+    "name": "Full Name",
+    "company": "Company Name",
+    "email": "Business Email",
+    "phone": "Phone Number",
+    "product": "Product of Interest",
+    "volume": "Volume (e.g., 1 Container)",
+    "incoterms": "Preferred Incoterms (FOB, CIF...)",
+    "destination": "Destination Port/Country",
+    "message": "Specific Requirements (Grade, Size, etc.)",
+    "incoterm_fob": "FOB (Free On Board)",
+    "incoterm_cif": "CIF (Cost, Insurance & Freight)",
+    "incoterm_dap": "DAP (Delivered at Place)",
+    "incoterm_exw": "EXW (Ex Works)",
+    "product_other": "Other / Mix",
+    "send": "Ask for a Quotation"
   },
   "Footer": {
     "description": "Bringing the freshest fruits and vegetables from Morocco to your table. Quality and reliability since 1990.",
@@ -87,7 +105,106 @@
       "Seedless varieties available",
       "Carefully harvested and transported",
       "Peak season availability"
-    ]
+    ],
+    "specs_title": "Technical Specifications",
+    "varieties_label": "Varieties",
+    "calendar_label": "Harvest Calendar",
+    "packaging_label": "Packaging",
+    "calibration_label": "Sizes / Calibration",
+    "tomatoes_specs": {
+      "varieties": "Round, Cherry, Plum (Roma), Beefsteak",
+      "calendar": "Year-round availability",
+      "packaging": "6kg Carton, 10kg Plastic Crate, Custom Flowpack",
+      "calibration": "Scales: M (57-67mm), MM (67-82mm), G (82-102mm)"
+    },
+    "oranges_specs": {
+      "varieties": "Clementine, Nour, Maroc Late, Washington Navel",
+      "calendar": "October to June",
+      "packaging": "10kg / 15kg Open Top, Wooden Box",
+      "calibration": "Sizes 1 (90mm) to 5 (60mm)"
+    },
+    "peppers_specs": {
+      "varieties": "Kapia, California Wonder (Red, Yellow, Green)",
+      "calendar": "October to May",
+      "packaging": "5kg Carton Box",
+      "calibration": "M, L, XL, XXL"
+    },
+    "watermelons_specs": {
+      "varieties": "Dumara, Delta, Seedless",
+      "calendar": "April to August",
+      "packaging": "Bins (Palox) or Bulk loading",
+      "calibration": "8kg - 16kg per fruit"
+    },
+    "calabacin_description": "Our zucchini are grown in controlled environments to ensure a perfectly straight shape and vibrant green skin. Harvested daily to maintain maximum crunch.",
+    "calabacin_features": [
+      "Rich dark green color",
+      "Firm and crunchy texture",
+      "Uniform size for catering",
+      "High nutritional value",
+      "GlobalGAP Certified"
+    ],
+    "calabacin_specs": {
+      "varieties": "Black Beauty, Cora",
+      "calendar": "October to June",
+      "packaging": "5kg Carton Box",
+      "calibration": "14-21cm, 21-28cm"
+    },
+    "cantaloupe_description": "Fragrant and sweet Cantaloupe melons. These melons are selected for their distinct netted rind and deep orange, honey-like flesh.",
+    "cantaloupe_features": [
+      "High Sugar Content (Brix 12+)",
+      "Strong characteristic aroma",
+      "Rich in Vitamin A",
+      "Ideal for premium retail",
+      "Long shelf life"
+    ],
+    "cantaloupe_specs": {
+      "varieties": "Cantaloupe Charentais",
+      "calendar": "May to July",
+      "packaging": "10kg Carton Box",
+      "calibration": "Sizes 5, 6, 7"
+    },
+    "melon_description": "Nurtured under the Moroccan sun, our yellow melons offer a refreshingly sweet flavor and smooth texture. Known for their durability during transport.",
+    "melon_features": [
+      "Smooth yellow skin",
+      "Crisp white flesh",
+      "Refreshing sweetness",
+      "Excellent transport stability",
+      "Vibrant presentation"
+    ],
+    "melon_specs": {
+      "varieties": "Honey Dew, Canary Melon",
+      "calendar": "May to August",
+      "packaging": "10kg Carton or wooden crates",
+      "calibration": "Sizes 4, 5, 6"
+    },
+    "alubias_description": "Premium flat green beans (Alubias). These beans are hand-selected for their length, width, and absence of strings, perfect for traditional European stews.",
+    "alubias_features": [
+      "Completely stringless",
+      "Wide and flat profile",
+      "Rich green color",
+      "Hand-harvested",
+      "Exceptional culinary quality"
+    ],
+    "alubias_specs": {
+      "varieties": "Garrofa, Helda",
+      "calendar": "October to May",
+      "packaging": "5kg Carton Box",
+      "calibration": "Length 15-22cm"
+    },
+    "judias_description": "Round, fine green beans (Judías). Meticulously sorted to ensure uniform thickness and a satisfying 'snap' when broken. A staple for gourmet presentation.",
+    "judias_features": [
+      "Extra fine and fine grades",
+      "Round and straight shape",
+      "Intense green hue",
+      "Pre-cooled for freshness",
+      "Ready for catering"
+    ],
+    "judias_specs": {
+      "varieties": "Bobby, Perona",
+      "calendar": "October to June",
+      "packaging": "5kg Carton, 500g Flowpack",
+      "calibration": "6-9mm (Fine), <6mm (Extra Fine)"
+    }
   },
   "Reviews": {
     "title": "Client Reviews",

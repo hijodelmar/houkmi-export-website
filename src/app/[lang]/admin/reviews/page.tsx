@@ -1,7 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Check, X, Shield, Trash2, Globe, Building2, UserCircle, Star, Filter, LogOut, Quote } from "lucide-react";
+import { Check, Shield, Trash2, Globe, Building2, Star, Filter, LogOut, Quote, ArrowLeft } from "lucide-react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import LogoutButton from "@/components/ui/LogoutButton";
 
 interface Review {
     id: string;
@@ -15,18 +18,15 @@ interface Review {
     createdAt: string;
 }
 
-export default function AdminDashboard({ lang }: { lang: string }) {
+export default function AdminDashboard() {
+    const params = useParams();
+    const lang = params?.lang as string || 'en';
     const [reviews, setReviews] = useState<Review[]>([]);
     const [loading, setLoading] = useState(true);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [password, setPassword] = useState("");
     const [filter, setFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
 
     useEffect(() => {
-        // Simple check for demo purposes
-        const auth = sessionStorage.getItem("admin_auth");
-        if (auth === "true") setIsAuthenticated(true);
-        if (auth === "true") fetchReviews();
+        fetchReviews();
     }, []);
 
     const fetchReviews = async () => {
@@ -41,18 +41,6 @@ export default function AdminDashboard({ lang }: { lang: string }) {
             console.error("Error fetching admin reviews:", error);
         } finally {
             setLoading(false);
-        }
-    };
-
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Hardcoded for demo - in production use env variables and real auth
-        if (password === "admin123") {
-            setIsAuthenticated(true);
-            sessionStorage.setItem("admin_auth", "true");
-            fetchReviews();
-        } else {
-            alert("Invalid password");
         }
     };
 
@@ -85,41 +73,6 @@ export default function AdminDashboard({ lang }: { lang: string }) {
         ? reviews
         : reviews.filter(r => r.status === filter);
 
-    if (!isAuthenticated) {
-        return (
-            <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-                <main className="max-w-md w-full bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-                    <div className="flex flex-col items-center mb-8">
-                        <div className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center mb-4">
-                            <Shield size={32} />
-                        </div>
-                        <h1 className="text-2xl font-extrabold text-gray-900 text-center">Admin Portal</h1>
-                        <p className="text-gray-500 text-center mt-2">HOUKMI EXPORT Review Management</p>
-                    </div>
-                    <form onSubmit={handleLogin} className="space-y-4">
-                        <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">Password</label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all"
-                                placeholder="••••••••"
-                                required
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-all shadow-lg"
-                        >
-                            Access Dashboard
-                        </button>
-                    </form>
-                </main>
-            </div>
-        );
-    }
-
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Sidebar / Header */}
@@ -127,30 +80,33 @@ export default function AdminDashboard({ lang }: { lang: string }) {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center">
-                                <Shield size={20} />
-                            </div>
-                            <div>
-                                <h2 className="text-xl font-extrabold text-gray-900">Review Moderation</h2>
-                                <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Admin Panel</p>
+                            <div className="flex items-center gap-4">
+                                <Link href={`/${lang}/admin`} className="p-2 hover:bg-gray-50 rounded-full transition-colors">
+                                    <ArrowLeft className="w-6 h-6" />
+                                </Link>
+                                <div className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center">
+                                    <Shield size={20} />
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-extrabold text-gray-900">Review Moderation</h2>
+                                    <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Admin Panel</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4">
-                            <button
-                                onClick={() => {
-                                    sessionStorage.removeItem("admin_auth");
-                                    setIsAuthenticated(false);
-                                }}
-                                className="flex items-center gap-2 text-gray-500 hover:text-red-600 font-bold transition-colors"
+                        <div className="flex items-center gap-6">
+                            <Link
+                                href={`/${lang}`}
+                                className="text-gray-500 hover:text-brand-orange transition-colors"
                             >
-                                <LogOut size={20} />
-                                <span className="hidden sm:inline">Logout</span>
-                            </button>
+                                View Site
+                            </Link>
+                            <LogoutButton lang={lang} />
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 {/* Stats */}

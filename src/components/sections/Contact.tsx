@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-export default function Contact({ lang, dict }: { lang: string; dict: any }) {
+export default function Contact({ lang, dict, initialProduct = "Tomatoes" }: { lang: string; dict: any; initialProduct?: string }) {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -24,7 +24,13 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
             const formData = new FormData(e.currentTarget);
             const data = {
                 name: formData.get('name'),
+                company: formData.get('company'),
                 email: formData.get('email'),
+                phone: formData.get('phone'),
+                product: formData.get('product'),
+                volume: formData.get('volume'),
+                incoterms: formData.get('incoterms'),
+                destination: formData.get('destination'),
                 message: formData.get('message'),
                 captcha: captchaToken,
             };
@@ -96,15 +102,15 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                 <Phone style={{ color: '#AB47BC' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.phoneLabel}</h4>
-                                    <p className="text-gray-700">+212 5 28 00 00 00</p>
+                                    <p className="text-gray-700">+34 691 78 11 8</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Google Map Embed */}
+                        {/* Google Map Embed - Agadir City Center */}
                         <div className="h-64 bg-gray-200 rounded-xl overflow-hidden shadow-md">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110183.07869389283!2d-9.664878!3d30.421114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e9daa54fa9%3A0xdb98579d49265e7d!2sAgadir%2C%20Morocco!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27536.32625345704!2d-9.610574892480456!3d30.42111435212956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6e9daa54fa9%3A0xdb98579d49265e7d!2sAgadir%2C%20Morocco!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
@@ -133,35 +139,114 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <Send className="w-8 h-8 text-green-600" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900">Message Sent!</h3>
-                                    <p className="text-gray-600 mt-2">We'll get back to you shortly.</p>
+                                    <h3 className="text-xl font-bold text-gray-900">Request Sent!</h3>
+                                    <p className="text-gray-600 mt-2">We will send you a quotation shortly.</p>
                                 </motion.div>
                             </div>
                         )}
 
                         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.name}</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    required
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
-                                    placeholder="Your Name"
-                                />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.name}</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        required
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="company" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.company}</label>
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        id="company"
+                                        required
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="Company Ltd."
+                                    />
+                                </div>
                             </div>
 
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.email}</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    required
-                                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
-                                    placeholder="your@email.com"
-                                />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.email}</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="sales@company.com"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.phone}</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        id="phone"
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="+33 6 12 34 56 78"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="product" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.product}</label>
+                                    <select
+                                        name="product"
+                                        id="product"
+                                        defaultValue={initialProduct}
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium appearance-none"
+                                    >
+                                        <option value="Tomatoes">{dict.Products.tomatoes}</option>
+                                        <option value="Citrus">{dict.Products.oranges}</option>
+                                        <option value="Peppers">{dict.Products.peppers}</option>
+                                        <option value="Watermelon">{dict.Products.watermelons}</option>
+                                        <option value="Other">{dict.Contact.product_other}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="volume" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.volume}</label>
+                                    <input
+                                        type="text"
+                                        name="volume"
+                                        id="volume"
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="e.g. 1 Container / 20 Pallets"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="incoterms" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.incoterms}</label>
+                                    <select
+                                        name="incoterms"
+                                        id="incoterms"
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium appearance-none"
+                                    >
+                                        <option value="FOB">{dict.Contact.incoterm_fob}</option>
+                                        <option value="CIF">{dict.Contact.incoterm_cif}</option>
+                                        <option value="DAP">{dict.Contact.incoterm_dap}</option>
+                                        <option value="EXW">{dict.Contact.incoterm_exw}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="destination" className="block text-sm font-bold text-gray-900 mb-2">{dict.Contact.destination}</label>
+                                    <input
+                                        type="text"
+                                        name="destination"
+                                        id="destination"
+                                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
+                                        placeholder="Port of Marseille / Madrid"
+                                    />
+                                </div>
                             </div>
 
                             <div>
@@ -169,10 +254,10 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                 <textarea
                                     id="message"
                                     name="message"
-                                    rows={4}
+                                    rows={3}
                                     required
                                     className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/10 outline-none transition-all bg-gray-50 hover:bg-white text-gray-900 font-medium"
-                                    placeholder="How can we help you?"
+                                    placeholder="Specific sizes, packaging preferences, or target delivery dates..."
                                 ></textarea>
                             </div>
 
@@ -190,7 +275,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                 className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-lg py-5 px-8 rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/50 hover:-translate-y-1 active:translate-y-0 disabled:opacity-70 disabled:translate-y-0 transition-all duration-300 flex items-center justify-center space-x-3 group relative overflow-hidden"
                             >
                                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                                <span className="relative tracking-wide">{status === 'loading' ? 'Sending...' : dict.Contact.send}</span>
+                                <span className="relative tracking-wide">{status === 'loading' ? 'Sending Request...' : dict.Contact.send}</span>
                                 <Send className={`w-6 h-6 relative ${status === 'loading' ? 'animate-pulse' : 'group-hover:translate-x-1 group-hover:-translate-y-1'} transition-transform`} />
                             </button>
                         </form>

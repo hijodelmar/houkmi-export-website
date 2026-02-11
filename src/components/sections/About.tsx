@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Award, Leaf, Users, Globe } from "lucide-react";
+import { CheckCircle, Award, Leaf, Users, Globe, Package } from "lucide-react";
 
 export default function About({ lang, dict }: { lang: string; dict: any }) {
     const features = [
         { icon: <Award className="w-6 h-6" />, text: dict.About.experience, color: "linear-gradient(to bottom right, #FFD600, #FF6F00)" },
-        { icon: <Leaf className="w-6 h-6" />, text: dict.About.farming, color: "linear-gradient(to bottom right, #7CB342, #26A69A)" },
-        { icon: <Globe className="w-6 h-6" />, text: dict.About.globalReach, color: "linear-gradient(to bottom right, #AB47BC, #FF5252)" },
+        { icon: <CheckCircle className="w-6 h-6" />, text: dict.About.quality, color: "linear-gradient(to bottom right, #7CB342, #26A69A)" },
+        { icon: <Package className="w-6 h-6" />, text: dict.About.logistics, color: "linear-gradient(to bottom right, #AB47BC, #FF5252)" },
     ];
 
     return (
@@ -20,14 +20,15 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
+                        className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1625246333195-bf480e68d18e?w=800&q=80')` }}
+                            style={{ backgroundImage: `url('/images/ahmed.JPG')` }}
                         ></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div className="absolute bottom-6 left-6 text-white">
-                            <p className="font-bold text-lg">{dict.About.imageCaption}</p>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 right-6 text-white p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+                            <p className="font-bold text-lg text-center">{dict.About.imageCaption}</p>
                         </div>
                     </motion.div>
 
@@ -38,15 +39,26 @@ export default function About({ lang, dict }: { lang: string; dict: any }) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 bg-gradient-to-r from-brand-green to-brand-orange bg-clip-text text-transparent">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2 bg-gradient-to-r from-brand-green to-brand-orange bg-clip-text text-transparent">
                             {dict.About.title}
                         </h2>
-                        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                        <h3 className="text-xl font-bold text-gray-700 mb-6 flex items-center gap-2">
+                            <Award className="text-brand-orange" /> {dict.About.subtitle}
+                        </h3>
+
+                        <p className="text-lg text-gray-600 mb-4 leading-relaxed">
                             {dict.About.description}
                         </p>
-                        <p className="text-lg text-gray-700 font-medium mb-8 leading-relaxed">
-                            {dict.About.mission}
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            {dict.About.sub_description}
                         </p>
+
+                        <div className="bg-brand-mint/10 p-6 rounded-2xl border border-brand-mint/20 mb-8 relative">
+                            <Leaf className="absolute top-4 right-4 text-brand-mint/40 w-8 h-8" />
+                            <p className="text-lg text-gray-800 font-medium leading-relaxed italic">
+                                "{dict.About.mission}"
+                            </p>
+                        </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {features.map((item, index) => (

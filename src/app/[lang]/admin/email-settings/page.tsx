@@ -1,10 +1,13 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Save } from 'lucide-react';
+import { useParams, useRouter } from 'next/navigation';
+import { Save, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function EmailSettings() {
+    const params = useParams();
+    const lang = params?.lang as string || 'en';
     const [config, setConfig] = useState({
         host: '',
         port: 465,
@@ -51,93 +54,115 @@ export default function EmailSettings() {
         }
     };
 
-    if (loading) return <div className="p-8">Loading settings...</div>;
+    if (loading) return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center font-bold text-gray-400 uppercase tracking-widest">
+            Loading settings...
+        </div>
+    );
 
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-8">
-                <div className="uppercase tracking-wide text-sm text-brand-orange font-semibold mb-4">Admin Panel</div>
-                <h1 className="block mt-1 text-2xl leading-tight font-bold text-black mb-6">Email SMTP Configuration</h1>
+            <div className="max-w-2xl mx-auto">
+                <div className="flex items-center gap-4 mb-8">
+                    <Link href={`/${lang}/admin`} className="p-2 hover:bg-white rounded-full transition-colors">
+                        <ArrowLeft className="w-6 h-6" />
+                    </Link>
+                    <h1 className="text-3xl font-bold">Email & SMTP Settings</h1>
+                </div>
 
-                {message && (
-                    <div className={`p-4 mb-6 rounded ${message.includes('success') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                        {message}
-                    </div>
-                )}
+                <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+                    <div className="uppercase tracking-widest text-xs text-brand-orange font-black mb-1">Infrastructure</div>
+                    <h2 className="text-xl font-extrabold text-gray-900 mb-8">SMTP Configuration</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">SMTP Host (Gmail: smtp.gmail.com)</label>
-                        <input
-                            type="text"
-                            value={config.host}
-                            onChange={e => setConfig({ ...config, host: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900"
-                        />
-                    </div>
+                    {message && (
+                        <div className={`p-4 mb-8 rounded-2xl font-bold flex items-center gap-3 ${message.includes('success') ? 'bg-green-50 text-green-700 border border-green-100' : 'bg-red-50 text-red-700 border border-red-100'}`}>
+                            <div className={`w-2 h-2 rounded-full ${message.includes('success') ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                            {message}
+                        </div>
+                    )}
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <form onSubmit={handleSubmit} className="space-y-6 text-gray-900">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">Port (Gmail: 465)</label>
+                            <label className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-tight">SMTP Host</label>
                             <input
-                                type="number"
-                                value={config.port}
-                                onChange={e => setConfig({ ...config, port: parseInt(e.target.value) })}
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900"
+                                type="text"
+                                value={config.host}
+                                placeholder="smtp.gmail.com"
+                                onChange={e => setConfig({ ...config, host: e.target.value })}
+                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-orange outline-none transition-all"
                             />
                         </div>
-                        <div className="flex items-center mt-6">
-                            <input
-                                type="checkbox"
-                                checked={config.secure}
-                                onChange={e => setConfig({ ...config, secure: e.target.checked })}
-                                className="h-4 w-4 text-brand-orange focus:ring-brand-orange border-gray-300 rounded"
-                            />
-                            <label className="ml-2 block text-sm text-gray-900">Secure (SSL/TLS)</label>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-tight">Port</label>
+                                <input
+                                    type="number"
+                                    value={config.port}
+                                    placeholder="465"
+                                    onChange={e => setConfig({ ...config, port: parseInt(e.target.value) })}
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-orange outline-none transition-all"
+                                />
+                            </div>
+                            <div className="flex items-center mt-8">
+                                <label className="relative inline-flex items-center cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        checked={config.secure}
+                                        onChange={e => setConfig({ ...config, secure: e.target.checked })}
+                                        className="sr-only peer"
+                                    />
+                                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-orange"></div>
+                                    <span className="ml-3 text-sm font-bold text-gray-900">Secure (SSL/TLS)</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">Gmail User (Your Email)</label>
-                        <input
-                            type="email"
-                            value={config.user}
-                            onChange={e => setConfig({ ...config, user: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900"
-                        />
-                    </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-tight">Username</label>
+                                <input
+                                    type="email"
+                                    value={config.user}
+                                    placeholder="info@houkmiexport.com"
+                                    onChange={e => setConfig({ ...config, user: e.target.value })}
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-orange outline-none transition-all"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-tight">App Password</label>
+                                <input
+                                    type="password"
+                                    value={config.pass}
+                                    placeholder="•••• •••• •••• ••••"
+                                    onChange={e => setConfig({ ...config, pass: e.target.value })}
+                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-orange outline-none transition-all"
+                                />
+                            </div>
+                        </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">Gmail App Password</label>
-                        <input
-                            type="password"
-                            value={config.pass}
-                            placeholder="xxxx xxxx xxxx xxxx"
-                            onChange={e => setConfig({ ...config, pass: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900"
-                        />
-                        <p className="text-xs text-gray-500 mt-1">Use an App Password if 2FA is enabled.</p>
-                    </div>
+                        <div className="pt-6 border-t border-gray-50">
+                            <label className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-tight">Receiver Email</label>
+                            <input
+                                type="email"
+                                value={config.toEmail}
+                                placeholder="notifications@houkmiexport.com"
+                                onChange={e => setConfig({ ...config, toEmail: e.target.value })}
+                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-orange outline-none transition-all"
+                            />
+                            <p className="mt-2 text-xs text-gray-500">All customer inquiries will be sent to this address.</p>
+                        </div>
 
-                    <div className="border-t pt-4">
-                        <label className="block text-sm font-medium text-gray-700">Receiver Email (Where emails go)</label>
-                        <input
-                            type="email"
-                            value={config.toEmail}
-                            onChange={e => setConfig({ ...config, toEmail: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-900"
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        disabled={saving}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-orange hover:bg-brand-orange-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange disabled:opacity-50"
-                    >
-                        {saving ? 'Saving...' : 'Save Configuration'}
-                        {!saving && <Save className="ml-2 h-5 w-5" />}
-                    </button>
-                </form>
+                        <button
+                            type="submit"
+                            disabled={saving}
+                            className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-brand-orange text-white font-black hover:bg-orange-600 transition-all shadow-xl shadow-orange-100 disabled:opacity-50 mt-4 uppercase tracking-widest text-sm"
+                        >
+                            {saving ? 'Saving...' : 'Save Configuration'}
+                            {!saving && <Save className="w-5 h-5" />}
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     );

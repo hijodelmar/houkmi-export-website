@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Products({ lang, dict }: { lang: string; dict: any }) {
-    const products = [
+    const pathname = usePathname();
+    const isFullPage = pathname?.includes('/products');
+
+    const allProducts = [
         {
             id: "tomatoes",
             name: dict.Products.tomatoes,
@@ -29,7 +33,39 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
             color: "#EC4899",
             image: "/images/watermelon.jpg"
         },
+        {
+            id: "calabacin",
+            name: dict.Products.calabacin,
+            color: "#166534",
+            image: "/images/calabacin.jpg"
+        },
+        {
+            id: "cantaloupe",
+            name: dict.Products.cantaloupe,
+            color: "#F59E0B",
+            image: "/images/catalupo.jpg"
+        },
+        {
+            id: "melon",
+            name: dict.Products.melon,
+            color: "#FACC15",
+            image: "/images/melon.jpg"
+        },
+        {
+            id: "alubias",
+            name: dict.Products.alubias,
+            color: "#4ADE80",
+            image: "/images/alubias.jpg"
+        },
+        {
+            id: "judias",
+            name: dict.Products.judias,
+            color: "#65A30D",
+            image: "/images/judias.jpg"
+        }
     ];
+
+    const displayedProducts = isFullPage ? allProducts : allProducts.slice(0, 4);
 
     return (
         <section className="py-20" style={{ background: 'linear-gradient(to bottom right, #ffffff, #f9fafb, #f0fdf4)' }} id="products">
@@ -42,14 +78,19 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ background: 'linear-gradient(to right, #7CB342, #FF6F00)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                            {dict.Products.title}
+                            {isFullPage ? dict.Products.title : dict.Products.title}
                         </h2>
                         <div className="w-24 h-1.5 mx-auto rounded-full" style={{ background: 'linear-gradient(to right, #FF6F00, #FFD600)' }}></div>
+                        {isFullPage && (
+                            <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                                Discover our full range of premium Moroccan produce, grown with expertise and exported with care.
+                            </p>
+                        )}
                     </motion.div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {products.map((product, index) => (
+                    {displayedProducts.map((product, index) => (
                         <motion.div
                             key={product.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -84,7 +125,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                                     className="inline-flex items-center font-semibold text-sm hover:gap-2 gap-1 transition-all"
                                     style={{ color: '#FF6F00' }}
                                 >
-                                    Learn more
+                                    {lang === 'es' ? 'Saber más' : 'Learn more'}
                                     <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                                 </Link>
                             </div>
@@ -92,23 +133,37 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                     ))}
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="mt-12 text-center"
-                >
-                    <Link
-                        href={`/${lang}/products`}
-                        className="inline-block text-white font-bold py-4 px-10 rounded-full hover:shadow-2xl hover:scale-105 transition-all shadow-lg"
-                        style={{ background: 'linear-gradient(to right, #7CB342, #26A69A)' }}
+                {!isFullPage && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="mt-12 text-center"
                     >
-                        {dict.Products.view_all}
-                    </Link>
-                </motion.div>
+                        <Link
+                            href={`/${lang}/products`}
+                            className="inline-block text-white font-bold py-4 px-10 rounded-full hover:shadow-2xl hover:scale-105 transition-all shadow-lg"
+                            style={{ background: 'linear-gradient(to right, #7CB342, #26A69A)' }}
+                        >
+                            {dict.Products.view_all}
+                        </Link>
+                    </motion.div>
+                )}
+
+                {isFullPage && (
+                    <div className="mt-20 flex flex-col items-center">
+                        <Link
+                            href={`/${lang}`}
+                            className="text-gray-500 hover:text-brand-orange font-bold flex items-center gap-2 transition-all hover:-translate-x-2"
+                        >
+                            <span>←</span> Back to Home
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );
 }
+
 

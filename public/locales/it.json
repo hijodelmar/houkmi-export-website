@@ -14,13 +14,15 @@
     "cta_contact": "Contattaci"
   },
   "About": {
-    "title": "Chi Siamo",
-    "description": "Con oltre 35 anni di esperienza, HOUKMI EXPORT è leader nella produzione ed esportazione di agrumi e verdure fresche.",
-    "mission": "La nostra missione è fornire il meglio della natura con qualità senza compromessi.",
+    "title": "La Nostra Eredità",
+    "subtitle": "Qualità Radicata negli Standard Europei",
+    "description": "SARL HOUKMI EXPORT è stata fondata dal Sig. Houkmi Ahmed, ex Ispettore di Qualità della Commissione Europea, insieme a sua figlia, Imene Houkmi. Con oltre 35 anni di esperienza combinata, questa leadership unica garantisce che ogni spedizione soddisfi i più severi standard di qualità europei.",
+    "sub_description": "Non ci limitiamo a commerciare; garantiamo l'eccellenza. Collaborando con aziende agricole e stazioni di confezionamento di prim'ordine ad Agadir, offriamo soluzioni di imballaggio completamente personalizzabili e manteniamo una rigorosa catena del freddo nei nostri magazzini dedicati.",
+    "mission": "Offrire prezzi imbattibili senza compromettere la qualità, colmando il divario tra i produttori marocchini e i mercati europei (Francia, Italia e oltre).",
     "experience": "+35 Anni di Esperienza",
-    "farming": "Agricoltura Sostenibile",
-    "globalReach": "Portata Globale",
-    "imageCaption": "Cura dettagliata in ogni raccolto"
+    "quality": "Fondato da Ispettore UE",
+    "logistics": "Catena del Freddo & Imballaggio",
+    "imageCaption": "Il Sig. Houkmi Ahmed e Imene Houkmi - Un'eredità di qualità"
   },
   "Gallery": {
     "description": "Uno sguardo alle nostre fattorie, strutture di confezionamento e al team dedicato che garantisce la qualità in ogni scatola."
@@ -34,16 +36,27 @@
     "watermelons": "Angurie Succose"
   },
   "Contact": {
-    "title": "Contattaci",
-    "description": "Siamo sempre pronti a discutere di nuove opportunità. Contattaci per ordini o richieste.",
-    "locationLabel": "La Nostra Posizione",
+    "title": "Richiedi un Preventivo",
+    "description": "Pronti a importare prodotti marocchini di qualità? Compila il modulo sottostante per un preventivo personalizzato.",
+    "locationLabel": "Posizione del Magazzino",
     "location": "Zona Industriale di Agadir, Marocco",
-    "emailLabel": "Inviaci un'Email",
-    "phoneLabel": "Chiamaci",
-    "name": "Nome",
-    "email": "Email",
-    "message": "Messaggio",
-    "send": "Invia Messaggio"
+    "emailLabel": "Vendite & Esportazioni",
+    "phoneLabel": "Telefono / WhatsApp",
+    "name": "Nome Completo",
+    "company": "Nome dell'Azienda",
+    "email": "Email Aziendale",
+    "phone": "Numero di Telefono",
+    "product": "Prodotto di Interesse",
+    "volume": "Volume (es: 1 Container)",
+    "incoterms": "Incoterms (es: FOB, CIF, EXW)",
+    "destination": "Porto/Paese di Destinazione",
+    "message": "Requisiti Specifici (Calibro, Dimensione, ecc.)",
+    "incoterm_fob": "FOB (Franco a Bordo)",
+    "incoterm_cif": "CIF (Costo, Assicurazione e Nolo)",
+    "incoterm_dap": "DAP (Reso al Luogo di Destinazione)",
+    "incoterm_exw": "EXW (Franco Fabbrica)",
+    "product_other": "Altro / Misto",
+    "send": "Richiedi un Preventivo"
   },
   "Footer": {
     "description": "Portando la frutta e la verdura più fresca dal Marocco alla vostra tavola. Qualità e affidabilità dal 1990.",
@@ -87,7 +100,36 @@
       "Varietà senza semi disponibili",
       "Accuratamente raccolte e trasportate",
       "Disponibilità in alta stagione"
-    ]
+    ],
+    "specs_title": "Specifiche Tecniche",
+    "varieties_label": "Varietà",
+    "calendar_label": "Calendario Raccolto",
+    "packaging_label": "Imballaggio",
+    "calibration_label": "Calibro / Dimensioni",
+    "tomatoes_specs": {
+      "varieties": "Tondo, Ciliegino, Prugna (Roma), Cuore di Bue",
+      "calendar": "Disponibilità tutto l'anno",
+      "packaging": "Cartone 6kg, Cassette Plastica 10kg, Flowpack personalizzato",
+      "calibration": "Scale: M (57-67mm), MM (67-82mm), G (82-102mm)"
+    },
+    "oranges_specs": {
+      "varieties": "Clementina, Nour, Maroc Late, Washington Navel",
+      "calendar": "Ottobre a Giugno",
+      "packaging": "Open Top 10kg / 15kg, Cassette Legno",
+      "calibration": "Calibri 1 (90mm) a 5 (60mm)"
+    },
+    "peppers_specs": {
+      "varieties": "Kapia, California Wonder (Rosso, Giallo, Verde)",
+      "calendar": "Ottobre a Maggio",
+      "packaging": "Cartone 5kg",
+      "calibration": "M, L, XL, XXL"
+    },
+    "watermelons_specs": {
+      "varieties": "Dumara, Delta, Senza Semi",
+      "calendar": "Aprile ad Agosto",
+      "packaging": "Bins (Palox) o Sfuso",
+      "calibration": "8kg - 16kg per frutto"
+    }
   },
   "Reviews": {
     "title": "Recensioni dei Clienti",

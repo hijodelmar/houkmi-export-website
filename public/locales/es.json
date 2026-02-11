@@ -14,13 +14,15 @@
     "cta_contact": "Contáctenos"
   },
   "About": {
-    "title": "Quiénes Somos",
-    "description": "Con más de 35 años de experiencia, HOUKMI EXPORT es líder en la producción y exportación de cítricos y verduras frescas.",
-    "mission": "Nuestra misión es proporcionar lo mejor de la naturaleza con una calidad inigualable.",
+    "title": "Nuestro Legado",
+    "subtitle": "Calidad Arraigada en los Estándares Europeos",
+    "description": "SARL HOUKMI EXPORT fue fundada por el Sr. Houkmi Ahmed, ex Inspector de Calidad de la Comisión Europea, junto con su hija, Imene Houkmi. Con más de 35 años de experiencia, este liderazgo único garantiza que cada envío cumpla con los estándares de calidad europeos más estrictos.",
+    "sub_description": "No solo somos comerciantes; aseguramos la excelencia. Colaborando con granjas y estaciones de empaque de primer nivel en Agadir, ofrecemos soluciones de embalaje totalmente personalizables y mantenemos una cadena de frío rigurosa en nuestras instalaciones dedicadas para garantizar la frescura.",
+    "mission": "Brindar precios inmejorables sin comprometer la calidad, uniendo a los productores marroquíes con los mercados europeos (Francia, Italia y más allá).",
     "experience": "+35 Años de Experiencia",
-    "farming": "Agricultura Sostenible",
-    "globalReach": "Alcance Global",
-    "imageCaption": "Cuidado detallado en cada cosecha"
+    "quality": "Fundada por ex Inspector UE",
+    "logistics": "Cadena de Frío y Empaque a Medida",
+    "imageCaption": "Sr. Houkmi Ahmed e Imene Houkmi - Un legado de calidad"
   },
   "Gallery": {
     "description": "Un vistazo a nuestras granjas, instalaciones de envasado y al equipo dedicado que garantiza la calidad en cada caja."
@@ -31,19 +33,35 @@
     "tomatoes": "Tomates Frescos",
     "oranges": "Naranjas Dulces",
     "peppers": "Pimientos Crujientes",
-    "watermelons": "Sandías Jugosas"
+    "watermelons": "Sandías Jugosas",
+    "calabacin": "Calabacín Premium",
+    "cantaloupe": "Cantalupo (Cantaloupe)",
+    "melon": "Melón Amarillo",
+    "alubias": "Alubias Verdes",
+    "judias": "Judías Verdes"
   },
   "Contact": {
-    "title": "Póngase en Contacto",
-    "description": "Siempre estamos listos para discutir nuevas oportunidades. Contáctenos para pedidos o consultas.",
-    "locationLabel": "Nuestra Ubicación",
+    "title": "Solicitar Cotización",
+    "description": "¿Listo para importar productos marroquíes premium? Complete el formulario para una cotización a medida.",
+    "locationLabel": "Ubicación del Almacén",
     "location": "Zona Industrial de Agadir, Marruecos",
-    "emailLabel": "Envíenos un Correo",
-    "phoneLabel": "Llámenos",
-    "name": "Nombre",
-    "email": "Correo Electrónico",
-    "message": "Mensaje",
-    "send": "Enviar Mensaje"
+    "emailLabel": "Ventas y Exportaciones",
+    "phoneLabel": "Teléfono / WhatsApp",
+    "name": "Nombre Completo",
+    "company": "Nombre de la Empresa",
+    "email": "Email Corporativo",
+    "phone": "Número de Teléfono",
+    "product": "Producto de Interés",
+    "volume": "Volumen (ej: 1 Contenedor)",
+    "incoterms": "Incoterms (ej: FOB, CIF, EXW)",
+    "destination": "Puerto/País de Destino",
+    "message": "Requisitos Específicos (Calibre, Tamaño, etc.)",
+    "incoterm_fob": "FOB (Franco a Bordo)",
+    "incoterm_cif": "CIF (Costo, Seguro y Flete)",
+    "incoterm_dap": "DAP (Entregado en Lugar)",
+    "incoterm_exw": "EXW (En Fábrica)",
+    "product_other": "Otro / Mixto",
+    "send": "Solicitar Cotización"
   },
   "Footer": {
     "description": "Llevando las frutas y verduras más frescas de Marruecos a su mesa. Calidad y confianza desde 1990.",
@@ -87,7 +105,106 @@
       "Variedades sin semillas disponibles",
       "Cuidadosamente cosechadas y transportadas",
       "Disponibilidad en temporada alta"
-    ]
+    ],
+    "specs_title": "Especificaciones Técnicas",
+    "varieties_label": "Variedades",
+    "calendar_label": "Calendario de Cosecha",
+    "packaging_label": "Embalaje",
+    "calibration_label": "Calibre / Tamaños",
+    "tomatoes_specs": {
+      "varieties": "Redondo, Cherry, Pera (Roma), Beefsteak",
+      "calendar": "Disponibilidad todo el año",
+      "packaging": "Cartón 6kg, Caja Plástica 10kg, Flowpack a medida",
+      "calibration": "Escalas: M (57-67mm), MM (67-82mm), G (82-102mm)"
+    },
+    "oranges_specs": {
+      "varieties": "Clementina, Nour, Maroc Late, Washington Navel",
+      "calendar": "Octubre a Junio",
+      "packaging": "Open Top 10kg / 15kg, Caja Madera",
+      "calibration": "Calibres 1 (90mm) a 5 (60mm)"
+    },
+    "peppers_specs": {
+      "varieties": "Kapia, California Wonder (Rojo, Amarillo, Verde)",
+      "calendar": "Octubre a Mayo",
+      "packaging": "Caja Cartón 5kg",
+      "calibration": "M, L, XL, XXL"
+    },
+    "watermelons_specs": {
+      "varieties": "Dumara, Delta, Sin Pepitas",
+      "calendar": "Abril a Agosto",
+      "packaging": "Bins (Palox) o Granel",
+      "calibration": "8kg - 16kg por fruta"
+    },
+    "calabacin_description": "Nuestros calabacines se cultivan en ambientes controlados para asegurar una forma perfectamente recta y una piel verde vibrante. Cosechados diariamente.",
+    "calabacin_features": [
+      "Color verde oscuro intenso",
+      "Textura firme y crujiente",
+      "Tamaño uniforme",
+      "Alto valor nutricional",
+      "Certificado GlobalGAP"
+    ],
+    "calabacin_specs": {
+      "varieties": "Black Beauty, Cora",
+      "calendar": "Octubre a Junio",
+      "packaging": "Caja Cartón 5kg",
+      "calibration": "14-21cm, 21-28cm"
+    },
+    "cantaloupe_description": "Cantalupos fragantes y dulces. Estos melones se seleccionan por su pulpa naranja intensa y sabor meloso.",
+    "cantaloupe_features": [
+      "Alto contenido de azúcar (Brix 12+)",
+      "Aroma característico fuerte",
+      "Rico en Vitamina A",
+      "Ideal para venta premium",
+      "Larga vida útil"
+    ],
+    "cantaloupe_specs": {
+      "varieties": "Cantaloupe Charentais",
+      "calendar": "Mayo a Julio",
+      "packaging": "Caja Cartón 10kg",
+      "calibration": "Calibres 5, 6, 7"
+    },
+    "melon_description": "Cultivados bajo el sol marroquí, nuestros melones amarillos ofrecen un sabor refrescante y una textura suave.",
+    "melon_features": [
+      "Piel amarilla lisa",
+      "Pulpa blanca crujiente",
+      "Dulzura refrescante",
+      "Excelente estabilidad en transporte",
+      "Presentación vibrante"
+    ],
+    "melon_specs": {
+      "varieties": "Honey Dew, Melón Canario",
+      "calendar": "Mayo a Agosto",
+      "packaging": "Caja Cartón 10kg o madera",
+      "calibration": "Calibres 4, 5, 6"
+    },
+    "alubias_description": "Alubias verdes planas premium. Seleccionadas a mano por su longitud, anchura y ausencia de hilos.",
+    "alubias_features": [
+      "Totalmente sin hilos",
+      "Perfil ancho y plano",
+      "Color verde intenso",
+      "Cosechadas a mano",
+      "Calidad culinaria excepcional"
+    ],
+    "alubias_specs": {
+      "varieties": "Garrofa, Helda",
+      "calendar": "Octubre a Mayo",
+      "packaging": "Caja Cartón 5kg",
+      "calibration": "Longitud 15-22cm"
+    },
+    "judias_description": "Judías verdes redondas y finas. Clasificadas meticulosamente para asegurar un grosor uniforme y un 'snap' satisfactorio.",
+    "judias_features": [
+      "Calibres extra fino y fino",
+      "Forma redonda y recta",
+      "Tono verde intenso",
+      "Pre-enfriadas para frescura",
+      "Listas para alta cocina"
+    ],
+    "judias_specs": {
+      "varieties": "Bobby, Perona",
+      "calendar": "Octubre a Junio",
+      "packaging": "Cartón 5kg, Flowpack 500g",
+      "calibration": "6-9mm (Fina), <6mm (Extra Fina)"
+    }
   },
   "Reviews": {
     "title": "Reseñas de Clientes",

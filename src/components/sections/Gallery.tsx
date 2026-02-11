@@ -1,22 +1,56 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 
 export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
-    // Use a simple grid for now, masonry can be complex without a library like 'react-masonry-css'
-    // or pure CSS columns.
-    const images = [
-        "https://images.unsplash.com/photo-1625246333195-bf480e68d18e?w=800&q=80", // Farm
-        "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&q=80", // Citrus crate
-        "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=800&q=80", // Greenhouse
-        "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80", // Market display
-        "https://images.unsplash.com/photo-1601598851547-4302969ca066?w=800&q=80", // Export/Port
-        "https://images.unsplash.com/photo-1596740926475-61e57c913532?w=800&q=80", // Holding tomatoes
-    ];
+    const [images, setImages] = useState<string[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        fetch('/api/gallery')
+            .then(res => res.json())
+            .then(data => {
+                // Shuffle images randomly on each load
+                const shuffled = [...data].sort(() => Math.random() - 0.5);
+                setImages(shuffled);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Failed to fetch gallery:", err);
+                setLoading(false);
+            });
+    }, []);
+
+    const gridImages = images.slice(0, 9);
+    const carouselImages = images.slice(9);
+
+    const scrollCarousel = (direction: 'left' | 'right') => {
+        if (carouselRef.current) {
+            const scrollAmount = 400;
+            carouselRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    if (loading) return (
+        <section className="py-20 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-orange mx-auto"></div>
+                <p className="mt-4 text-gray-500 font-bold uppercase tracking-widest text-sm">Elevating your visual experience...</p>
+            </div>
+        </section>
+    );
 
     return (
-        <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-brand-mint/5" id="gallery">
+        <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-brand-mint/5 overflow-hidden" id="gallery">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header Section */}
                 <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -24,36 +58,127 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-gradient-to-r from-brand-green to-brand-orange bg-clip-text text-transparent">
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 bg-gradient-to-r from-brand-green to-brand-orange bg-clip-text text-transparent italic">
                             {dict.Gallery.title}
                         </h2>
-                        <div className="w-24 h-1.5 bg-gradient-to-r from-brand-orange to-brand-yellow mx-auto rounded-full mb-4"></div>
-                        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+                        <div className="w-24 h-1.5 bg-gradient-to-r from-brand-orange to-brand-yellow mx-auto rounded-full mb-6"></div>
+                        <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium leading-relaxed">
                             {dict.Gallery.description}
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {images.map((src, index) => (
+                {/* 3x3 Grid Section */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
+                    {gridImages.map((src, index) => (
                         <motion.div
-                            key={index}
-                            className="relative h-64 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
-                            whileHover={{ scale: 1.03 }}
+                            key={`grid-${index}`}
+                            className="relative h-80 rounded-3xl overflow-hidden shadow-xl group cursor-pointer border-4 border-white"
+                            whileHover={{ y: -10, scale: 1.02 }}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.05 }}
+                            onClick={() => setSelectedImage(src)}
                         >
                             <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
                                 style={{ backgroundImage: `url(${src})` }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/0 to-brand-purple/0 group-hover:from-brand-orange/20 group-hover:to-brand-purple/20 transition-all duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <Maximize2 className="text-white w-6 h-6 ml-auto" />
+                            </div>
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Premium Carousel Section */}
+                {carouselImages.length > 0 && (
+                    <div className="relative group/carousel">
+                        <div className="flex items-center justify-between mb-8">
+                            <h3 className="text-2xl font-bold text-gray-800">Explore More</h3>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => scrollCarousel('left')}
+                                    className="p-3 bg-white shadow-lg rounded-full hover:bg-brand-orange hover:text-white transition-all text-gray-600"
+                                >
+                                    <ChevronLeft className="w-6 h-6" />
+                                </button>
+                                <button
+                                    onClick={() => scrollCarousel('right')}
+                                    className="p-3 bg-white shadow-lg rounded-full hover:bg-brand-orange hover:text-white transition-all text-gray-600"
+                                >
+                                    <ChevronRight className="w-6 h-6" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            ref={carouselRef}
+                            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth"
+                        >
+                            {carouselImages.map((src, index) => (
+                                <motion.div
+                                    key={`carousel-${index}`}
+                                    className="flex-none w-80 h-60 rounded-2xl overflow-hidden shadow-lg border-2 border-white snap-center cursor-pointer relative group"
+                                    onClick={() => setSelectedImage(src)}
+                                    whileHover={{ scale: 1.05 }}
+                                >
+                                    <div
+                                        className="absolute inset-0 bg-cover bg-center"
+                                        style={{ backgroundImage: `url(${src})` }}
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            className="absolute top-8 right-8 text-white/50 hover:text-white p-2 hover:bg-white/10 rounded-full transition-all"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative max-w-5xl w-full h-full flex items-center justify-center"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img
+                                src={selectedImage}
+                                alt="Gallery Preview"
+                                className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain border-4 border-white/10"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <style jsx>{`
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}</style>
         </section>
     );
 }

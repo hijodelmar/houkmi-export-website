@@ -4,7 +4,7 @@ import { getSmtpConfig } from '@/lib/email-config';
 
 export async function POST(request: Request) {
     try {
-        const { name, email, message, captcha } = await request.json();
+        const { name, email, company, phone, product, volume, incoterms, destination, message, captcha } = await request.json();
 
         // Verify Captcha v2 (Classic)
         const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6LdvEGgsAAAAAAH-JCG8-Y-bQT7dsJQ6uWS3i9Jo";
@@ -45,14 +45,22 @@ export async function POST(request: Request) {
             from: `"${name}" <${config.user}>`, // Gmail requires from to be the authenticated user usually, or use reply-to
             replyTo: email,
             to: config.toEmail,
-            subject: `New Contact from Website: ${name}`,
-            text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+            subject: `New RFQ from Website: ${company || name}`,
+            text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nProduct: ${product}\nVolume: ${volume}\nIncoterms: ${incoterms}\nDestination: ${destination}\n\nMessage:\n${message}`,
             html: `
-                <h3>New Contact Message</h3>
+                <h3>New Request for Quotation</h3>
                 <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Company:</strong> ${company || 'N/A'}</p>
                 <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
                 <br/>
-                <p><strong>Message:</strong></p>
+                <h4>Order Details</h4>
+                <p><strong>Product:</strong> ${product || 'N/A'}</p>
+                <p><strong>Volume:</strong> ${volume || 'N/A'}</p>
+                <p><strong>Incoterms:</strong> ${incoterms || 'N/A'}</p>
+                <p><strong>Destination:</strong> ${destination || 'N/A'}</p>
+                <br/>
+                <p><strong>Message/Specs:</strong></p>
                 <p>${message.replace(/\n/g, '<br/>')}</p>
             `,
         });
