@@ -1,8 +1,6 @@
-
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { getSmtpConfig } from '@/lib/email-config';
-import { createAssessment } from '@/lib/recaptcha-server';
 
 export async function POST(request: Request) {
     try {

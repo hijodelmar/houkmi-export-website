@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getReviews, addReview } from '@/lib/reviews-store';
-import { createAssessment } from '@/lib/recaptcha-server';
 
 export const dynamic = 'force-dynamic';
 
