@@ -1,19 +1,17 @@
 import { put } from '@vercel/blob';
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<NextResponse> {
     try {
-        const formData = await request.formData();
-        const file = formData.get('file') as File;
+        const { searchParams } = new URL(request.url);
+        const filename = searchParams.get('filename') || 'image.webp';
 
-        if (!file) {
-            return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+        if (!request.body) {
+            return NextResponse.json({ error: 'No body provided' }, { status: 400 });
         }
 
-        const filename = file.name.replace(/\s+/g, '-');
-
-        // Upload to Vercel Blob
-        const blob = await put(`gallery/${filename}`, file, {
+        // Upload to Vercel Blob using the body stream directly
+        const blob = await put(`gallery/${filename}`, request.body, {
             access: 'public',
         });
 

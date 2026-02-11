@@ -37,28 +37,33 @@ export default function GalleryAdmin() {
         if (!file) return;
 
         setUploading(true);
-        const formData = new FormData();
-        formData.append('file', file);
+        const filename = file.name.replace(/\s+/g, '-');
 
-        const res = await fetch('/api/admin/gallery/upload', {
-            method: 'POST',
-            body: formData,
-        });
+        try {
+            const res = await fetch(`/api/admin/gallery/upload?filename=${filename}`, {
+                method: 'POST',
+                body: file,
+            });
 
-        if (res.ok) {
-            fetchImages();
-        } else {
+            if (res.ok) {
+                fetchImages();
+            } else {
+                alert('Upload failed');
+            }
+        } catch (error) {
+            console.error('Upload Error:', error);
             alert('Upload failed');
+        } finally {
+            setUploading(false);
         }
-        setUploading(false);
     };
 
-    const handleDelete = async (filename: string) => {
-        if (!confirm(`Are you sure you want to delete ${filename}?`)) return;
+    const handleDelete = async (url: string, name: string) => {
+        if (!confirm(`Are you sure you want to delete ${name}?`)) return;
 
         const res = await fetch('/api/admin/gallery', {
             method: 'DELETE',
-            body: JSON.stringify({ filename }),
+            body: JSON.stringify({ url }),
         });
 
         if (res.ok) {
@@ -80,7 +85,7 @@ export default function GalleryAdmin() {
 
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-600">
-                        Managing <strong>{images.length}</strong> images in <code>/public/images/pics</code>
+                        Managing <strong>{images.length}</strong> images in <strong>Vercel Blob</strong>
                     </p>
                     <div className="flex gap-3">
                         <button
@@ -121,7 +126,7 @@ export default function GalleryAdmin() {
                                 />
                                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                     <button
-                                        onClick={() => handleDelete(img.name)}
+                                        onClick={() => handleDelete(img.path, img.name)}
                                         className="p-3 bg-red-500 text-white rounded-full hover:bg-red-600 transform scale-75 group-hover:scale-100 transition-all shadow-xl"
                                         title="Delete Image"
                                     >
