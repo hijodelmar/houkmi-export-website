@@ -7,15 +7,32 @@ export async function POST(request: Request) {
     try {
         const { name, email, message, captcha } = await request.json();
 
-        // Verify Captcha
-        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6Lcb_WcsAAAAAIX5PdiQGMdrFV0uliGVrjF_I4kc";
-        const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`, {
-            method: 'POST'
-        });
+        // Verify reCAPTCHA Enterprise Assessment
+        const projectID = "houkmiexport";
+        const apiKey = "AIzaSyCiZDzFjtGcUD-jEQF3rrXtrUu_cogXx08";
+        const siteKey = "6LcI7GcsAAAAABfEZ115oceso-A9xqoX_Gueg5er";
+
+        const verifyRes = await fetch(
+            `https://recaptchaenterprise.googleapis.com/v1/projects/${projectID}/assessments?key=${apiKey}`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    event: {
+                        token: captcha,
+                        siteKey: siteKey,
+                        expectedAction: 'CONTACT'
+                    }
+                })
+            }
+        );
+
         const verifyData = await verifyRes.json();
 
-        if (!verifyData.success) {
-            return NextResponse.json({ error: 'Captcha verification failed' }, { status: 400 });
+        // Score 0.0 is bot, 1.0 is human. We accept 0.5+
+        if (!verifyData.tokenProperties?.valid || (verifyData.riskAnalysis?.score !== undefined && verifyData.riskAnalysis.score < 0.5)) {
+            console.error("reCAPTCHA failed:", verifyData);
+            return NextResponse.json({ error: 'Security check failed. Please try again.' }, { status: 400 });
         }
 
         const config = await getSmtpConfig();
