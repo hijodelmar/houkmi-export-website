@@ -305,18 +305,63 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
 
                                             <div>
                                                 <label className="block text-sm font-bold text-gray-700 mb-2">{dict.Reviews.photo}</label>
-                                                <div className="flex items-center gap-4">
-                                                    <label className="flex items-center gap-2 cursor-pointer bg-gray-50 border-2 border-dashed border-gray-200 px-6 py-4 rounded-xl hover:bg-gray-100 transition-all flex-1">
-                                                        <Upload className="h-5 w-5 text-gray-400" />
-                                                        <span className="text-gray-500 text-sm">{formData.image_url ? "Image selected" : dict.Reviews.photo}</span>
-                                                        <input
-                                                            type="text"
-                                                            className="w-full bg-transparent outline-none text-sm"
-                                                            placeholder="Image URL (optional)"
-                                                            value={formData.image_url}
-                                                            onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-                                                        />
-                                                    </label>
+                                                <div className="flex flex-col gap-4">
+                                                    <div className="flex items-center gap-4">
+                                                        <label className="flex items-center gap-2 cursor-pointer bg-gray-50 border-2 border-dashed border-gray-200 px-6 py-4 rounded-xl hover:bg-gray-100 transition-all flex-1">
+                                                            <Upload className="h-5 w-5 text-gray-400" />
+                                                            <span className="text-gray-500 text-sm">
+                                                                {formData.image_url ? "Photo attached" : dict.Reviews.photo}
+                                                            </span>
+                                                            <input
+                                                                type="file"
+                                                                className="hidden"
+                                                                accept="image/*"
+                                                                onChange={async (e) => {
+                                                                    const file = e.target.files?.[0];
+                                                                    if (file) {
+                                                                        // Basic compression using canvas
+                                                                        const reader = new FileReader();
+                                                                        reader.onload = (event) => {
+                                                                            const img = new Image();
+                                                                            img.onload = () => {
+                                                                                const canvas = document.createElement('canvas');
+                                                                                const MAX_WIDTH = 200;
+                                                                                const MAX_HEIGHT = 200;
+                                                                                let width = img.width;
+                                                                                let height = img.height;
+
+                                                                                if (width > height) {
+                                                                                    if (width > MAX_WIDTH) {
+                                                                                        height *= MAX_WIDTH / width;
+                                                                                        width = MAX_WIDTH;
+                                                                                    }
+                                                                                } else {
+                                                                                    if (height > MAX_HEIGHT) {
+                                                                                        width *= MAX_HEIGHT / height;
+                                                                                        height = MAX_HEIGHT;
+                                                                                    }
+                                                                                }
+                                                                                canvas.width = width;
+                                                                                canvas.height = height;
+                                                                                const ctx = canvas.getContext('2d');
+                                                                                ctx?.drawImage(img, 0, 0, width, height);
+                                                                                const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                                                                                setFormData({ ...formData, image_url: dataUrl });
+                                                                            };
+                                                                            img.src = event.target?.result as string;
+                                                                        };
+                                                                        reader.readAsDataURL(file);
+                                                                    }
+                                                                }}
+                                                            />
+                                                        </label>
+                                                        {formData.image_url && (
+                                                            <div className="w-14 h-14 rounded-xl overflow-hidden border-2 border-brand-green shadow-sm">
+                                                                <img src={formData.image_url} alt="Preview" className="w-full h-full object-cover" />
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-[10px] text-gray-400">Max size: 2MB. Optimized automatically for B2B portal.</p>
                                                 </div>
                                             </div>
 
