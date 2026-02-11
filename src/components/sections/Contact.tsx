@@ -180,7 +180,7 @@ export default function Contact({ lang, dict }: { lang: string; dict: any }) {
                                 <p className="text-sm font-bold text-brand-orange animate-pulse">Security Verification Required:</p>
                                 <ReCAPTCHA
                                     ref={recaptchaRef}
-                                    sitekey="6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdvEGgsAAAAAB1clNIRf_SQSjqHnqeiUBG6xmj5"}
                                     onChange={(token) => {
                                         console.log("Token received:", token);
                                         setCaptchaToken(token);

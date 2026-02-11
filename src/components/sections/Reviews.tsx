@@ -385,7 +385,7 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                             <div className="flex justify-center">
                                                 <ReCAPTCHA
                                                     ref={recaptchaRef}
-                                                    sitekey="6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"
+                                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdvEGgsAAAAAB1clNIRf_SQSjqHnqeiUBG6xmj5"}
                                                     onChange={(token) => setCaptchaToken(token)}
                                                 />
                                             </div>
