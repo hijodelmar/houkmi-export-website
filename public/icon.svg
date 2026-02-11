@@ -1,20 +1,11 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="gradient-globe" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#FF6F00" />
-            <stop offset="1" stopColor="#FFD600" />
-        </linearGradient>
-        <linearGradient id="gradient-leaf" x1="60" y1="30" x2="90" y2="70" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#7CB342" />
-            <stop offset="1" stopColor="#2E7D32" />
-        </linearGradient>
-        <linearGradient id="gradient-leaf-2" x1="60" y1="10" x2="90" y2="50" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#aeea00" />
-            <stop offset="1" stopColor="#64dd17" />
-        </linearGradient>
-    </defs>
-    <circle cx="50" cy="50" r="45" stroke="url(#gradient-globe)" strokeWidth="4" strokeLinecap="round" strokeDasharray="20 10" opacity="0.3" />
-    <path d="M35 30V70M65 30V70M35 50H65" stroke="#1A1A1A" strokeWidth="8" strokeLinecap="round" />
-    <path d="M65 30C65 30 85 20 85 45C85 65 65 70 65 70" fill="url(#gradient-leaf)" opacity="0.9" />
-    <path d="M65 50C75 50 90 45 90 30C90 15 75 10 65 30Z" fill="url(#gradient-leaf-2)" />
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Circular Background - Vibrant Orange to make it pop -->
+    <circle cx="50" cy="50" r="48" fill="#FF6F00" />
+    
+    <!-- Bold Leaf - High Contrast Green -->
+    <path d="M50 25 C70 5 95 10 90 40 C85 60 70 65 65 65" fill="#4CAF50" />
+    <path d="M65 45 C75 45 90 40 90 25 C90 10 75 5 65 25Z" fill="#aeea00" />
+
+    <!-- Bold White H - Very thick for visibility at small sizes -->
+    <path d="M30 35 V65 M55 35 V65 M30 50 H55" stroke="white" strokeWidth="12" strokeLinecap="round" />
 </svg>
