@@ -88,5 +88,19 @@
       "Carefully harvested and transported",
       "Peak season availability"
     ]
+  },
+  "Reviews": {
+    "title": "Client Reviews",
+    "subtitle": "Trusted by European Importers and Wholesalers",
+    "writeReview": "Write a Review",
+    "name": "Full Name",
+    "company": "Company Name",
+    "country": "Country",
+    "rating": "Rating",
+    "comment": "Your Comment",
+    "submit": "Submit Review",
+    "success": "Thank you! Your review is awaiting approval.",
+    "photo": "Upload Photo (Optional)",
+    "pending": "Review Pending Approval"
   }
 }

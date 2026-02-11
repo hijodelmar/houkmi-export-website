@@ -88,5 +88,19 @@
       "Soigneusement récoltées et transportées",
       "Disponibilité en haute saison"
     ]
+  },
+  "Reviews": {
+    "title": "Avis Clients",
+    "subtitle": "Approuvé par les importateurs et grossistes européens",
+    "writeReview": "Écrire un avis",
+    "name": "Nom complet",
+    "company": "Nom de l'entreprise",
+    "country": "Pays",
+    "rating": "Note",
+    "comment": "Votre commentaire",
+    "submit": "Envoyer l'avis",
+    "success": "Merci ! Votre avis est en attente d'approbation.",
+    "photo": "Télécharger une photo (Optionnel)",
+    "pending": "Avis en attente d'approbation"
   }
 }

@@ -88,5 +88,19 @@
       "Cuidadosamente cosechadas y transportadas",
       "Disponibilidad en temporada alta"
     ]
+  },
+  "Reviews": {
+    "title": "Reseñas de Clientes",
+    "subtitle": "Con la confianza de importadores y mayoristas europeos",
+    "writeReview": "Escribir una reseña",
+    "name": "Nombre completo",
+    "company": "Nombre de la empresa",
+    "country": "País",
+    "rating": "Calificación",
+    "comment": "Tu comentario",
+    "submit": "Enviar reseña",
+    "success": "¡Gracias! Tu reseña está pendiente de aprobación.",
+    "photo": "Subir foto (Opcional)",
+    "pending": "Reseña pendiente de aprobación"
   }
 }

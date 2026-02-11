@@ -5,6 +5,7 @@ import Products from "@/components/sections/Products";
 import Contact from "@/components/sections/Contact";
 
 import Gallery from "@/components/sections/Gallery";
+import Reviews from "@/components/sections/Reviews";
 
 export default async function Home({
     params,
@@ -20,6 +21,7 @@ export default async function Home({
             <About lang={lang} dict={dict} />
             <Products lang={lang} dict={dict} />
             <Gallery lang={lang} dict={dict} />
+            <Reviews lang={lang} dict={dict} />
             <Contact lang={lang} dict={dict} />
         </div>
     );
