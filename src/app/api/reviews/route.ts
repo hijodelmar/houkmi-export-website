@@ -16,7 +16,7 @@ export async function POST(request: Request) {
         const { name, company, country, rating, comment, image_url, captcha } = body;
 
         // Verify Captcha
-        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"; // Google Test Secret
+        const secretKey = process.env.RECAPTCHA_SECRET_KEY || "6Lcb_WcsAAAAAIX5PdiQGMdrFV0uliGVrjF_I4kc";
         const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`, {
             method: 'POST'
         });

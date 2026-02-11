@@ -382,7 +382,7 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                             <div className="flex justify-center">
                                                 <ReCAPTCHA
                                                     ref={recaptchaRef}
-                                                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Google Test Key
+                                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Lcb_WcsAAAAAEZeeYxIV31Rkq4LdAxnEFezx219"}
                                                     onChange={(token) => setCaptchaToken(token)}
                                                 />
                                             </div>
