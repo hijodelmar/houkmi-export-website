@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getReviews, addReview } from '@/lib/reviews-store';
+import { createAssessment } from '@/lib/recaptcha-server';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,30 +17,14 @@ export async function POST(request: Request) {
         const { name, company, country, rating, comment, image_url, captcha } = body;
 
         // Verify reCAPTCHA Enterprise Assessment
-        const projectID = "houkmiexport";
-        const apiKey = "AIzaSyCiZDzFjtGcUD-jEQF3rrXtrUu_cogXx08";
-        const siteKey = "6LcI7GcsAAAAABfEZ115oceso-A9xqoX_Gueg5er";
-
-        const verifyRes = await fetch(
-            `https://recaptchaenterprise.googleapis.com/v1/projects/${projectID}/assessments?key=${apiKey}`,
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    event: {
-                        token: captcha,
-                        siteKey: siteKey,
-                        expectedAction: 'REVIEW'
-                    }
-                })
-            }
-        );
-
-        const verifyData = await verifyRes.json();
+        const score = await createAssessment({
+            token: captcha,
+            recaptchaAction: 'REVIEW'
+        });
 
         // Score 0.0 is bot, 1.0 is human. We accept 0.5+
-        if (!verifyData.tokenProperties?.valid || (verifyData.riskAnalysis?.score !== undefined && verifyData.riskAnalysis.score < 0.5)) {
-            console.error("reCAPTCHA failed:", verifyData);
+        if (score === null || score < 0.5) {
+            console.error("reCAPTCHA check failed. Score:", score);
             return NextResponse.json({ error: 'Security check failed. Please try again.' }, { status: 400 });
         }
 

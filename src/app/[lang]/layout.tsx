@@ -120,7 +120,7 @@ export default async function RootLayout({ children, params }) {
                 <SchemaOrg lang={lang} />
                 <Script
                     src="https://www.google.com/recaptcha/enterprise.js?render=6LcI7GcsAAAAABfEZ115oceso-A9xqoX_Gueg5er"
-                    strategy="beforeInteractive"
+                    strategy="afterInteractive"
                 />
             </head>
             <body className="antialiased">
