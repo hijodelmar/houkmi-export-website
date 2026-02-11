@@ -17,66 +17,8 @@ interface Review {
     createdAt: string;
 }
 
-const dummyReviews: Review[] = [
-    {
-        id: "1",
-        name: "Markus Schmidt",
-        company: "EuroFruit GmbH",
-        country: "Germany",
-        rating: 5,
-        comment: "Outstanding quality. We've been importing tomatoes and peppers from HOUKMI EXPORT for 5 years. Their reliability and product freshness are unmatched in the Moroccan market.",
-        status: "approved",
-        createdAt: "2024-01-15",
-        image_url: "https://i.pravatar.cc/150?u=markus"
-    },
-    {
-        id: "2",
-        name: "Alessandra Rossi",
-        company: "Italia Fresca S.r.l.",
-        country: "Italy",
-        rating: 5,
-        comment: "The best sweet oranges we've ever sourced. The color and juice content are exactly what our premium supermarkets demand. Highly professional logistics team.",
-        status: "approved",
-        createdAt: "2024-02-10",
-        image_url: "https://i.pravatar.cc/150?u=alessandra"
-    },
-    {
-        id: "3",
-        name: "Jean-Pierre Laurent",
-        company: "Marché de Paris",
-        country: "France",
-        rating: 4,
-        comment: "Excellent partnership. Their watermelons are a hit every summer in Paris. Consistent quality and GlobalGAP certifications make them a trusted supplier.",
-        status: "approved",
-        createdAt: "2024-03-05",
-        image_url: "https://i.pravatar.cc/150?u=jean"
-    },
-    {
-        id: "4",
-        name: "Dmitry Volkov",
-        company: "Nordic Trade Group",
-        country: "Russia",
-        rating: 5,
-        comment: "Reliable exporter for the Russian market. They handle the complex logistics and documentation perfectly. The peppers arrive crisp and fresh even after long transit.",
-        status: "approved",
-        createdAt: "2024-03-20",
-        image_url: "https://i.pravatar.cc/150?u=dmitry"
-    },
-    {
-        id: "5",
-        name: "Sarah Van den Berg",
-        company: "Benelux Imports",
-        country: "Netherlands",
-        rating: 5,
-        comment: "A true B2B partner. HOUKMI EXPORT understands the European standards for residue levels and quality. Their transparency and communication are top-tier.",
-        status: "approved",
-        createdAt: "2024-04-01",
-        image_url: "https://i.pravatar.cc/150?u=sarah"
-    }
-];
-
 export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
-    const [reviews, setReviews] = useState<Review[]>(dummyReviews);
+    const [reviews, setReviews] = useState<Review[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -98,7 +40,7 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
             const res = await fetch('/api/reviews');
             if (res.ok) {
                 const data = await res.json();
-                if (data.length > 0) setReviews(data);
+                setReviews(data);
             }
         } catch (error) {
             console.error("Error fetching reviews:", error);
