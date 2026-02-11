@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { useState } from "react";
 import { Check, Shield, Trash2, Globe, Building2, Star, Filter, Quote, ArrowLeft } from "lucide-react";
 import { useParams } from "next/navigation";
