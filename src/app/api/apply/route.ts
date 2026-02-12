@@ -13,7 +13,7 @@ export async function POST(request: Request) {
         // Upload to Vercel Blob
         const blob = await put(`cvs/${Date.now()}-${file.name}`, file, {
             access: "public",
-            token: process.env.houkmi_READ_WRITE_TOKEN,
+            token: process.env.houkmi_READ_WRITE_TOKEN || process.env.BLOB_READ_WRITE_TOKEN,
         });
 
         return NextResponse.json({ url: blob.url });

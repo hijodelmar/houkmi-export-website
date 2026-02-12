@@ -5,7 +5,7 @@ export async function GET() {
     try {
         const { blobs } = await list({
             prefix: 'gallery/',
-            token: process.env.houkmi_READ_WRITE_TOKEN,
+            token: process.env.houkmi_READ_WRITE_TOKEN || process.env.BLOB_READ_WRITE_TOKEN,
         });
 
         const images = blobs.map(blob => ({
@@ -15,9 +15,9 @@ export async function GET() {
         }));
 
         return NextResponse.json(images);
-    } catch (error) {
+    } catch (error: any) {
         console.error('List Error:', error);
-        return NextResponse.json({ error: 'Failed to list images' }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to list images', details: error.message }, { status: 500 });
     }
 }
 
@@ -30,11 +30,11 @@ export async function DELETE(request: Request) {
         }
 
         await del(url, {
-            token: process.env.houkmi_READ_WRITE_TOKEN,
+            token: process.env.houkmi_READ_WRITE_TOKEN || process.env.BLOB_READ_WRITE_TOKEN,
         });
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Delete Error:', error);
-        return NextResponse.json({ error: 'Failed to delete image' }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to delete image', details: error.message }, { status: 500 });
     }
 }

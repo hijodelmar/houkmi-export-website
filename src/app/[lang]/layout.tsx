@@ -95,8 +95,8 @@ export async function generateMetadata({
             },
         },
         icons: {
-            icon: '/icon.svg',
-            apple: '/icon.svg',
+            icon: '/images/logo2.png',
+            apple: '/images/logo2.png',
         },
         manifest: '/manifest.json',
     };

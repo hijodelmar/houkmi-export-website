@@ -25,7 +25,7 @@ export default function About({ dict }: { dict: any }) {
                     >
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: `url('/images/ahmedlogo.PNG')` }}
+                            style={{ backgroundImage: `url('/images/logo2.png')` }}
                         ></div>
 
                     </motion.div>

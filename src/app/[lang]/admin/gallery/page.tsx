@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ArrowLeft, RefreshCw, Upload, Trash2 } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { upload } from '@vercel/blob/client';
 
 interface GalleryImage {
     name: string;
@@ -40,20 +41,19 @@ export default function GalleryAdmin() {
         const fileList = Array.from(files);
 
         try {
-            // Process all files in parallel
+            // Process all files in parallel using client-side upload
             await Promise.all(fileList.map(async (file) => {
                 const filename = file.name.replace(/\s+/g, '-');
-                const res = await fetch(`/api/admin/gallery/upload?filename=${filename}`, {
-                    method: 'POST',
-                    body: file,
+                await upload(`gallery/${filename}`, file, {
+                    access: 'public',
+                    handleUploadUrl: '/api/admin/gallery/upload',
                 });
-                if (!res.ok) throw new Error(`Failed to upload ${file.name}`);
             }));
 
             fetchImages();
-        } catch (error) {
+        } catch (error: any) {
             console.error('Upload Error:', error);
-            alert('Some uploads failed. Please try again.');
+            alert(`Upload failed: ${error.message || 'Please try again.'}`);
         } finally {
             setUploading(false);
             if (e.target) e.target.value = ''; // Reset input
