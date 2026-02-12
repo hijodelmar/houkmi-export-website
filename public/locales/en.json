@@ -246,5 +246,46 @@
       "temp": "21°C Avg",
       "advantage": "Atlantic Advantage"
     }
+  },
+  "Join": {
+    "title": "Join the",
+    "team": "Team",
+    "subtitle": "Join a global leader in agricultural export and help us bring the best of nature to the world.",
+    "innovation_title": "Innovation First",
+    "innovation_desc": "We use the latest technologies in logistics and agriculture to ensure quality.",
+    "global_title": "Global Community",
+    "global_desc": "Work with a diverse team of professionals from all over the world.",
+    "growth_title": "Growth Career",
+    "growth_desc": "We invest in our people and provide clear paths for professional advancement.",
+    "ready_title": "Ready to start your journey?",
+    "ready_desc": "We are always looking for passionate people in logistics, sales, quality control, and agricultural management. Send us your CV today.",
+    "apply_now": "APPLY NOW"
+  },
+  "ApplicationForm": {
+    "title": "Apply for a Position",
+    "subtitle": "Tell us more about yourself and upload your CV.",
+    "name": "Full Name *",
+    "email": "Email Address *",
+    "phone": "Phone Number *",
+    "position": "Desired Position *",
+    "position_placeholder": "Select a position",
+    "pos_logistics": "Logistics & Supply Chain",
+    "pos_quality": "Quality Control",
+    "pos_sales": "Sales & Export",
+    "pos_admin": "Administrative",
+    "pos_other": "Other",
+    "message": "Message",
+    "message_placeholder": "Tell us why you want to join us...",
+    "upload_cv": "Upload CV (PDF) *",
+    "upload_placeholder": "Choose a file or drag it here",
+    "upload_hint": "PDF only, max 5MB",
+    "submit": "SUBMIT APPLICATION",
+    "submitting": "SUBMITTING...",
+    "success_title": "Application Received!",
+    "success_desc": "Thank you for your interest. We will review your CV and get back to you soon.",
+    "error_upload": "CV Upload failed. Please check if Vercel Blob is configured.",
+    "error_save": "Failed to save application data to database. Please try again.",
+    "error_captcha": "Please verify that you are not a robot.",
+    "error_file": "Please upload your CV"
   }
 }

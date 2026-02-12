@@ -7,7 +7,7 @@ import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import ReCAPTCHA from "react-google-recaptcha";
 
-export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
+export default function ApplicationForm({ isOpen, onClose, lang, dict }: { isOpen: boolean, onClose: () => void, lang?: string, dict?: any }) {
     const submitApplication = useMutation(api.applications.submit);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -22,16 +22,21 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
         message: ""
     });
 
+    // Helper for translations with fallbacks
+    const t = (key: string, section: string = "ApplicationForm") => {
+        return dict?.[section]?.[key] || key;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!captchaToken) {
-            alert("Please verify that you are not a robot.");
+            alert(t("error_captcha"));
             return;
         }
 
         if (!file) {
-            alert("Please upload your CV");
+            alert(t("error_file"));
             return;
         }
 
@@ -50,7 +55,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
             const uploadResult = await uploadRes.json();
 
             if (!uploadRes.ok) {
-                throw new Error(uploadResult.error || "CV Upload failed. Please check if Vercel Blob is configured.");
+                throw new Error(uploadResult.error || t("error_upload"));
             }
 
             const cv_url = uploadResult.url;
@@ -63,7 +68,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                 });
             } catch (convexError) {
                 console.error("Convex error:", convexError);
-                throw new Error("Failed to save application data to database. Please try again.");
+                throw new Error(t("error_save"));
             }
 
             setIsSuccess(true);
@@ -78,7 +83,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
 
         } catch (error) {
             console.error("Submission error:", error);
-            alert(error instanceof Error ? error.message : "Failed to submit application. Please try again.");
+            alert(error instanceof Error ? error.message : t("error_save"));
         } finally {
             setIsSubmitting(false);
         }
@@ -107,18 +112,18 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                     <div className="w-24 h-24 bg-green-100 text-brand-green rounded-full flex items-center justify-center mb-8">
                                         <CheckCircle size={48} />
                                     </div>
-                                    <h3 className="text-3xl font-black text-gray-900 mb-4 uppercase">Application Received!</h3>
-                                    <p className="text-gray-500 font-medium">Thank you for your interest. We will review your CV and get back to you soon.</p>
+                                    <h3 className="text-3xl font-black text-gray-900 mb-4 uppercase">{t("success_title")}</h3>
+                                    <p className="text-gray-500 font-medium">{t("success_desc")}</p>
                                 </div>
                             ) : (
                                 <>
-                                    <h3 className="text-3xl font-black text-gray-900 mb-2 uppercase">Apply for a Position</h3>
-                                    <p className="text-gray-500 mb-10 font-medium">Tell us more about yourself and upload your CV.</p>
+                                    <h3 className="text-3xl font-black text-gray-900 mb-2 uppercase">{t("title")}</h3>
+                                    <p className="text-gray-500 mb-10 font-medium">{t("subtitle")}</p>
 
                                     <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
-                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Full Name *</label>
+                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("name")}</label>
                                                 <input
                                                     type="text"
                                                     required
@@ -129,7 +134,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                                 />
                                             </div>
                                             <div>
-                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Email Address *</label>
+                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("email")}</label>
                                                 <input
                                                     type="email"
                                                     required
@@ -143,7 +148,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
-                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Phone Number *</label>
+                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("phone")}</label>
                                                 <input
                                                     type="tel"
                                                     required
@@ -154,36 +159,36 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                                 />
                                             </div>
                                             <div>
-                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Desired Position *</label>
+                                                <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("position")}</label>
                                                 <select
                                                     required
                                                     value={formData.position}
                                                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                                                     className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition-all font-medium appearance-none bg-white"
                                                 >
-                                                    <option value="">Select a position</option>
-                                                    <option value="logistics">Logistics & Supply Chain</option>
-                                                    <option value="quality">Quality Control</option>
-                                                    <option value="sales">Sales & Export</option>
-                                                    <option value="admin">Administrative</option>
-                                                    <option value="other">Other</option>
+                                                    <option value="">{t("position_placeholder")}</option>
+                                                    <option value="logistics">{t("pos_logistics")}</option>
+                                                    <option value="quality">{t("pos_quality")}</option>
+                                                    <option value="sales">{t("pos_sales")}</option>
+                                                    <option value="admin">{t("pos_admin")}</option>
+                                                    <option value="other">{t("pos_other")}</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Message</label>
+                                            <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("message")}</label>
                                             <textarea
                                                 rows={3}
                                                 value={formData.message}
                                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                                 className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition-all font-medium resize-none"
-                                                placeholder="Tell us why you want to join us..."
+                                                placeholder={t("message_placeholder")}
                                             ></textarea>
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">Upload CV (PDF) *</label>
+                                            <label className="block text-sm font-black text-gray-700 mb-2 uppercase tracking-wider">{t("upload_cv")}</label>
                                             <div className="relative">
                                                 <label className={`flex items-center gap-4 cursor-pointer bg-gray-50 border-2 border-dashed ${file ? 'border-brand-green' : 'border-gray-200'} px-6 py-6 rounded-2xl hover:bg-gray-100 transition-all`}>
                                                     <div className={`p-3 rounded-xl ${file ? 'bg-brand-green/10 text-brand-green' : 'bg-gray-200 text-gray-400'}`}>
@@ -191,9 +196,9 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                                     </div>
                                                     <div className="flex-1">
                                                         <span className="block font-bold text-gray-900">
-                                                            {file ? file.name : "Choose a file or drag it here"}
+                                                            {file ? file.name : t("upload_placeholder")}
                                                         </span>
-                                                        <span className="text-xs text-gray-500 uppercase tracking-tighter">PDF only, max 5MB</span>
+                                                        <span className="text-xs text-gray-500 uppercase tracking-tighter">{t("upload_hint")}</span>
                                                     </div>
                                                     <input
                                                         type="file"
@@ -221,10 +226,10 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                             {isSubmitting ? (
                                                 <>
                                                     <Loader2 className="w-6 h-6 animate-spin" />
-                                                    SUBMITTING...
+                                                    {t("submitting")}
                                                 </>
                                             ) : (
-                                                "SUBMIT APPLICATION"
+                                                t("submit")
                                             )}
                                         </button>
                                     </form>

@@ -50,9 +50,9 @@
     "name": "Nombre Completo",
     "company": "Nombre de la Empresa",
     "email": "Email Corporativo",
-    "phone": "Número de Teléfono",
+    "phone": "Número de Télefono",
     "product": "Producto de Interés",
-    "volume": "Volumen (ej: 1 Contenedor)",
+    "volume": "Volumen (ej: 1 Conteneuidor)",
     "incoterms": "Incoterms (ej: FOB, CIF, EXW)",
     "destination": "Puerto/País de Destino",
     "message": "Requisitos Específicos (Calibre, Tamaño, etc.)",
@@ -138,7 +138,7 @@
     "calabacin_description": "Nuestros calabacines se cultivan en el microclima costero de Agadir para asegurar una forma perfectamente recta y una piel verde vibrante. Cosechados diariamente.",
     "calabacin_features": [
       "Color verde oscuro intenso",
-      "Textura firme y crujiente",
+      "Texture firme y crujiente",
       "Tamaño uniforme",
       "Alto valor nutricional",
       "Certificado GlobalGAP"
@@ -202,7 +202,7 @@
     "judias_specs": {
       "varieties": "Bobby, Perona",
       "calendar": "Octubre a Junio",
-      "packaging": "Cartón 5kg, Flowpack 500g",
+      "packaging": "Carton 5kg, Flowpack 500g",
       "calibration": "6-9mm (Fina), <6mm (Extra Fina)"
     },
     "climate_advantage_title": "Por qué el clima de Agadir mejora este producto",
@@ -246,5 +246,46 @@
       "temp": "21°C Media",
       "advantage": "Ventaja Atlántica"
     }
+  },
+  "Join": {
+    "title": "Únete al",
+    "team": "Equipo",
+    "subtitle": "Únete a un líder mundial en exportación agrícola y ayúdanos a llevar lo mejor de la naturaleza al mundo.",
+    "innovation_title": "Innovación Primero",
+    "innovation_desc": "Utilizamos las últimas tecnologías en logística y agricultura para asegurar la calidad.",
+    "global_title": "Comunidad Global",
+    "global_desc": "Trabaja con un equipo diverso de profesionales de todo el mundo.",
+    "growth_title": "Carrera en Crecimiento",
+    "growth_desc": "Invertimos en nuestra gente y ofrecemos caminos claros para el avance profesional.",
+    "ready_title": "¿Listo para empezar tu viaje?",
+    "ready_desc": "Siempre buscamos personas apasionadas por la logística, ventas, control de calidad y gestión agrícola. Envíanos tu CV hoy mismo.",
+    "apply_now": "POSTULAR AHORA"
+  },
+  "ApplicationForm": {
+    "title": "Postular a una Posición",
+    "subtitle": "Cuéntanos más sobre ti y sube tu CV.",
+    "name": "Nombre Completo *",
+    "email": "Correo Electrónico *",
+    "phone": "Número de Teléfono *",
+    "position": "Posición Deseada *",
+    "position_placeholder": "Selecciona una posición",
+    "pos_logistics": "Logística y Cadena de Suministro",
+    "pos_quality": "Control de Calidad",
+    "pos_sales": "Ventas y Exportación",
+    "pos_admin": "Administrativo",
+    "pos_other": "Otro",
+    "message": "Mensaje",
+    "message_placeholder": "Cuéntanos por qué quieres unirte a nosotros...",
+    "upload_cv": "Subir CV (PDF) *",
+    "upload_placeholder": "Elige un archivo o arrástralo aquí",
+    "upload_hint": "Solo PDF, máx. 5MB",
+    "submit": "ENVIAR POSTULACIÓN",
+    "submitting": "ENVIANDO...",
+    "success_title": "¡Postulación Recibida!",
+    "success_desc": "Gracias por tu interés. Revisaremos tu CV y nos pondremos en contacto pronto.",
+    "error_upload": "Error al subir el CV. Verifica si Vercel Blob está configurado.",
+    "error_save": "Error al guardar los datos. Inténtalo de nuevo.",
+    "error_captcha": "Por favor, verifica que no eres un robot.",
+    "error_file": "Por favor, sube tu CV"
   }
 }

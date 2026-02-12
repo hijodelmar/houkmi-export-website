@@ -98,7 +98,7 @@
       "Premium-Exportqualität",
       "Nachhaltige Anbaumethoden"
     ],
-    "oranges_climate": "Ausgewogene Meeresfeuchtigkeit und intensive Sonnenbestrahlung erhöhen den Zuckergehalt (Brix) auf natürliche Weise.",
+    "oranges_climate": "Ausgewogene Meeresfeuchtigkeit and intensive Sonnenbestrahlung erhöhen den Zuckergehalt (Brix) auf natürliche Weise.",
     "peppers_description": "Knackige, farbenfrohe Paprika, die mit Sorgfalt in den Küstenfarmen von Agadir unter einem stabilen Durchschnitt von 21°C angebaut werden.",
     "peppers_features": [
       "Mehrere Farbvarianten verfügbar",
@@ -131,5 +131,46 @@
     "success": "Vielen Dank! Ihre Bewertung wartet auf die Genehmigung.",
     "photo": "Foto hochladen (Optional)",
     "pending": "Bewertung ausstehend"
+  },
+  "Join": {
+    "title": "Werden Sie Teil des",
+    "team": "Teams",
+    "subtitle": "Werden Sie Teil eines weltweit führenden Unternehmens im Agrarexport und helfen Sie uns, das Beste der Natur in die Welt zu tragen.",
+    "innovation_title": "Innovation Zuerst",
+    "innovation_desc": "Wir nutzen die neuesten Technologien in Logistik und Landwirtschaft, um Qualität zu gewährleisten.",
+    "global_title": "Globale Gemeinschaft",
+    "global_desc": "Arbeiten Sie mit einem vielfältigen Team von Fachleuten aus der ganzen Welt zusammen.",
+    "growth_title": "Karrierechancen",
+    "growth_desc": "Wir investieren in unsere Mitarbeiter und bieten klare Wege für den beruflichen Aufstieg.",
+    "ready_title": "Bereit für Ihre Reise?",
+    "ready_desc": "Wir suchen immer leidenschaftliche Menschen in den Bereichen Logistik, Vertrieb, Qualitätskontrolle und Agrarmanagement. Senden Sie uns noch heute Ihren Lebenslauf.",
+    "apply_now": "JETZT BEWERBEN"
+  },
+  "ApplicationForm": {
+    "title": "Auf eine Stelle bewerben",
+    "subtitle": "Erzählen Sie uns mehr über sich und laden Sie Ihren Lebenslauf hoch.",
+    "name": "Vollständiger Name *",
+    "email": "E-Mail-Adresse *",
+    "phone": "Telefonnummer *",
+    "position": "Gewünschte Stelle *",
+    "position_placeholder": "Wählen Sie eine Position aus",
+    "pos_logistics": "Logistik & Lieferkette",
+    "pos_quality": "Qualitätskontrolle",
+    "pos_sales": "Vertrieb & Export",
+    "pos_admin": "Verwaltung",
+    "pos_other": "Andere",
+    "message": "Nachricht",
+    "message_placeholder": "Erzählen Sie uns, warum Sie zu uns kommen wollen...",
+    "upload_cv": "Lebenslauf hochladen (PDF) *",
+    "upload_placeholder": "Wählen Sie eine Datei aus oder ziehen Sie sie hierher",
+    "upload_hint": "Nur PDF, max. 5MB",
+    "submit": "BEWERBUNG ABSCHICKEN",
+    "submitting": "WIRD GESENDET...",
+    "success_title": "Bewerbung erhalten!",
+    "success_desc": "Vielen Dank für Ihr Interesse. Wir werden Ihren Lebenslauf prüfen und uns in Kürze bei Ihnen melden.",
+    "error_upload": "Lebenslauf-Upload fehlgeschlagen. Bitte prüfen Sie, ob Vercel Blob konfiguriert ist.",
+    "error_save": "Bewerbungsdaten konnten nicht in der Datenbank gespeichert werden. Bitte versuchen Sie es erneut.",
+    "error_captcha": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
+    "error_file": "Bitte laden Sie Ihren Lebenslauf hoch"
   }
 }
