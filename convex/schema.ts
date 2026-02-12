@@ -12,4 +12,13 @@ export default defineSchema({
         status: v.union(v.literal("pending"), v.literal("approved"), v.literal("rejected")),
         createdAt: v.string(),
     }),
+    applications: defineTable({
+        name: v.string(),
+        email: v.string(),
+        phone: v.string(),
+        position: v.string(),
+        message: v.string(),
+        cv_url: v.string(),
+        createdAt: v.string(),
+    }),
 });

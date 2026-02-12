@@ -8,6 +8,8 @@
  * @module
  */
 
+import type * as actions from "../actions.js";
+import type * as applications from "../applications.js";
 import type * as reviews from "../reviews.js";
 import type * as seed from "../seed.js";
 
@@ -18,6 +20,8 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  actions: typeof actions;
+  applications: typeof applications;
   reviews: typeof reviews;
   seed: typeof seed;
 }>;

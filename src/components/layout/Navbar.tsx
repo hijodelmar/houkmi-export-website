@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Menu, X, Search, Globe } from "lucide-react";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import Logo from "@/components/ui/Logo";
+import SearchModal from "@/components/ui/SearchModal";
 
 export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const navigation = [
         { name: dict.Navigation.home, href: `/${lang}` },
@@ -19,6 +21,12 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
 
     return (
         <header className="sticky top-0 z-50 w-full">
+            <SearchModal
+                isOpen={isSearchOpen}
+                onClose={() => setIsSearchOpen(false)}
+                lang={lang}
+                dict={dict}
+            />
             {/* Top Bar */}
             <div className="bg-[#0A2A12] text-white py-2 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto flex justify-end items-center gap-6 text-[11px] font-bold uppercase tracking-wider">
@@ -28,11 +36,8 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                     <Link href={`/${lang}/contact`} className="hover:text-brand-orange transition-colors">
                         {lang === 'fr' ? 'NOUS CONTACTER' : 'CONTACT US'}
                     </Link>
-                    <div className="flex items-center gap-1 border-l border-white/20 pl-6 cursor-pointer hover:text-brand-orange transition-colors">
-                        <Globe className="w-3 h-3" />
-                        <span className="flex items-center gap-1">
-                            {lang.toUpperCase()} <span className="text-[8px]">▼</span>
-                        </span>
+                    <div className="border-l border-white/20 pl-6 h-4 flex items-center">
+                        <LanguageSwitcher currentLang={lang} />
                     </div>
                 </div>
             </div>
@@ -61,7 +66,10 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                             ))}
 
                             {/* Search Button */}
-                            <button className="bg-[#FF6F00] p-4 text-white hover:bg-[#e66400] transition-colors ml-4 mr-[-2rem] h-24 flex items-center justify-center w-16">
+                            <button
+                                onClick={() => setIsSearchOpen(true)}
+                                className="bg-[#FF6F00] p-4 text-white hover:bg-[#e66400] transition-colors ml-4 mr-[-2rem] h-24 flex items-center justify-center w-16"
+                            >
                                 <Search className="w-5 h-5" />
                             </button>
                         </div>
@@ -91,6 +99,13 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                                 {item.name}
                             </Link>
                         ))}
+                        {/* Mobile Search Button */}
+                        <button
+                            onClick={() => { setIsSearchOpen(true); setIsOpen(false); }}
+                            className="flex items-center gap-2 text-[#FF6F00] font-bold text-sm uppercase tracking-widest"
+                        >
+                            <Search className="w-4 h-4" /> {lang === 'fr' ? 'Rechercher' : 'Search'}
+                        </button>
                     </div>
                 )}
             </nav>
