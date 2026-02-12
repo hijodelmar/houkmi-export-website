@@ -17,7 +17,7 @@
     "title": "Notre Héritage",
     "subtitle": "Qualité Ancrée dans les Normes Européennes",
     "description": "SARL HOUKMI EXPORT a été fondée par la FAMILLE HOUKMI. Avec plus de 35 ans d'expérience combinée, ce leadership unique garantit que chaque expédition respecte les normes de qualité européennes les plus strictes.",
-    "sub_description": "Nous ne nous contentons pas de commercer ; nous assurons l'excellence. En partenariat avec des fermes et des stations d'emballage de premier plan à Agadir, we offer fully customizable packaging solutions and maintain a rigorous cold chain in our dedicated warehousing facilities to ensure freshness.",
+    "sub_description": "Nous ne nous contentons pas de commercer ; nous assurons l'excellence. En partenariat avec des fermes et des stations d'emballage de premier plan à Agadir, nous proposons des solutions d'emballage entièrement personnalisables et maintenons une chaîne du froid rigoureuse dans nos installations de stockage dédiées pour garantir la fraîcheur.",
     "mission": "Offrir des prix imbattables sans compromis sur la qualité, en faisant le pont entre les producteurs marocains et les marchés européens (France, Italie, et au-delà).",
     "experience": "+35 Ans d'Expérience",
     "quality": "Fondé par Ex-Inspecteur UE",
@@ -133,7 +133,7 @@
       "varieties": "Dumara, Delta, Sans pépins",
       "calendar": "Avril à Août",
       "packaging": "Bins (Palox) ou Vrac",
-      "calibration": "8kg - 16kg par fruit"
+      "calibration": "8kg - 16kg per fruit"
     },
     "calabacin_description": "Nos courgettes sont cultivées dans le microclima côtier d'Agadir pour assurer une forme parfaitement droite et une peau verte vibrante.",
     "calabacin_features": [
@@ -287,5 +287,55 @@
     "error_save": "Échec de l'enregistrement des données. Veuillez réessayer.",
     "error_captcha": "Veuillez vérifier que vous n'êtes pas un robot.",
     "error_file": "Veuillez télécharger votre CV"
+  },
+  "Legal": {
+    "terms": "CGU",
+    "privacy": "Confidentialité",
+    "mentions": "Mentions Légales",
+    "cookies": "Cookies",
+    "terms_title": "Conditions Générales d'Utilisation",
+    "privacy_title": "Politique de Confidentialité",
+    "mentions_title": "Mentions Légales",
+    "cookies_title": "Politique des Cookies",
+    "privacy_policy": "Politique de protection des données",
+    "last_updated": "Dernière mise à jour",
+    "mentions_content": {
+      "editor_title": "Éditeur du Site",
+      "editor_text": "Le présent site internet est édité par la société SARL HOUKMI EXPORT, société à responsabilité limitée au capital social de [Montant] DH, dont le siège social est situé à Zone Industrielle, Agadir, Maroc.",
+      "hosting_title": "Hébergement",
+      "hosting_text": "Le site est hébergé par Vercel Inc., situé au 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.",
+      "intellectual_title": "Propriété Intellectuelle",
+      "intellectual_text": "L'ensemble du contenu de ce site (textes, images, logos, etc.) est la propriété exclusive de SARL HOUKMI EXPORT ou de ses partenaires. Toute reproduction ou représentation, intégrale ou partielle, du site ou de l’un des éléments qui le composent, est interdite."
+    },
+    "privacy_content": {
+      "intro_title": "Introduction",
+      "intro_text": "La présente politique de protection des données personnelles a pour objet d'informer les utilisateurs sur la manière dont SARL HOUKMI EXPORT collecte et traite leurs données personnelles.",
+      "responsible_title": "Responsable du traitement",
+      "responsible_text": "SARL HOUKMI EXPORT est responsable du traitement des données personnelles collectées via le site.",
+      "data_collected_title": "Données collectées",
+      "data_collected_text": "Nous collectons les données que vous nous communiquez via les formulaires de contact ou de candidature (Nom, Prénom, Email, Téléphone, CV, etc.).",
+      "purposes_title": "Finalités",
+      "purposes_text": "Vos données sont traitées pour répondre à vos demandes, gérer vos candidatures et améliorer votre expérience sur le site.",
+      "rights_title": "Vos droits",
+      "rights_text": "Vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition au traitement de vos données. Contactez-nous à : info@houkmiexport.com."
+    },
+    "terms_content": {
+      "object_title": "Objet",
+      "object_text": "Les présentes CGU définissent les conditions d'accès et d'utilisation du site par les utilisateurs.",
+      "access_title": "Accès au site",
+      "access_text": "L'accès au site est possible 24h/24 et 7j/7, sous réserve d'opérations de maintenance ou de force majeure.",
+      "user_obligations_title": "Obligations de l'utilisateur",
+      "user_obligations_text": "L'utilisateur s'engage à utiliser le site de manière licite, à ne pas porter atteinte à son fonctionnement et à respecter les droits de propriété intellectuelle.",
+      "liability_title": "Responsabilité",
+      "liability_text": "HOUKMI EXPORT s'efforce de fournir des informations précises mais ne saurait être tenue responsable des erreurs ou omissions."
+    },
+    "cookies_content": {
+      "definition_title": "Qu'est-ce qu'un cookie ?",
+      "definition_text": "Un cookie est un petit fichier texte déposé sur votre terminal lors de la navigation sur un site.",
+      "usage_title": "Utilisation des cookies",
+      "usage_text": "Nous utilisons des cookies pour assurer le bon fonctionnement du site, mémoriser vos préférences et analyser le trafic.",
+      "management_title": "Gestion des cookies",
+      "management_text": "Vous pouvez paramétrer votre navigateur pour refuser les cookies ou être informé de leur dépôt."
+    }
   }
 }

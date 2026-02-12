@@ -16,7 +16,7 @@
   "About": {
     "title": "Nuestro Legado",
     "subtitle": "Calidad Arraigada en los Estándares Europeos",
-    "description": "SARL HOUKMI EXPORT fue fundada por la FAMILIA HOUKMI. Con más de 35 años de experiencia, este liderazgo único garantiza que cada envío cumpla con los estándares de calidad europeos más estrictos.",
+    "description": "SARL HOUKMI EXPORT fue fundada por la FAMILIA HOUKMI. Con más de 35 años de experiencia, este leadership único garantiza que cada envío cumpla con los estándares de calidad europeos más estrictos.",
     "sub_description": "No solo somos comerciantes; aseguramos la excelencia. Colaborando con granjas y estaciones de empaque de primer nivel en Agadir, ofrecemos soluciones de embalaje totalmente personalizables y mantenemos una cadena de frío rigurosa en nuestras instalaciones dedicadas para garantizar la frescura.",
     "mission": "Brindar precios inmejorables sin comprometer la calidad, uniendo a los productores marroquíes con los mercados europeos (Francia, Italia y más allá).",
     "experience": "+35 Años de Experiencia",
@@ -90,7 +90,7 @@
       "Calidad premium de exportación",
       "Prácticas agrícolas sostenibles"
     ],
-    "peppers_description": "Pimientos crujientes y coloridos cultivados con cuidado en nuestras granjas costeras de Agadir bajo una media estable de 21°C. Disponibles en múltiples variedades, conocidos por su frescura y colores vibrantes.",
+    "peppers_description": "Pimientos crujientes y coloridos cultivados con cuidado en nuestras granjas costeras de Agadir bajo una media estable de 21°C. Disponibles en múltiples variedades, conocidos por su frescura and colores vibrantes.",
     "peppers_features": [
       "Múltiples variedades de colores disponibles",
       "Textura crujiente y sabor fresco",
@@ -133,7 +133,7 @@
       "varieties": "Dumara, Delta, Sin Pepitas",
       "calendar": "Abril a Agosto",
       "packaging": "Bins (Palox) o Granel",
-      "calibration": "8kg - 16kg por fruta"
+      "calibration": "8kg - 16kg per fruta"
     },
     "calabacin_description": "Nuestros calabacines se cultivan en el microclima costero de Agadir para asegurar una forma perfectamente recta y una piel verde vibrante. Cosechados diariamente.",
     "calabacin_features": [
@@ -208,7 +208,7 @@
     "climate_advantage_title": "Por qué el clima de Agadir mejora este producto",
     "trust_title": "Experiencia Confiable en Exportación",
     "trust_description": "Con más de 35 años de experiencia, HOUKMI EXPORT garantiza un calendario de cosecha confiable, logística oportuna y una capacidad de suministro constante para todos nuestros socios internacionales.",
-    "tomatoes_climate": "La temperatura media estable de 21°C evita el choque térmico, asegurando que nuestros tomates desarrollen un color uniforme y una firmeza óptima para el transporte de larga distancia.",
+    "tomatoes_climate": "La temperatura media stabile de 21°C evita el choque térmico, asegurando que nuestros tomates desarrollen un color uniforme y una firmeza óptima para el transporte de larga distancia.",
     "oranges_climate": "La humedad oceánica equilibrada y la intensa exposición al sol dan como resultado naranjas con un contenido de jugo excepcional y la relación perfecta entre azúcar y acidez.",
     "peppers_climate": "Los ciclos de cosecha predecibles nos permiten suministrar pimientos crujientes y de paredes gruesas con un tamaño constante, cumpliendo con las estrictas demandas de los supermercados europeos.",
     "zucchini_climate": "El clima costero templado permite la cosecha diaria de calabacines tiernos que mantienen su textura crujiente y su brillo verde intenso durante toda la cadena de exportación.",
@@ -232,7 +232,7 @@
   },
   "Agadir": {
     "title": "Agadir: Un Microclima Agrícola Único para un Suministro de Exportación Confiable",
-    "description": "Situada en la costa atlántica del sur de Marruecos, Agadir ofrece una ventaja estratégica agrícola inigualable en la región. La combinación de la regulación oceánica y el sol constante crea un motor para la exportación de productos premium.",
+    "description": "Situada en la costa atlántica del sur de Marruecos, Agadir ofrece una ventaja estratégica agrícola inigualable en la región. La combinación de la regulación oceánica et el sol constante crea un motor para la exportación de productos premium.",
     "climate_title": "Estabilidad Climática y Media Anual de 21°C",
     "climate_desc": "Agadir disfruta de más de 300 días de sol al año, con una temperatura media anual de 21°C, proporcionando el entorno perfecto para la producción durante todo el año.",
     "ocean_title": "Influencia Oceánica y Regulación de Temperatura",
@@ -267,7 +267,7 @@
     "name": "Nombre Completo *",
     "email": "Correo Electrónico *",
     "phone": "Número de Teléfono *",
-    "position": "Posición Deseada *",
+    "position": "Posición Desiada *",
     "position_placeholder": "Selecciona una posición",
     "pos_logistics": "Logística y Cadena de Suministro",
     "pos_quality": "Control de Calidad",
@@ -287,5 +287,55 @@
     "error_save": "Error al guardar los datos. Inténtalo de nuevo.",
     "error_captcha": "Por favor, verifica que no eres un robot.",
     "error_file": "Por favor, sube tu CV"
+  },
+  "Legal": {
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "mentions": "Aviso Legal",
+    "cookies": "Cookies",
+    "terms_title": "Términos y Condiciones de Uso",
+    "privacy_title": "Política de Privacidad",
+    "mentions_title": "Aviso Legal",
+    "cookies_title": "Política de Cookies",
+    "privacy_policy": "Política de protección de datos",
+    "last_updated": "Última actualización",
+    "mentions_content": {
+      "editor_title": "Editor del Sitio",
+      "editor_text": "Este sitio web es editado por la sociedad SARL HOUKMI EXPORT, una sociedad de responsabilidad limitada con un capital social de [Monto] DH, cuya sede social se encuentra en Zona Industrial, Agadir, Marruecos.",
+      "hosting_title": "Alojamiento",
+      "hosting_text": "El sitio está alojado por Vercel Inc., ubicado en 340 S Lemon Ave #4133, Walnut, CA 91789, Estados Unidos.",
+      "intellectual_title": "Propiedad Intelectual",
+      "intellectual_text": "Todo el contenido de este sitio (textos, imágenes, logotipos, etc.) es propiedad exclusiva de SARL HOUKMI EXPORT o de sus socios. Cualquier reproducción o representación, total o parcial, del sitio o de cualquiera de sus elementos, está prohibida."
+    },
+    "privacy_content": {
+      "intro_title": "Introducción",
+      "intro_text": "Esta política de protección de datos personales tiene como objetivo informar a los usuarios sobre cómo SARL HOUKMI EXPORT recopila y procesa sus datos personales.",
+      "responsible_title": "Responsable del tratamiento",
+      "responsible_text": "SARL HOUKMI EXPORT es responsable del tratamiento de los datos personales recopilados a través del sitio.",
+      "data_collected_title": "Datos recopilados",
+      "data_collected_text": "Recopilamos los datos que nos proporciona a través de los formularios de contacto o de solicitud (Nombre, Apellido, Correo electrónico, Teléfono, CV, etc.).",
+      "purposes_title": "Finalidades",
+      "purposes_text": "Sus datos se procesan para responder a sus solicitudes, gestionar sus solicitudes de empleo y mejorar su experiencia en el sitio.",
+      "rights_title": "Sus derechos",
+      "rights_text": "Tiene derecho de acceso, rectificación, supresión y oposición al tratamiento de sus datos. Contáctenos en: info@houkmiexport.com."
+    },
+    "terms_content": {
+      "object_title": "Objeto",
+      "object_text": "Estos Términos de Uso definen las condiciones de acceso y uso del sitio por parte de los usuarios.",
+      "access_title": "Acceso al sitio",
+      "access_text": "El acceso al sitio es posible las 24 horas del día, los 7 días de la semana, sujeto a operaciones de mantenimiento o fuerza mayor.",
+      "user_obligations_title": "Obligaciones del usuario",
+      "user_obligations_text": "El usuario se compromete a utilizar el sitio de manera lícita, no dañar su funcionamiento y respetar los derechos de propiedad intelectual.",
+      "liability_title": "Responsabilidad",
+      "liability_text": "HOUKMI EXPORT se esfuerza por proporcionar información precisa, pero no puede ser considerada responsable de errores u omisiones."
+    },
+    "cookies_content": {
+      "definition_title": "¿Qué es una cookie?",
+      "definition_text": "Una cookie es un pequeño archivo de texto que se deposita en su terminal al navegar por un sitio.",
+      "usage_title": "Uso de cookies",
+      "usage_text": "Utilizamos cookies para asegurar el buen funcionamiento del sitio, recordar sus preferencias y analizar el tráfico.",
+      "management_title": "Gestión de cookies",
+      "management_text": "Puede configurar su navegador para rechazar las cookies o ser informado de su depósito."
+    }
   }
 }

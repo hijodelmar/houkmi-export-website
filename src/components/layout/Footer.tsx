@@ -74,8 +74,24 @@ export default function Footer({ lang, dict }: { lang: string; dict: any }) {
 
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-brand-green/20 text-center text-gray-600 text-sm">
-                &copy; {new Date().getFullYear()} HOUKMI EXPORT. {dict.Footer.rights}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-brand-green/20">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-sm">
+                    <p>&copy; {new Date().getFullYear()} HOUKMI EXPORT. {dict.Footer.rights}</p>
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                        <Link href={`/${lang}/legal/mentions`} className="hover:text-brand-orange transition-colors">
+                            {dict.Legal?.mentions || "Legal Notice"}
+                        </Link>
+                        <Link href={`/${lang}/legal/privacy`} className="hover:text-brand-orange transition-colors">
+                            {dict.Legal?.privacy || "Privacy Policy"}
+                        </Link>
+                        <Link href={`/${lang}/legal/terms`} className="hover:text-brand-orange transition-colors">
+                            {dict.Legal?.terms || "Terms of Use"}
+                        </Link>
+                        <Link href={`/${lang}/legal/cookies`} className="hover:text-brand-orange transition-colors">
+                            {dict.Legal?.cookies || "Cookies"}
+                        </Link>
+                    </div>
+                </div>
             </div>
         </footer>
     );

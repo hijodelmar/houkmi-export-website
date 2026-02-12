@@ -1,11 +1,6 @@
 {
     "name": "HOUKMI EXPORT",
     "short_name": "HOUKMI",
-    "description": "Premium Fresh Fruit & Vegetable Exporter from Morocco",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#FF6F00",
     "icons": [
         {
             "src": "/images/pics/favicon_io/android-chrome-192x192.png",
@@ -17,5 +12,8 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "theme_color": "#FF6F00",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }

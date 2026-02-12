@@ -98,7 +98,7 @@
       "Premium-Exportqualität",
       "Nachhaltige Anbaumethoden"
     ],
-    "oranges_climate": "Ausgewogene Meeresfeuchtigkeit and intensive Sonnenbestrahlung erhöhen den Zuckergehalt (Brix) auf natürliche Weise.",
+    "oranges_climate": "Ausgewogene Meeresfeuchtigkeit und intensive Sonnenbestrahlung erhöhen den Zuckergehalt (Brix) auf natürliche Weise.",
     "peppers_description": "Knackige, farbenfrohe Paprika, die mit Sorgfalt in den Küstenfarmen von Agadir unter einem stabilen Durchschnitt von 21°C angebaut werden.",
     "peppers_features": [
       "Mehrere Farbvarianten verfügbar",
@@ -172,5 +172,55 @@
     "error_save": "Bewerbungsdaten konnten nicht in der Datenbank gespeichert werden. Bitte versuchen Sie es erneut.",
     "error_captcha": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
     "error_file": "Bitte laden Sie Ihren Lebenslauf hoch"
+  },
+  "Legal": {
+    "terms": "Nutzung",
+    "privacy": "Datenschutz",
+    "mentions": "Impressum",
+    "cookies": "Cookies",
+    "terms_title": "Nutzungsbedingungen",
+    "privacy_title": "Datenschutzerklärung",
+    "mentions_title": "Impressum",
+    "cookies_title": "Cookie-Richtlinie",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "last_updated": "Zuletzt aktualisiert",
+    "mentions_content": {
+      "editor_title": "Seitenbetreiber",
+      "editor_text": "Diese Website wird herausgegeben von der Firma SARL HOUKMI EXPORT, einer Gesellschaft mit beschränkter Haftung mit einem Stammkapital von [Betrag] DH, deren Sitz sich in der Industriezone, Agadir, Marokko befindet.",
+      "hosting_title": "Hosting",
+      "hosting_text": "Die Website wird von Vercel Inc. gehostet, ansässig in 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+      "intellectual_title": "Geistiges Eigentum",
+      "intellectual_text": "Der gesamte Inhalt dieser Website (Texte, Bilder, Logos usw.) ist das ausschließliche Eigentum von SARL HOUKMI EXPORT oder seinen Partnern. Jede vollständige oder teilweise Vervielfältigung oder Darstellung der Website oder eines ihrer Bestandteile ist untersagt."
+    },
+    "privacy_content": {
+      "intro_title": "Einführung",
+      "intro_text": "Diese Datenschutzrichtlinie soll die Nutzer darüber informieren, wie SARL HOUKMI EXPORT ihre personenbezogenen Daten erhebt und verarbeitet.",
+      "responsible_title": "Verantwortlicher",
+      "responsible_text": "SARL HOUKMI EXPORT ist verantwortlich für die Verarbeitung der über die Website erhobenen personenbezogenen Daten.",
+      "data_collected_title": "Erhobene Daten",
+      "data_collected_text": "Wir erheben die Daten, die Sie uns über die Kontakt- oder Bewerbungsformulare übermitteln (Name, Vorname, E-Mail, Telefon, Lebenslauf usw.).",
+      "purposes_title": "Zwecke",
+      "purposes_text": "Ihre Daten werden verarbeitet, um Ihre Anfragen zu beantworten, Ihre Bewerbungen zu verwalten und Ihr Erlebnis auf der Website zu verbessern.",
+      "rights_title": "Ihre Rechte",
+      "rights_text": "Sie haben ein Recht auf Auskunft, Berichtigung, Löschung und Widerspruch gegen die Verarbeitung Ihrer Daten. Kontaktieren Sie uns unter: info@houkmiexport.com."
+    },
+    "terms_content": {
+      "object_title": "Gegenstand",
+      "object_text": "Diese Nutzungsbedingungen definieren die Bedingungen für den Zugriff und die Nutzung der Website durch die Nutzer.",
+      "access_title": "Zugriff auf die Website",
+      "access_text": "Der Zugriff auf die Website ist 24 Stunden am Tag, 7 Tage die Woche möglich, vorbehaltlich von Wartungsarbeiten oder höherer Gewalt.",
+      "user_obligations_title": "Pflichten des Nutzers",
+      "user_obligations_text": "Der Nutzer verpflichtet sich, die Website rechtmäßig zu nutzen, deren Betrieb nicht zu beeinträchtigen und die geistigen Eigentumsrechte zu respektieren.",
+      "liability_title": "Haftung",
+      "liability_text": "HOUKMI EXPORT bemüht sich um die Bereitstellung genauer Informationen, kann jedoch nicht für Fehler oder Auslassungen haftbar gemacht werden."
+    },
+    "cookies_content": {
+      "definition_title": "Was ist ein Cookie?",
+      "definition_text": "Ein Cookie ist eine kleine Textdatei, die beim Durchsuchen einer Website auf Ihrem Endgerät abgelegt wird.",
+      "usage_title": "Verwendung von Cookies",
+      "usage_text": "Wir verwenden Cookies, um das ordnungsgemäße Funktionieren der Website zu gewährleisten, Ihre Einstellungen zu speichern und den Datenverkehr zu analysieren.",
+      "management_title": "Cookie-Management",
+      "management_text": "Sie können Ihren Browser so einstellen, dass er Cookies ablehnt oder Sie über deren Ablage informiert."
+    }
   }
 }

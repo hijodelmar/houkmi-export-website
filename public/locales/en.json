@@ -74,38 +74,6 @@
     "features": "Key Features",
     "contact_us": "Contact Us for Orders",
     "back_to_products": "Back to Products",
-    "tomatoes_description": "Our premium tomatoes are grown in the fertile soils of Agadir, Morocco. Harvested at peak ripeness, they offer exceptional flavor, vibrant color, and firm texture. Perfect for fresh consumption, salads, or processing.",
-    "tomatoes_features": [
-      "Grown in Agadir's unique Atlantic microclimate",
-      "Hand-picked at peak ripeness",
-      "Rich in vitamins and antioxidants",
-      "Available year-round",
-      "Certified quality standards"
-    ],
-    "oranges_description": "Sweet, juicy oranges from Agadir's sun-drenched groves, benefitting from 300+ days of sun. Our oranges are known for their perfect balance of sweetness and acidity, making them ideal for fresh juice or direct consumption. Packed with vitamin C and natural goodness.",
-    "oranges_features": [
-      "100% natural, no artificial treatments",
-      "High juice content",
-      "Perfect sweetness balance",
-      "Premium export quality",
-      "Sustainable farming practices"
-    ],
-    "peppers_description": "Crisp, colorful peppers grown with care in Agadir's coastal farms under a stable 21°C average. Available in multiple varieties, our peppers are known for their freshness, crunch, and vibrant colors. Ideal for cooking, grilling, or fresh salads.",
-    "peppers_features": [
-      "Multiple color varieties available",
-      "Crisp texture and fresh flavor",
-      "Rich in vitamins A and C",
-      "Carefully sorted and packed",
-      "Extended shelf life"
-    ],
-    "watermelons_description": "Juicy, sweet watermelons grown under the exceptional Agadir sun. Our watermelons are carefully selected for their sweetness, crisp texture, and vibrant red flesh. Perfect for hot summer days and a healthy, refreshing treat.",
-    "watermelons_features": [
-      "Naturally sweet and refreshing",
-      "High water content for hydration",
-      "Seedless varieties available",
-      "Carefully harvested and transported",
-      "Peak season availability"
-    ],
     "specs_title": "Technical Specifications",
     "varieties_label": "Varieties",
     "calendar_label": "Harvest Calendar",
@@ -287,5 +255,55 @@
     "error_save": "Failed to save application data to database. Please try again.",
     "error_captcha": "Please verify that you are not a robot.",
     "error_file": "Please upload your CV"
+  },
+  "Legal": {
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "mentions": "Legal Notice",
+    "cookies": "Cookies",
+    "terms_title": "Terms and Conditions of Use",
+    "privacy_title": "Privacy Policy",
+    "mentions_title": "Legal Notice",
+    "cookies_title": "Cookies Policy",
+    "privacy_policy": "Personal Data Protection Policy",
+    "last_updated": "Last Updated",
+    "mentions_content": {
+      "editor_title": "Site Editor",
+      "editor_text": "This website is edited by SARL HOUKMI EXPORT, a limited liability company with a share capital of [Amount] DH, whose head office is located at Industrial Zone, Agadir, Morocco.",
+      "hosting_title": "Hosting",
+      "hosting_text": "The site is hosted by Vercel Inc., located at 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+      "intellectual_title": "Intellectual Property",
+      "intellectual_text": "The entire content of this site (text, images, logos, etc.) is the exclusive property of SARL HOUKMI EXPORT or its partners. Any reproduction or representation, in whole or in part, of the site or any of its components, is prohibited."
+    },
+    "privacy_content": {
+      "intro_title": "Introduction",
+      "intro_text": "This personal data protection policy is intended to inform users about how SARL HOUKMI EXPORT collects and processes their personal data.",
+      "responsible_title": "Data Controller",
+      "responsible_text": "SARL HOUKMI EXPORT is responsible for the processing of personal data collected via the site.",
+      "data_collected_title": "Data Collected",
+      "data_collected_text": "We collect the data you provide to us via contact or application forms (Last Name, First Name, Email, Phone, CV, etc.).",
+      "purposes_title": "Purposes",
+      "purposes_text": "Your data is processed to respond to your requests, manage your applications, and improve your experience on the site.",
+      "rights_title": "Your Rights",
+      "rights_text": "You have a right of access, rectification, deletion, and opposition to the processing of your data. Contact us at: info@houkmiexport.com."
+    },
+    "terms_content": {
+      "object_title": "Object",
+      "object_text": "These Terms of Use define the conditions of access and use of the site by users.",
+      "access_title": "Site Access",
+      "access_text": "Access to the site is possible 24/7, subject to maintenance operations or force majeure.",
+      "user_obligations_title": "User Obligations",
+      "user_obligations_text": "The user agrees to use the site in a lawful manner, not to harm its operation, and to respect intellectual property rights.",
+      "liability_title": "Liability",
+      "liability_text": "HOUKMI EXPORT strives to provide accurate information but cannot be held responsible for errors or omissions."
+    },
+    "cookies_content": {
+      "definition_title": "What is a cookie?",
+      "definition_text": "A cookie is a small text file placed on your terminal when browsing a site.",
+      "usage_title": "Use of Cookies",
+      "usage_text": "We use cookies to ensure the proper functioning of the site, remember your preferences, and analyze traffic.",
+      "management_title": "Cookie Management",
+      "management_text": "You can set your browser to refuse cookies or be informed of their deposit."
+    }
   }
 }
