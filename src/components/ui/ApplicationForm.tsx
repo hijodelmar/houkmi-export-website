@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Upload, CheckCircle, Loader2 } from "lucide-react";
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
     const submitApplication = useMutation(api.applications.submit);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
     const [file, setFile] = useState<File | null>(null);
     const [formData, setFormData] = useState({
         name: "",
@@ -21,6 +24,12 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            alert("Please verify that you are not a robot.");
+            return;
+        }
+
         if (!file) {
             alert("Please upload your CV");
             return;
@@ -53,6 +62,8 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                 setIsSuccess(false);
                 setFormData({ name: "", email: "", phone: "", position: "", message: "" });
                 setFile(null);
+                setCaptchaToken(null);
+                recaptchaRef.current?.reset();
             }, 3000);
 
         } catch (error) {
@@ -183,6 +194,14 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                                     />
                                                 </label>
                                             </div>
+                                        </div>
+
+                                        <div className="flex justify-center">
+                                            <ReCAPTCHA
+                                                ref={recaptchaRef}
+                                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdvEGgsAAAAAB1clNIRf_SQSjqHnqeiUBG6xmj5"}
+                                                onChange={(token) => setCaptchaToken(token)}
+                                            />
                                         </div>
 
                                         <button
