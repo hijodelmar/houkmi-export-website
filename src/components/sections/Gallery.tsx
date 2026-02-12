@@ -14,9 +14,14 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
         fetch('/api/gallery')
             .then(res => res.json())
             .then(data => {
-                // Shuffle images randomly on each load
-                const shuffled = [...data].sort(() => Math.random() - 0.5);
-                setImages(shuffled);
+                if (Array.isArray(data)) {
+                    // Shuffle images randomly on each load
+                    const shuffled = [...data].sort(() => Math.random() - 0.5);
+                    setImages(shuffled);
+                } else {
+                    console.error("Gallery API did not return an array:", data);
+                    setImages([]);
+                }
                 setLoading(false);
             })
             .catch(err => {

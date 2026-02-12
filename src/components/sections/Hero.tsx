@@ -72,64 +72,33 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
             {/* Animated Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-fresh animate-gradient opacity-60"></div>
 
-            {/* Decorative Floating Elements */}
-            <div className="absolute top-20 left-10 w-20 h-20 bg-brand-yellow rounded-full opacity-20 animate-float"></div>
-            <div className="absolute bottom-32 right-16 w-32 h-32 bg-brand-purple rounded-full opacity-20 animate-bounce-slow"></div>
-            <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-brand-mint rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="flex flex-col items-center"
                 >
-                    {/* Main Heading - Larger and Bolder */}
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-2xl leading-tight">
+                    {/* Main Heading - Matching Azura Style */}
+                    <h1 className="text-5xl md:text-8xl font-[900] mb-8 text-white drop-shadow-2xl leading-[1.1] uppercase tracking-tight max-w-5xl">
                         {dict.Hero.title}
                     </h1>
 
-                    {/* Subtitle */}
-                    <p className="text-xl md:text-2xl mb-10 text-white/95 max-w-3xl mx-auto font-light drop-shadow-lg">
+                    {/* Subtitle / Sub-branding */}
+                    <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl font-bold uppercase tracking-[0.2em] drop-shadow-lg">
                         {dict.Hero.subtitle}
                     </p>
 
-                    {/* CTA Buttons with Enhanced Styling */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Link href={`/${lang}/products`}>
-                            <motion.button
-                                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255, 111, 0, 0.4)" }}
-                                whileTap={{ scale: 0.95 }}
-                                className="group px-8 py-4 bg-white text-brand-orange font-bold rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 flex items-center gap-2"
-                            >
-                                {dict.Hero.cta_products}
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                        </Link>
-                        <Link href={`/${lang}/contact`}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-white/20 backdrop-blur-md text-white font-bold rounded-full border-2 border-white/50 hover:bg-white/30 transition-all duration-300 shadow-xl"
-                            >
-                                {dict.Hero.cta_contact}
-                            </motion.button>
-                        </Link>
-                    </div>
-
-                    {/* Image Indicators */}
-                    <div className="flex gap-2 justify-center mt-12">
-                        {heroImages.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCurrentImageIndex(index)}
-                                className={`h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                                    ? 'w-8 bg-white'
-                                    : 'w-2 bg-white/40 hover:bg-white/60'
-                                    }`}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
+                    {/* Model-style Footer Elements in Hero */}
+                    <div className="mt-20 flex flex-col md:flex-row items-center gap-8 opacity-80">
+                        <div className="h-16 w-px bg-white/40 hidden md:block"></div>
+                        <div className="flex items-center gap-6">
+                            <div className="text-white text-left">
+                                <span className="block text-[10px] font-black tracking-widest uppercase opacity-70">Certification</span>
+                                <span className="text-sm font-bold uppercase tracking-wider">Quality & Sustainability</span>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
             </div>
