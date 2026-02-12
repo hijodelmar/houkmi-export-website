@@ -18,6 +18,12 @@ export async function POST(request: Request) {
         return NextResponse.json({ url: blob.url });
     } catch (error) {
         console.error("Upload error:", error);
-        return NextResponse.json({ error: "Failed to upload file" }, { status: 500 });
+        const message = error instanceof Error ? error.message : "Failed to upload file";
+
+        if (message.includes("BLOB_READ_WRITE_TOKEN")) {
+            return NextResponse.json({ error: "Vercel Blob storage is not configured. please add BLOB_READ_WRITE_TOKEN to environment variables." }, { status: 500 });
+        }
+
+        return NextResponse.json({ error: message }, { status: 500 });
     }
 }

@@ -47,14 +47,24 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                 body: uploadData,
             });
 
-            if (!uploadRes.ok) throw new Error("Upload failed");
-            const { url: cv_url } = await uploadRes.json();
+            const uploadResult = await uploadRes.json();
+
+            if (!uploadRes.ok) {
+                throw new Error(uploadResult.error || "CV Upload failed. Please check if Vercel Blob is configured.");
+            }
+
+            const cv_url = uploadResult.url;
 
             // 2. Submit to Convex
-            await submitApplication({
-                ...formData,
-                cv_url
-            });
+            try {
+                await submitApplication({
+                    ...formData,
+                    cv_url
+                });
+            } catch (convexError) {
+                console.error("Convex error:", convexError);
+                throw new Error("Failed to save application data to database. Please try again.");
+            }
 
             setIsSuccess(true);
             setTimeout(() => {
@@ -68,7 +78,7 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
 
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Failed to submit application. Please try again.");
+            alert(error instanceof Error ? error.message : "Failed to submit application. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -187,7 +197,6 @@ export default function ApplicationForm({ isOpen, onClose }: { isOpen: boolean, 
                                                     </div>
                                                     <input
                                                         type="file"
-                                                        required
                                                         className="hidden"
                                                         accept=".pdf"
                                                         onChange={(e) => setFile(e.target.files?.[0] || null)}
