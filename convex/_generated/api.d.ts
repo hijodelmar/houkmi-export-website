@@ -10,6 +10,7 @@
 
 import type * as actions from "../actions.js";
 import type * as applications from "../applications.js";
+import type * as clients from "../clients.js";
 import type * as reviews from "../reviews.js";
 import type * as seed from "../seed.js";
 
@@ -22,6 +23,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   actions: typeof actions;
   applications: typeof applications;
+  clients: typeof clients;
   reviews: typeof reviews;
   seed: typeof seed;
 }>;

@@ -4,11 +4,14 @@ import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useMutation } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 
 export default function Contact({ lang, dict, initialProduct = "Tomatoes" }: { lang: string; dict: any; initialProduct?: string }) {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const addClient = useMutation(api.clients.add);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -23,22 +26,36 @@ export default function Contact({ lang, dict, initialProduct = "Tomatoes" }: { l
         try {
             const formData = new FormData(e.currentTarget);
             const data = {
-                name: formData.get('name'),
-                company: formData.get('company'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                product: formData.get('product'),
-                volume: formData.get('volume'),
-                incoterms: formData.get('incoterms'),
-                destination: formData.get('destination'),
-                message: formData.get('message'),
+                name: formData.get('name') as string,
+                company: formData.get('company') as string,
+                email: formData.get('email') as string,
+                phone: formData.get('phone') as string,
+                product: formData.get('product') as string,
+                volume: formData.get('volume') as string,
+                incoterms: formData.get('incoterms') as string,
+                destination: formData.get('destination') as string,
+                message: formData.get('message') as string,
                 captcha: captchaToken,
             };
 
+            // 1. Send Email
             const res = await fetch('/api/email/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
+            });
+
+            // 2. Save to Convex
+            await addClient({
+                name: data.name,
+                company: data.company,
+                email: data.email,
+                phone: data.phone,
+                product: data.product,
+                volume: data.volume,
+                incoterms: data.incoterms,
+                destination: data.destination,
+                message: data.message,
             });
 
             const result = await res.json();

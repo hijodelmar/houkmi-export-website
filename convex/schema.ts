@@ -21,4 +21,16 @@ export default defineSchema({
         cv_url: v.string(),
         createdAt: v.string(),
     }),
+    clients: defineTable({
+        name: v.string(),
+        company: v.string(),
+        email: v.string(),
+        phone: v.string(),
+        product: v.string(),
+        volume: v.string(),
+        incoterms: v.string(),
+        destination: v.string(),
+        message: v.string(),
+        createdAt: v.string(),
+    }),
 });

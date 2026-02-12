@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Settings, MessageSquare, Image as ImageIcon } from 'lucide-react';
+import { Settings, MessageSquare, Image as ImageIcon, Briefcase, Users } from 'lucide-react';
 import LogoutButton from '@/components/ui/LogoutButton';
 
 export default async function AdminDashboard({ params }: { params: { lang: string } }) {
@@ -12,6 +12,18 @@ export default async function AdminDashboard({ params }: { params: { lang: strin
             description: "Approve, hide or delete customer testimonials.",
             href: `/${lang}/admin/reviews`,
             icon: <MessageSquare className="w-8 h-8 text-blue-500" />
+        },
+        {
+            title: "Recruitment",
+            description: "View job applications and download resumes.",
+            href: `/${lang}/admin/applications`,
+            icon: <Briefcase className="w-8 h-8 text-purple-500" />
+        },
+        {
+            title: "Client List",
+            description: "Manage inquiries and leads from the contact form.",
+            href: `/${lang}/admin/clients`,
+            icon: <Users className="w-8 h-8 text-brand-orange" />
         },
         {
             title: "Email & SMTP Settings",
