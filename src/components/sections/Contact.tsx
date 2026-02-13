@@ -81,7 +81,7 @@ export default function Contact({ lang, dict, initialProduct = "Tomatoes" }: { l
     };
 
     return (
-        <section className="py-20 bg-gradient-to-br from-brand-orange/5 via-white to-brand-purple/5" id="contact">
+        <section className="py-20 bg-gradient-to-br from-brand-orange/5 via-white to-brand-purple/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Contact Info & Map */}

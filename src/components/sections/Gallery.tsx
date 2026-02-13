@@ -54,7 +54,7 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
     );
 
     return (
-        <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-brand-mint/5 overflow-hidden" id="gallery">
+        <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-brand-mint/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header Section */}
                 <div className="text-center mb-16">

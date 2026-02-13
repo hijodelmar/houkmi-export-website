@@ -25,15 +25,15 @@ export default async function Home({
             <AgadirAdvantage lang={lang} dict={dict} />
             <Products lang={lang} dict={dict} />
 
-            <LazySection>
+            <LazySection id="gallery">
                 <Gallery lang={lang} dict={dict} />
             </LazySection>
 
-            <LazySection>
+            <LazySection id="reviews">
                 <Reviews lang={lang} dict={dict} />
             </LazySection>
 
-            <LazySection>
+            <LazySection id="contact">
                 <Contact lang={lang} dict={dict} />
             </LazySection>
         </div>
