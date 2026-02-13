@@ -95,7 +95,6 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
                         <div className="h-16 w-px bg-white/40 hidden md:block"></div>
                         <div className="flex items-center gap-6">
                             <div className="text-white text-left">
-                                <span className="block text-[10px] font-black tracking-widest uppercase opacity-70">General Manager</span>
                                 <span className="text-sm font-bold uppercase tracking-wider">Wiliam Lombardi</span>
                             </div>
                         </div>
