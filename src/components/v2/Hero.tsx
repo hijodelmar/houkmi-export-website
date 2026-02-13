@@ -8,13 +8,13 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image with Parallax-like feel */}
-            <div
-                className="absolute inset-0 bg-cover bg-center transform scale-105"
-                style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1546470427-227dd47b9e4f?w=1920&q=80')",
-                    filter: "brightness(0.85)"
-                }}
-            >
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-black/40 z-10"></div>
+                <img
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e"
+                    alt="Agriculture Background"
+                    className="w-full h-full object-cover scale-110 motion-safe:animate-subtle-zoom"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
             </div>
 
@@ -24,18 +24,20 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
                     <div className="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
                         <Leaf className="w-5 h-5 text-white" />
                     </div>
-                    HOUKMI<span className="font-light">EXPORT</span>
+                    HOUKMI EXPORT
                 </div>
-                <div className="hidden md:flex gap-8 items-center bg-white/10 backdrop-blur-md px-8 py-3 rounded-full border border-white/20">
-                    {['Home', 'About', 'Products', 'Gallery', 'Contact'].map((item) => (
-                        <span key={item} className="text-white text-sm font-medium hover:text-brand-green active:scale-95 transition-all cursor-pointer">
-                            {item}
-                        </span>
-                    ))}
+                <div className="hidden md:flex gap-8 text-white/80 font-medium text-sm">
+                    <Link href={`/${lang}/v2`} className="hover:text-white transition-colors">Home</Link>
+                    <Link href="#about" className="hover:text-white transition-colors">About</Link>
+                    <Link href="#products" className="hover:text-white transition-colors">Products</Link>
+                    <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
                 </div>
-                <button className="bg-white text-brand-green font-bold px-6 py-2.5 rounded-full hover:bg-brand-green hover:text-white transition-all shadow-lg text-sm">
+                <Link
+                    href="#contact"
+                    className="bg-brand-orange text-white px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition-all shadow-lg"
+                >
                     Get Quote
-                </button>
+                </Link>
             </nav>
 
             {/* Main Content */}
@@ -48,28 +50,27 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
                     <span className="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-widest uppercase mb-6">
                         Premium Moroccan Produce
                     </span>
-                    <h1 className="text-5xl md:text-8xl font-[800] text-white leading-tight mb-6 drop-shadow-xl tracking-tight">
-                        From Moroccan Soil <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-green">
-                            To Global Tables
+                    <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
+                        NATURE'S FINEST<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-green">
+                            DIRECT TO YOU
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                        Exporting the finest quality fruits and vegetables from Agadir to the world.
-                        Certified excellence, sustainable farming, and 35+ years of trust.
+                    <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-medium">
+                        Strategically located in Agadir, we bridge the gap between Morocco's
+                        sun-drenched fields and the global dinner table.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div className="flex flex-col sm:flex-row gap-6">
                         <Link
-                            href={`/${lang}/products`}
-                            className="group bg-brand-green hover:bg-brand-green-dark text-white text-lg font-bold px-8 py-4 rounded-full transition-all shadow-xl shadow-brand-green/30 flex items-center gap-2"
+                            href="#products"
+                            className="bg-brand-green text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-3 hover:scale-105 transition-all shadow-xl shadow-brand-green/20"
                         >
-                            Our Catalog
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            Explore Harvest <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
-                            href={`/${lang}/about`}
-                            className="group bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white text-lg font-bold px-8 py-4 rounded-full transition-all flex items-center gap-2"
+                            href="#about"
+                            className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all"
                         >
                             Learn More
                         </Link>
@@ -84,13 +85,16 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
                     className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-12 bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl"
                 >
                     {[
-                        { label: 'Experience', value: '35+ Years' },
-                        { label: 'Export Size', value: '50k Tons' },
-                        { label: 'Markets', value: '25+ Countries' },
-                        { label: 'Quality', value: 'GlobalGAP' }
+                        { label: "Active Countries", value: "24+", icon: <Globe className="w-4 h-4" /> },
+                        { label: "Containers / Year", value: "1,200+", icon: <Leaf className="w-4 h-4" /> },
+                        { label: "Quality Assurance", value: "100%", icon: <Leaf className="w-4 h-4" /> },
+                        { label: "Fast Delivery", value: "24/7", icon: <Globe className="w-4 h-4" /> },
                     ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <div className="text-2xl md:text-3xl font-black text-white mb-1">{stat.value}</div>
+                        <div key={i} className="text-left border-l border-white/10 pl-4 md:pl-6 first:border-0">
+                            <div className="flex items-center gap-2 text-brand-orange mb-1">
+                                {stat.icon}
+                                <span className="text-2xl md:text-3xl font-black text-white">{stat.value}</span>
+                            </div>
                             <div className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-wider">{stat.label}</div>
                         </div>
                     ))}
@@ -98,7 +102,7 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
         </section>
     );
 }

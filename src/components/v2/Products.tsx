@@ -1,70 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Image from "next/image";
+import Link from 'next/link';
 import { ArrowUpRight } from "lucide-react";
 
 export default function Products({ lang, dict }: { lang: string; dict: any }) {
     const products = [
         {
             id: "tomatoes",
-            name: "Tomatoes",
+            name: dict.Products.tomatoes,
             category: "Vegetables",
-            image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea",
             color: "bg-red-500"
         },
         {
-            id: "citrus",
-            name: "Citrus",
+            id: "oranges",
+            name: dict.Products.oranges,
             category: "Fruits",
-            image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1547514701-42782101795e",
             color: "bg-orange-500"
         },
         {
             id: "peppers",
-            name: "Peppers",
+            name: dict.Products.peppers,
             category: "Vegetables",
-            image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83",
             color: "bg-green-500"
         },
         {
             id: "watermelons",
-            name: "Watermelons",
+            name: dict.Products.watermelons,
             category: "Fruits",
-            image: "https://images.unsplash.com/photo-1587049352846-4a222e784587?w=800&q=80",
-            color: "bg-rose-500"
+            image: "/images/watermelon.jpg",
+            color: "bg-pink-500"
+        },
+        {
+            id: "calabacin",
+            name: dict.Products.calabacin,
+            category: "Vegetables",
+            image: "/images/calabacin.jpg",
+            color: "bg-green-700"
+        },
+        {
+            id: "cantaloupe",
+            name: dict.Products.cantaloupe,
+            category: "Fruits",
+            image: "/images/catalupo.jpg",
+            color: "bg-yellow-500"
         }
     ];
 
     return (
-        <section className="py-24 bg-gray-50">
+        <section id="products" className="py-24 bg-gray-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h4 className="text-brand-green font-bold uppercase tracking-widest text-sm mb-2">Our Harvest</h4>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">Premium Produce</h2>
+                        <span className="text-brand-orange font-bold tracking-[0.3em] uppercase text-sm mb-4 block">
+                            Our Harvest
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+                            Fresh From <br />
+                            The <span className="text-brand-green">Atlas Fields</span>
+                        </h2>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
                         <Link
                             href={`/${lang}/products`}
-                            className="hidden md:flex items-center gap-2 border border-gray-300 px-6 py-3 rounded-full hover:bg-white hover:shadow-lg transition-all font-semibold text-gray-700"
+                            className="group flex items-center gap-2 text-gray-900 font-bold text-lg hover:text-brand-orange transition-colors"
                         >
-                            View Full Catalog
-                            <ArrowUpRight className="w-4 h-4" />
+                            View All Products
+                            <span className="bg-gray-200 p-2 rounded-full group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <ArrowUpRight className="w-5 h-5" />
+                            </span>
                         </Link>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map((product, index) => (
                         <motion.div
                             key={product.id}
@@ -73,39 +95,33 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -10 }}
-                            className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer"
+                            className="group relative h-[400px] w-full rounded-3xl overflow-hidden cursor-pointer"
                         >
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                style={{ backgroundImage: `url('${product.image}')` }}
-                            ></div>
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                            <Image
+                                src={product.image}
+                                alt={product.name}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
-                            {/* Glass Content Bottom */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
-                                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                    <div className="flex justify-between items-center mb-1">
-                                        <span className="text-white/80 text-xs font-bold uppercase tracking-wider">{product.category}</span>
-                                        <div className={`w-2 h-2 rounded-full ${product.color}`}></div>
+                            <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <div className="flex justify-between items-end">
+                                    <div>
+                                        <p className="text-white/60 text-sm font-bold tracking-widest uppercase mb-2">
+                                            {product.category}
+                                        </p>
+                                        <h3 className="text-3xl font-black text-white mb-4">
+                                            {product.name}
+                                        </h3>
                                     </div>
-                                    <h3 className="text-white text-2xl font-bold mb-2">{product.name}</h3>
-                                    <div className="h-0 group-hover:h-auto overflow-hidden transition-all opacity-0 group-hover:opacity-100">
-                                        <p className="text-white/80 text-sm mt-2">Export ready • High Quality</p>
+                                    <div className={`w-12 h-12 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 group-hover:bg-brand-orange group-hover:border-brand-orange transition-colors`}>
+                                        <ArrowUpRight className="text-white" />
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
-                </div>
-
-                <div className="mt-8 text-center md:hidden">
-                    <Link
-                        href={`/${lang}/products`}
-                        className="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-3 rounded-full font-bold shadow-lg"
-                    >
-                        View Full Catalog
-                        <ArrowUpRight className="w-4 h-4" />
-                    </Link>
                 </div>
             </div>
         </section>
