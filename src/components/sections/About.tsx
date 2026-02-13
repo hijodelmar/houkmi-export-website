@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Leaf, Package } from "lucide-react";
+import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function About({ dict }: { dict: any }) {
@@ -21,13 +22,15 @@ export default function About({ dict }: { dict: any }) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+                        className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl group"
                     >
-                        <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: `url('/images/logohoukmi.png')` }}
-                        ></div>
-
+                        <Image
+                            src="/images/logohoukmi.png"
+                            alt="Houkmi Export"
+                            fill
+                            className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                     </motion.div>
 
                     {/* Content Side */}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Products({ lang, dict }: { lang: string; dict: any }) {
     const pathname = usePathname();
@@ -13,19 +14,19 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
             id: "tomatoes",
             name: dict.Products.tomatoes,
             color: "#EF4444",
-            image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea"
         },
         {
             id: "oranges",
             name: dict.Products.oranges,
             color: "#F97316",
-            image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1547514701-42782101795e"
         },
         {
             id: "peppers",
             name: dict.Products.peppers,
             color: "#22C55E",
-            image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=800&q=80"
+            image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83"
         },
         {
             id: "watermelons",
@@ -101,10 +102,14 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                             className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
                         >
                             {/* Product Image */}
-                            <div className="h-52 relative overflow-hidden">
-                                <div
-                                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                                    style={{ backgroundImage: `url(${product.image})` }}
+                            <div className="h-52 relative overflow-hidden bg-gray-100">
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                                    loading="lazy"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                                 {/* Badge */}

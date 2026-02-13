@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Hero({ lang, dict }: { lang: string; dict: any }) {
@@ -11,27 +10,27 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
     // Array of hero images related to your export business
     const heroImages = [
         {
-            url: "https://images.unsplash.com/photo-1546470427-227dd47b9e4f?w=1920&q=80",
+            url: "https://images.unsplash.com/photo-1546470427-227dd47b9e4f",
             alt: "Fresh ripe tomatoes",
             gradient: "from-red-500/30 to-orange-500/30"
         },
         {
-            url: "https://images.unsplash.com/photo-1580052614034-c55d20bfee3b?w=1920&q=80",
+            url: "https://images.unsplash.com/photo-1580052614034-c55d20bfee3b",
             alt: "Juicy oranges",
             gradient: "from-orange-500/30 to-yellow-500/30"
         },
         {
-            url: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=1920&q=80",
+            url: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83",
             alt: "Colorful bell peppers",
             gradient: "from-green-500/30 to-lime-500/30"
         },
         {
-            url: "https://images.unsplash.com/photo-1587049352846-4a222e784587?w=1920&q=80",
+            url: "https://images.unsplash.com/photo-1587049352846-4a222e784587",
             alt: "Fresh watermelon",
             gradient: "from-pink-500/30 to-red-500/30"
         },
         {
-            url: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80",
+            url: "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
             alt: "Agricultural field",
             gradient: "from-green-600/30 to-emerald-500/30"
         }
@@ -49,22 +48,26 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image Carousel */}
             <div className="absolute inset-0">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout" initial={false}>
                     <motion.div
                         key={currentImageIndex}
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
                         className="absolute inset-0"
-                        style={{
-                            backgroundImage: `url('${heroImages[currentImageIndex].url}')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center'
-                        }}
                     >
+                        <Image
+                            src={heroImages[currentImageIndex].url}
+                            alt={heroImages[currentImageIndex].alt}
+                            fill
+                            priority={currentImageIndex === 0}
+                            className="object-cover object-center"
+                            sizes="100vw"
+                            quality={80}
+                        />
                         {/* Gradient overlay for better text readability */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${heroImages[currentImageIndex].gradient}`}></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${heroImages[currentImageIndex].gradient} mix-blend-multiply opacity-60`}></div>
                     </motion.div>
                 </AnimatePresence>
             </div>

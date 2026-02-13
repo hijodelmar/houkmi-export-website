@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
+import Image from "next/image";
 
 export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
     const [images, setImages] = useState<string[]>([]);
@@ -86,9 +87,12 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
                             transition={{ duration: 0.5, delay: index * 0.05 }}
                             onClick={() => setSelectedImage(src)}
                         >
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
-                                style={{ backgroundImage: `url(${src})` }}
+                            <Image
+                                src={src}
+                                alt={`Gallery image ${index + 1}`}
+                                fill
+                                className="object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                                 <Maximize2 className="text-white w-6 h-6 ml-auto" />
@@ -129,9 +133,12 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
                                     onClick={() => setSelectedImage(src)}
                                     whileHover={{ scale: 1.05 }}
                                 >
-                                    <div
-                                        className="absolute inset-0 bg-cover bg-center"
-                                        style={{ backgroundImage: `url(${src})` }}
+                                    <Image
+                                        src={src}
+                                        alt={`Gallery carousel image ${index + 1}`}
+                                        fill
+                                        className="object-cover object-center"
+                                        sizes="320px"
                                     />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
                                 </motion.div>
@@ -165,10 +172,13 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
                             className="relative max-w-5xl w-full h-full flex items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            <Image
                                 src={selectedImage}
                                 alt="Gallery Preview"
-                                className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain border-4 border-white/10"
+                                fill
+                                className="object-contain rounded-2xl shadow-2xl border-4 border-white/10"
+                                quality={90}
+                                sizes="100vw"
                             />
                         </motion.div>
                     </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sun, Wind, Calendar, MapPin, Thermometer } from "lucide-react";
+import Image from "next/image";
 
 export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: any }) {
     if (!dict.Agadir) return null;
@@ -97,9 +98,13 @@ export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: an
                         viewport={{ once: true }}
                         className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
                     >
-                        <div
-                            className="absolute inset-0 bg-cover bg-center"
-                            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=1200&q=80")' }}
+                        <Image
+                            src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2"
+                            alt="Agadir Coastal Farms"
+                            fill
+                            className="object-cover object-center"
+                            loading="lazy"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                             <div className="text-white">

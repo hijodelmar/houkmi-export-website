@@ -50,10 +50,12 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
             >
                 <div className="flex items-center gap-2">
                     <div className="relative w-4 h-3 overflow-hidden rounded-sm shadow-sm border border-white/20">
-                        <img
+                        <Image
                             src={`https://flagcdn.com/w40/${countryCodes[currentLang] || 'un'}.png`}
                             alt={currentLang}
-                            className="object-cover w-full h-full"
+                            fill
+                            className="object-cover"
+                            sizes="16px"
                         />
                     </div>
                     <span>{currentLang.toUpperCase()}</span>
@@ -69,16 +71,18 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
                                 key={locale}
                                 href={redirectedPathName(locale)}
                                 className={`flex items-center gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-widest transition-colors ${currentLang === locale
-                                        ? "bg-gray-50 text-brand-orange"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-brand-orange"
+                                    ? "bg-gray-50 text-brand-orange"
+                                    : "text-gray-700 hover:bg-gray-50 hover:text-brand-orange"
                                     }`}
                                 onClick={() => setIsOpen(false)}
                             >
                                 <div className="relative w-5 h-3.5 overflow-hidden rounded-sm shadow-sm border border-gray-100">
-                                    <img
+                                    <Image
                                         src={`https://flagcdn.com/w40/${countryCodes[locale]}.png`}
                                         alt={localeNames[locale]}
-                                        className="object-cover w-full h-full"
+                                        fill
+                                        className="object-cover"
+                                        sizes="20px"
                                     />
                                 </div>
                                 <span>{localeNames[locale]}</span>

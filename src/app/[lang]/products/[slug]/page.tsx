@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { locales, Locale } from "@/lib/i18n";
 import ProductSchema from "@/components/seo/ProductSchema";
+import Image from "next/image";
 
 const baseUrl = "https://houkmiexport.com";
 
@@ -434,9 +435,13 @@ export default async function ProductPage({
             <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-green-50">
                 {/* Hero Section */}
                 <div className="relative h-[60vh] overflow-hidden">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url(${product.image})` }}
+                    <Image
+                        src={product.image}
+                        alt={productName}
+                        fill
+                        priority
+                        className="object-cover object-center"
+                        sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
@@ -462,11 +467,13 @@ export default async function ProductPage({
 
                     <div className="grid md:grid-cols-2 gap-12 items-start">
                         {/* Product Image */}
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-square">
+                            <Image
                                 src={product.image}
                                 alt={productName}
-                                className="w-full h-auto object-cover"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </div>
 

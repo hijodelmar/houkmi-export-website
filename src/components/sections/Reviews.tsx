@@ -7,6 +7,7 @@ import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import ReviewSchema from "@/components/seo/ReviewSchema";
 import ReCAPTCHA from "react-google-recaptcha";
+import NextImage from "next/image";
 
 export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
     const reviewsData = useQuery(api.reviews.getApproved);
@@ -142,11 +143,13 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                         "{reviews[currentIndex]?.comment}"
                                     </p>
                                     <div className="flex flex-col items-center">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-brand-green/20">
-                                            <img
+                                        <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 ring-2 ring-brand-green/20 relative">
+                                            <NextImage
                                                 src={reviews[currentIndex]?.image_url || "https://i.pravatar.cc/150?u=anonymous"}
                                                 alt={reviews[currentIndex]?.name}
-                                                className="w-full h-full object-cover"
+                                                fill
+                                                className="object-cover"
+                                                sizes="80px"
                                             />
                                         </div>
                                         <h4 className="text-xl font-bold text-gray-900">{reviews[currentIndex]?.name}</h4>
@@ -306,7 +309,7 @@ export default function Reviews({ lang, dict }: { lang: string; dict: any }) {
                                                                     if (file) {
                                                                         const reader = new FileReader();
                                                                         reader.onload = (event) => {
-                                                                            const img = new Image();
+                                                                            const img = new window.Image();
                                                                             img.onload = () => {
                                                                                 const canvas = document.createElement('canvas');
                                                                                 const MAX_WIDTH = 200;

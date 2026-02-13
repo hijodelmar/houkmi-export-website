@@ -1,12 +1,13 @@
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/dictionary";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import AgadirAdvantage from "@/components/sections/AgadirAdvantage";
-import Products from "@/components/sections/Products";
-import Contact from "@/components/sections/Contact";
 
-import Gallery from "@/components/sections/Gallery";
-import Reviews from "@/components/sections/Reviews";
+const AgadirAdvantage = dynamic(() => import("@/components/sections/AgadirAdvantage"));
+const Products = dynamic(() => import("@/components/sections/Products"));
+const Gallery = dynamic(() => import("@/components/sections/Gallery"));
+const Reviews = dynamic(() => import("@/components/sections/Reviews"));
+const Contact = dynamic(() => import("@/components/sections/Contact"));
 
 export default async function Home({
     params,
