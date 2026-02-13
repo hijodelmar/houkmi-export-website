@@ -140,7 +140,7 @@ export default async function RootLayout({ children, params }) {
                     <Navbar lang={lang} dict={dict} />
                     {children}
                     <Footer lang={lang} dict={dict} />
-                    <WhatsAppButton />
+                    <WhatsAppButton lang={lang} />
                 </ConvexClientProvider>
             </body>
         </html>

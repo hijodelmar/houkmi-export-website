@@ -3,11 +3,27 @@
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 
-export default function WhatsAppButton() {
-    // Replace with actual number
-    const phoneNumber = "34691062262";
-    const message = "Hello, I am interested in your products.";
+interface WhatsAppButtonProps {
+    lang?: string;
+}
 
+export default function WhatsAppButton({ lang = "en" }: WhatsAppButtonProps) {
+    // New Italian number for Wiliam
+    const phoneNumber = "393482296062";
+    
+    // Localized message according to language
+    const getGreeting = (l: string) => {
+        switch (l) {
+            case 'fr': return "Bonjour";
+            case 'es': return "Hola";
+            case 'it': return "Buongiorno";
+            case 'de': return "Hallo";
+            case 'ru': return "Здравствуйте";
+            default: return "Hello";
+        }
+    };
+
+    const message = getGreeting(lang);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
