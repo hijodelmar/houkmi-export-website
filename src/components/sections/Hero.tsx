@@ -90,15 +90,6 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
                         {dict.Hero.subtitle}
                     </p>
 
-                    {/* Model-style Footer Elements in Hero */}
-                    <div className="mt-20 flex flex-col md:flex-row items-center gap-8 opacity-80">
-                        <div className="h-16 w-px bg-white/40 hidden md:block"></div>
-                        <div className="flex items-center gap-6">
-                            <div className="text-white text-left">
-                                <span className="text-sm font-bold uppercase tracking-wider">Wiliam Lombardi</span>
-                            </div>
-                        </div>
-                    </div>
                 </motion.div>
             </div>
 
