@@ -1,5 +1,4 @@
 import { getDictionary } from "@/lib/dictionary";
-import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import AgadirAdvantage from "@/components/sections/AgadirAdvantage";
 import Products from "@/components/sections/Products";
@@ -18,8 +17,7 @@ export default async function Home({
 
     return (
         <div className="flex flex-col gap-0">
-            <Hero lang={lang} dict={dict} />
-            <About lang={lang} dict={dict} />
+            <About dict={dict} />
             <AgadirAdvantage lang={lang} dict={dict} />
             <Products lang={lang} dict={dict} />
             <Gallery lang={lang} dict={dict} />
