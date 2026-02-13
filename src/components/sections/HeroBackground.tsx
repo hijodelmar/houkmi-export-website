@@ -43,7 +43,7 @@ export default function HeroBackground() {
     }, []);
 
     return (
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-[1]">
             <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div
                     key={currentImageIndex}
@@ -57,7 +57,9 @@ export default function HeroBackground() {
                         src={heroImages[currentImageIndex].url}
                         alt={heroImages[currentImageIndex].alt}
                         fill
-                        priority={currentImageIndex === 0}
+                        // Only add priority/eager for indices that might be LCP in slow loads
+                        priority={currentImageIndex <= 1}
+                        loading="eager"
                         className="object-cover object-center"
                         sizes="100vw"
                         quality={80}
