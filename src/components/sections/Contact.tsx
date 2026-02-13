@@ -119,7 +119,7 @@ export default function Contact({ lang, dict, initialProduct = "Tomatoes" }: { l
                                 <Phone style={{ color: '#AB47BC' }} className="w-8 h-8 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">{dict.Contact.phoneLabel}</h4>
-                                    <p className="text-gray-700">+39 348 229 6062 (Wiliam)</p>
+                                    <p className="text-gray-700">+39 348 229 6062 (Wiliam Lombardi)</p>
                                 </div>
                             </div>
                         </div>
