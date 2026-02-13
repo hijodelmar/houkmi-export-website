@@ -8,5 +8,5 @@ export default async function ProductsPage({
 }) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
-    return <Products lang={lang} dict={dict} />;
+    return <Products lang={lang} dict={dict} isFullPage={true} />;
 }

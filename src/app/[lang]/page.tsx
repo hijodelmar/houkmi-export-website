@@ -1,10 +1,11 @@
-import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/dictionary";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import AgadirAdvantage from "@/components/sections/AgadirAdvantage";
+import Products from "@/components/sections/Products";
+import dynamic from "next/dynamic";
+import LazySection from "@/components/ui/LazySection";
 
-const AgadirAdvantage = dynamic(() => import("@/components/sections/AgadirAdvantage"));
-const Products = dynamic(() => import("@/components/sections/Products"));
 const Gallery = dynamic(() => import("@/components/sections/Gallery"));
 const Reviews = dynamic(() => import("@/components/sections/Reviews"));
 const Contact = dynamic(() => import("@/components/sections/Contact"));
@@ -23,9 +24,18 @@ export default async function Home({
             <About dict={dict} />
             <AgadirAdvantage lang={lang} dict={dict} />
             <Products lang={lang} dict={dict} />
-            <Gallery lang={lang} dict={dict} />
-            <Reviews lang={lang} dict={dict} />
-            <Contact lang={lang} dict={dict} />
+
+            <LazySection>
+                <Gallery lang={lang} dict={dict} />
+            </LazySection>
+
+            <LazySection>
+                <Reviews lang={lang} dict={dict} />
+            </LazySection>
+
+            <LazySection>
+                <Contact lang={lang} dict={dict} />
+            </LazySection>
         </div>
     );
 }

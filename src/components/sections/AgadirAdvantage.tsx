@@ -52,7 +52,7 @@ export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: an
         <section className="py-24 bg-white overflow-hidden" id="agadir-advantage">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-20 animate-on-scroll">
+                <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -96,6 +96,7 @@ export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: an
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
                         className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
                     >
                         <Image
@@ -108,7 +109,7 @@ export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: an
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                             <div className="text-white">
-                                <p className="text-3xl font-bold italic mb-2">"300+ Days of Pure Sunshine"</p>
+                                <p className="text-3xl font-bold italic mb-2">&quot;300+ Days of Pure Sunshine&quot;</p>
                                 <p className="text-white/80">Agadir Coastal Farms</p>
                             </div>
                         </div>

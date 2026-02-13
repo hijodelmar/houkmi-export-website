@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Products({ lang, dict }: { lang: string; dict: any }) {
-    const pathname = usePathname();
-    const isFullPage = pathname?.includes('/products');
-
+export default function Products({ lang, dict, isFullPage = false }: { lang: string; dict: any, isFullPage?: boolean }) {
     const allProducts = [
         {
             id: "tomatoes",
@@ -79,7 +75,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ background: 'linear-gradient(to right, #7CB342, #FF6F00)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                            {isFullPage ? dict.Products.title : dict.Products.title}
+                            {dict.Products.title}
                         </h2>
                         <div className="w-24 h-1.5 mx-auto rounded-full" style={{ background: 'linear-gradient(to right, #FF6F00, #FFD600)' }}></div>
                         {isFullPage && (
@@ -107,7 +103,7 @@ export default function Products({ lang, dict }: { lang: string; dict: any }) {
                                     src={product.image}
                                     alt={product.name}
                                     fill
-                                    className="object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                                    className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                                     loading="lazy"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                 />
