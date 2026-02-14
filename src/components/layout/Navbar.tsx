@@ -23,11 +23,11 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
     }, []);
 
     const navigation = [
-        { name: dict.Navbar?.home || 'Home', href: `/${lang}` },
-        { name: dict.Navbar?.about || 'About us', href: `/${lang}#about` },
-        { name: dict.Navbar?.products || 'Products', href: `/${lang}/products` },
-        { name: dict.Navbar?.gallery || 'Gallery', href: `/${lang}#gallery` },
-        { name: dict.Navbar?.contact || 'Contact', href: `/${lang}#contact` },
+        { name: dict.Navigation?.home || 'Home', href: `/${lang}` },
+        { name: dict.Navigation?.about || 'About us', href: `/${lang}#about` },
+        { name: dict.Navigation?.products || 'Products', href: `/${lang}/products` },
+        { name: dict.Navigation?.gallery || 'Gallery', href: `/${lang}#gallery` },
+        { name: dict.Navigation?.contact || 'Contact', href: `/${lang}#contact` },
     ];
 
     return (
@@ -42,10 +42,10 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             <div className="bg-[#0A2A12] text-white py-2 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto flex justify-end items-center gap-6 text-[11px] font-bold uppercase tracking-wider">
                     <Link href={`/${lang}/join`} className="hover:text-brand-orange transition-colors">
-                        {lang === 'fr' ? 'NOUS REJOINDRE' : 'JOIN US'}
+                        {dict.Join?.apply_now || dict.Join?.title || 'JOIN US'}
                     </Link>
                     <Link href={`/${lang}#contact`} className="hover:text-brand-orange transition-colors">
-                        {lang === 'fr' ? 'NOUS CONTACTER' : 'CONTACT US'}
+                        {dict.Footer?.contact_us || 'CONTACT US'}
                     </Link>
                     <div className="border-l border-white/20 pl-6 h-4 flex items-center">
                         <LanguageSwitcher currentLang={lang} />
@@ -116,7 +116,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                             onClick={() => { setIsSearchOpen(true); setIsOpen(false); }}
                             className="flex items-center gap-2 text-[#FF6F00] font-bold text-sm uppercase tracking-widest py-2"
                         >
-                            <Search className="w-4 h-4" /> {lang === 'fr' ? 'Rechercher' : 'Search'}
+                            <Search className="w-4 h-4" /> {dict.Navbar?.search || 'Search'}
                         </button>
                     </div>
                 )}

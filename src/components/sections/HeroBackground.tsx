@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 
 const heroImages = [
     {
-        url: "https://images.unsplash.com/photo-1546470427-227dd47b9e4f",
+        url: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea",
         alt: "Fresh ripe tomatoes",
         gradient: "from-red-500/30 to-orange-500/30"
     },
     {
-        url: "https://images.unsplash.com/photo-1580052614034-c55d20bfee3b",
+        url: "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b",
         alt: "Juicy oranges",
         gradient: "from-orange-500/30 to-yellow-500/30"
     },
@@ -21,7 +21,7 @@ const heroImages = [
         gradient: "from-green-500/30 to-lime-500/30"
     },
     {
-        url: "https://images.unsplash.com/photo-1587049352846-4a222e784587",
+        url: "https://images.unsplash.com/photo-1589539148739-b5e099680b58",
         alt: "Fresh watermelon",
         gradient: "from-pink-500/30 to-red-500/30"
     },

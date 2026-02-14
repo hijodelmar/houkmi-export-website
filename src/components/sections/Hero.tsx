@@ -7,7 +7,7 @@ export default function Hero({ lang, dict }: { lang: string; dict: any }) {
             {/* First Image - Rendered on Server for instant LCP */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1546470427-227dd47b9e4f"
+                    src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea"
                     alt="Fresh ripe tomatoes"
                     fill
                     priority
