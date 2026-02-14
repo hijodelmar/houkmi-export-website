@@ -79,7 +79,9 @@
       "sun": "300+ Giorni di Sole",
       "temp": "21°C di Media",
       "advantage": "Vantaggio Atlantico"
-    }
+    },
+    "sunshine_quote": "300+ Giorni di Puro Sole",
+    "farms_label": "Fattorie Costiere di Agadir"
   },
   "ProductDetails": {
     "about": "Informazioni",

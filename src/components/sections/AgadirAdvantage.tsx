@@ -109,8 +109,8 @@ export default function AgadirAdvantage({ lang, dict }: { lang: string; dict: an
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                             <div className="text-white">
-                                <p className="text-3xl font-bold italic mb-2">&quot;300+ Days of Pure Sunshine&quot;</p>
-                                <p className="text-white/80">Agadir Coastal Farms</p>
+                                <p className="text-3xl font-bold italic mb-2">&quot;{dict.Agadir.sunshine_quote || "300+ Days of Pure Sunshine"}&quot;</p>
+                                <p className="text-white/80">{dict.Agadir.farms_label || "Agadir Coastal Farms"}</p>
                             </div>
                         </div>
                     </motion.div>

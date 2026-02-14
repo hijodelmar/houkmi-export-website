@@ -66,7 +66,9 @@
       "sun": "300+ Sonnentage",
       "temp": "21°C Durchschnitt",
       "advantage": "Atlantik-Vorteil"
-    }
+    },
+    "sunshine_quote": "300+ Tage Purer Sonnenschein",
+    "farms_label": "Küstenfarmen von Agadir"
   },
   "ProductDetails": {
     "about": "Über",

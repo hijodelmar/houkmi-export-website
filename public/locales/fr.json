@@ -245,7 +245,9 @@
       "sun": "300+ Jours",
       "temp": "21°C Moyenne",
       "advantage": "Avantage Atlantique"
-    }
+    },
+    "sunshine_quote": "300+ Jours de Pur Soleil",
+    "farms_label": "Fermes Côtières d'Agadir"
   },
   "Join": {
     "title": "Rejoignez l'Équipe",

@@ -213,7 +213,9 @@
       "sun": "300+ Days",
       "temp": "21°C Avg",
       "advantage": "Atlantic Advantage"
-    }
+    },
+    "sunshine_quote": "300+ Days of Pure Sunshine",
+    "farms_label": "Agadir Coastal Farms"
   },
   "Join": {
     "title": "Join the",

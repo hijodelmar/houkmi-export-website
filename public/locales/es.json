@@ -245,7 +245,9 @@
       "sun": "300+ Días",
       "temp": "21°C Media",
       "advantage": "Ventaja Atlántica"
-    }
+    },
+    "sunshine_quote": "300+ Días de Puro Sol",
+    "farms_label": "Granjas Costeras de Agadir"
   },
   "Join": {
     "title": "Únete al",
