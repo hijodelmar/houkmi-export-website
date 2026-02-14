@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "@/components/ui/Logo";
+import DeveloperModal from "@/components/ui/DeveloperModal";
 
 export default function Footer({ lang, dict }: { lang: string; dict: any }) {
     return (
@@ -76,7 +77,11 @@ export default function Footer({ lang, dict }: { lang: string; dict: any }) {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-brand-green/20">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-sm">
-                    <p>&copy; {new Date().getFullYear()} HOUKMI EXPORT. {dict.Footer.rights}</p>
+                    <div className="flex flex-col md:flex-row items-center gap-2">
+                        <p>&copy; {new Date().getFullYear()} HOUKMI EXPORT. {dict.Footer.rights}</p>
+                        <span className="hidden md:inline text-gray-300">|</span>
+                        <DeveloperModal />
+                    </div>
                     <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                         <Link href={`/${lang}/legal/mentions`} className="hover:text-brand-orange transition-colors">
                             {dict.Legal?.mentions || "Legal Notice"}
