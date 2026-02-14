@@ -21,7 +21,7 @@ const heroImages = [
         gradient: "from-green-500/30 to-lime-500/30"
     },
     {
-        url: "https://images.unsplash.com/photo-1589539148739-b5e099680b58",
+        url: "https://images.unsplash.com/photo-1587049352846-4a222e784d38",
         alt: "Fresh watermelon",
         gradient: "from-pink-500/30 to-red-500/30"
     },
