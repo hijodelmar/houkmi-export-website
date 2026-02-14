@@ -159,7 +159,7 @@ export default function Gallery({ lang, dict }: { lang: string; dict: any }) {
                         onClick={() => setSelectedImage(null)}
                     >
                         <button
-                            className="absolute top-8 right-8 text-white/50 hover:text-white p-2 hover:bg-white/10 rounded-full transition-all"
+                            className="absolute top-4 right-4 md:top-8 md:right-8 z-50 text-white/50 hover:text-white p-2 hover:bg-white/10 rounded-full transition-all"
                             onClick={() => setSelectedImage(null)}
                         >
                             <X className="w-8 h-8" />
